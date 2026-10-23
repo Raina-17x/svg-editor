@@ -1,0 +1,15 @@
+{
+  "name": "svg-cli-editor",
+  "version": "0.1.0",
+  "private": true,
+  "description": "PJ1 Phase 1 object-oriented SVG command-line editor",
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "cli": "npm run build --silent && node dist/src/main.js",
+    "test": "npm run build --silent && node --test dist/test/*.test.js",
+    "check": "npm test && node scripts/check-architecture.cjs"
+  },
+  "engines": { "node": ">=22" },
+  "dependencies": { "fast-xml-parser": "^5.0.0" },
+  "devDependencies": { "@types/node": "^24.0.0", "typescript": "^5.0.0" }
+}
