@@ -1,22 +1,30 @@
 {
   "name": "svg-phase2-tools",
   "displayName": "SVG Phase 2 Tools",
-  "description": "SVG file decorations for the Phase 2 lab.",
+  "description": "SVG file decorations and native outline for the Phase 2 lab.",
   "version": "0.0.1",
   "publisher": "phase2-lab",
   "private": true,
   "engines": {
     "vscode": "^1.85.0"
   },
-  "categories": ["Other"],
-  "activationEvents": ["onStartupFinished"],
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onStartupFinished"
+  ],
   "main": "./dist/extension.js",
   "scripts": {
     "build": "tsc -p .",
+    "test": "npm run build && node --test test/*.test.cjs",
     "watch": "tsc -p . --watch"
   },
   "devDependencies": {
     "@types/vscode": "1.85.0",
     "typescript": "^5.0.0"
+  },
+  "dependencies": {
+    "saxes": "^6.0.0"
   }
 }
