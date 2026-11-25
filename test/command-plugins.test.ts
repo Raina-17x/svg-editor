@@ -72,11 +72,18 @@ test('both real assembly entrypoints produce identical stdout and SVG using one 
   const input = readFileSync('doc/transcript/cli-commands.txt');
   const work = resolve(f.root, 'work'); const initial = readdirSync(work).sort();
   const entry = resolve('dist/src/main.js');
-  const code = spawnSync(process.execPath, [entry, '--code'], { cwd: work, input });
+  // Pin this earlier session to its original stats/dir collection as new plugins arrive.
+  const bootstrap = f.write('commands-code.cjs', `const {DefaultHost}=require(${JSON.stringify(resolve('dist/src/host/DefaultHost.js'))});
+    const {Repl}=require(${JSON.stringify(resolve('dist/src/cli/Repl.js'))}); const host=new DefaultHost();
+    for(const name of ['command-stats','command-dir']) { const pkg=${JSON.stringify(resolve('dist/src/plugins'))}+'/'+name;
+      const manifest=require(pkg+'/package.json'); host.installer.install(manifest,require(pkg).default); }
+    new Repl(host.cli).start();`);
+  const config = f.config(['command-stats', 'command-dir'].map(name => ({ module: resolve('dist/src/plugins', name) })));
+  const code = spawnSync(process.execPath, [bootstrap], { cwd: work, input });
   assert.equal(code.status, 0, code.stderr.toString());
   const svg = readFileSync(resolve(f.root, 'output.svg'));
   assert.deepEqual(readdirSync(work).sort(), initial);
-  const configured = spawnSync(process.execPath, [entry, '--config', resolve('plugins.config.json')], { cwd: work, input });
+  const configured = spawnSync(process.execPath, [entry, '--config', config], { cwd: work, input });
   assert.equal(configured.status, 0, configured.stderr.toString());
   assert.deepEqual(code.stdout, configured.stdout);
   assert.deepEqual(code.stdout, readFileSync('doc/transcript/cli-commands.expected.txt'));
