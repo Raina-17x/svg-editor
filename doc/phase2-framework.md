@@ -6,7 +6,7 @@
 
 原命令类从 `src/application/commands/` 移到 `src/plugins/builtin/commands/`，原图形工厂中的构造、参数与读写规则移到 BuiltinShapeProvider 的六个注册实例。公开 Shape/Rect/Group 等模型保留在 domain；SvgDocument.group 用公开 Group 创建普通分组，不按类型名枚举插件。
 
-NodeDirectoryAdapter 已接到命令上下文，但 dir 命令属于第 5 步。配置加载、manifest 校验和整次激活失败的注册回滚属于第 4 步。当前 ExtensionRegistry 只负责单项注册，DefaultHost 直接调用内置插件 activate，后续改为经过共同安装服务。本步不声称已完成 A/B 加载。
+NodeDirectoryAdapter 已接到命令上下文，但 dir 命令属于第 5 步。第 4 步现已完成配置加载、manifest 校验和注册回滚，默认内置插件也经过共同安装服务，详见 [插件加载说明](phase2-loading.md)。本篇其余内容记录第 3 步的框架设计。
 
 ## 实际扩展点清单
 

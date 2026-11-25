@@ -1,6 +1,6 @@
 # PJ1 Phase 1：CLI SVG 编辑器
 
-Phase 2 进度：[接口与 ADR](phase2-design.md)、[第 3 步框架接入及扩展点清单](phase2-framework.md)、[兼容性检查](transcript/README.md)、[自动指标](../docs/metrics/README.md)。四个扩展点及默认装配已接入运行，配置加载和正式可选插件仍待完成。原 Phase 1 文档保留如下。
+Phase 2 进度：[接口与 ADR](phase2-design.md)、[第 3 步框架接入及扩展点清单](phase2-framework.md)、[第 4 步插件加载](phase2-loading.md)、[兼容性检查](transcript/README.md)、[自动指标](../docs/metrics/README.md)。四个扩展点、默认装配、配置加载与注册回滚已接入；正式可选插件仍待完成。原 Phase 1 文档保留如下。
 
 本项目使用 TypeScript 和面向对象方式实现命令行 SVG 编辑器。用户输入命令后，程序修改内存中的图形树，再保存为浏览器可以打开的 SVG 文件。本阶段支持矩形、圆、椭圆、线段、文字和普通分组六种类型。
 

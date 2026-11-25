@@ -1,6 +1,6 @@
 # CLI 重构指标（脚本生成）
 
-比较：final (1fe4a0cb36c84caf1f135ebe534739c98d5d2db6) → WORKTREE (d332878d07863e4cfdfd085f1c95977e17729ccf)。
+比较：final (1fe4a0cb36c84caf1f135ebe534739c98d5d2db6) → WORKTREE (043234dac4968bc346795473b41d2bd5ecf5606b)。
 当前是框架阶段的工作树快照，并非最终 p2 指标；源文件哈希见 report.json。
 
 运行 `npm run metrics` 更新工作树快照；最终运行 `npm run metrics -- --from final --to p2` 比较两个历史标签。
@@ -12,8 +12,8 @@ kernel 包含领域、应用、CLI 和基础设施；composition 是 main 与 ho
 
 | 分类 | 基线文件 | 当前文件 | 基线行数 | 当前行数 | 行数增量 | 复杂度增量 |
 | --- | ---: | ---: | ---: | ---: | ---: | ---: |
-| kernel | 41 | 39 | 842 | 1009 | 167 | 45 |
-| composition | 1 | 2 | 11 | 31 | 20 | 7 |
+| kernel | 41 | 40 | 842 | 1022 | 180 | 48 |
+| composition | 1 | 6 | 11 | 224 | 213 | 112 |
 | plugins | 0 | 21 | 0 | 286 | 286 | 118 |
 | vscode | 0 | 4 | 0 | 152 | 152 | 35 |
 
@@ -25,9 +25,10 @@ kernel 包含领域、应用、CLI 和基础设施；composition 是 main 与 ho
 | src/application/AttributeService.ts | 应用事务与扩展调度 | kernel | 21 | 10 |
 | src/application/Command.ts | 应用事务与扩展调度 | kernel | 4 | 0 |
 | src/application/DocumentStore.ts | 应用事务与扩展调度 | kernel | 5 | 0 |
+| src/application/DuplicateRegistrationError.ts | 应用事务与扩展调度 | kernel | 3 | 1 |
 | src/application/EditCommand.ts | 应用事务与扩展调度 | kernel | 13 | 3 |
 | src/application/EditorSession.ts | 应用事务与扩展调度 | kernel | 101 | 30 |
-| src/application/ExtensionRegistry.ts | 应用事务与扩展调度 | kernel | 48 | 27 |
+| src/application/ExtensionRegistry.ts | 应用事务与扩展调度 | kernel | 58 | 29 |
 | src/application/HistoryEntry.ts | 应用事务与扩展调度 | kernel | 7 | 3 |
 | src/application/SessionFacade.ts | 应用事务与扩展调度 | kernel | 22 | 13 |
 | src/application/ShapeFactory.ts | 应用事务与扩展调度 | kernel | 41 | 36 |
@@ -57,11 +58,15 @@ kernel 包含领域、应用、CLI 和基础设施；composition 是 main 与 ho
 | src/domain/SvgDocument.ts | 公开领域模型与不变量 | kernel | 122 | 67 |
 | src/domain/Text.ts | 公开领域模型与不变量 | kernel | 14 | 7 |
 | src/domain/Value.ts | 公开领域模型与不变量 | kernel | 32 | 21 |
-| src/host/DefaultHost.ts | 宿主对象装配 | composition | 27 | 7 |
+| src/host/CliStartup.ts | 宿主对象装配 | composition | 16 | 5 |
+| src/host/DefaultHost.ts | 宿主对象装配 | composition | 31 | 7 |
+| src/host/PluginConfigLoader.ts | 宿主对象装配 | composition | 81 | 47 |
+| src/host/PluginInstaller.ts | 宿主对象装配 | composition | 58 | 35 |
+| src/host/RegistrationTransaction.ts | 宿主对象装配 | composition | 33 | 17 |
 | src/infrastructure/FileDocumentStore.ts | IO 适配与 SVG 编解码 | kernel | 23 | 6 |
 | src/infrastructure/NodeDirectoryAdapter.ts | IO 适配与 SVG 编解码 | kernel | 11 | 5 |
 | src/infrastructure/SvgCodec.ts | IO 适配与 SVG 编解码 | kernel | 101 | 54 |
-| src/main.ts | 宿主对象装配 | composition | 4 | 0 |
+| src/main.ts | 宿主对象装配 | composition | 5 | 1 |
 | src/plugins/builtin/BuiltinCommand.ts | 注册式内置能力实现 | plugins | 9 | 2 |
 | src/plugins/builtin/BuiltinPlugin.ts | 注册式内置能力实现 | plugins | 78 | 38 |
 | src/plugins/builtin/BuiltinShapeProvider.ts | 注册式内置能力实现 | plugins | 37 | 23 |

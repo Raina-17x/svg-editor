@@ -1,4 +1,5 @@
-import { DefaultHost } from './host/DefaultHost.js';
-import { Repl } from './cli/Repl.js';
+import { CliStartup } from './host/CliStartup.js';
 
-new Repl(new DefaultHost().cli).start();
+void new CliStartup().start(process.argv.slice(2)).catch(error => {
+  console.error(error); process.exitCode = 1;
+});

@@ -10,10 +10,14 @@ import { SvgCodec } from '../infrastructure/SvgCodec.js';
 import { CommandRegistry } from '../cli/CommandRegistry.js';
 import { CommandProcessor } from '../cli/CommandProcessor.js';
 import { BuiltinPlugin } from '../plugins/builtin/BuiltinPlugin.js';
+import manifest from '../plugins/builtin/package.json';
+import { PluginInstaller } from './PluginInstaller.js';
 
 /** Composition root. The kernel can also be constructed without builtin plugins. */
 export class DefaultHost {
   readonly extensions = new ExtensionRegistry();
+  readonly installer = new PluginInstaller(this.extensions);
+  readonly startupErrors: string[] = [];
   readonly factory = new ShapeFactory(() => this.extensions.shapeProviders());
   readonly codec = new SvgCodec(this.factory);
   readonly session = new EditorSession(new FileDocumentStore(this.codec),
@@ -22,6 +26,6 @@ export class DefaultHost {
   readonly commands = new CommandRegistry(() => this.extensions.commandPlugins());
   readonly cli = new CommandProcessor(this.session, this.commands, this.factory, new NodeDirectoryAdapter(), () => this.factory.help());
   constructor(builtins = true) {
-    if (builtins) new BuiltinPlugin().activate(this.extensions);
+    if (builtins) this.startupErrors.push(...this.installer.install(manifest, new BuiltinPlugin()));
   }
 }

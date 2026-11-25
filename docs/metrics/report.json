@@ -5,7 +5,7 @@
   },
   "to": {
     "ref": "WORKTREE",
-    "commit": "d332878d07863e4cfdfd085f1c95977e17729ccf",
+    "commit": "043234dac4968bc346795473b41d2bd5ecf5606b",
     "dirtySnapshot": true
   },
   "method": "Physical lines; function complexity = 1 + if/loops/catch/nondefault-case/ternary/&&/||/??; nested functions measured independently. No optional-chain or default-parameter increments. CLI runtime TypeScript only; VSCode separate; tests, scripts, dependencies and build output excluded.",
@@ -33,14 +33,14 @@
   },
   "afterTotals": {
     "kernel": {
-      "files": 39,
-      "lines": 1009,
-      "complexity": 431
+      "files": 40,
+      "lines": 1022,
+      "complexity": 434
     },
     "composition": {
-      "files": 2,
-      "lines": 31,
-      "complexity": 7
+      "files": 6,
+      "lines": 224,
+      "complexity": 112
     },
     "plugins": {
       "files": 21,
@@ -55,14 +55,14 @@
   },
   "delta": {
     "kernel": {
-      "files": -2,
-      "lines": 167,
-      "complexity": 45
+      "files": -1,
+      "lines": 180,
+      "complexity": 48
     },
     "composition": {
-      "files": 1,
-      "lines": 20,
-      "complexity": 7
+      "files": 5,
+      "lines": 213,
+      "complexity": 112
     },
     "plugins": {
       "files": 21,
@@ -1715,6 +1715,22 @@
       "sha256": "db1fec599f3479e8422da7a0b06bf5ddb52f53f7ae69436121acc3cf87c0a1e5"
     },
     {
+      "file": "src/application/DuplicateRegistrationError.ts",
+      "role": "应用事务与扩展调度",
+      "category": "kernel",
+      "lines": 3,
+      "nonblankLines": 3,
+      "complexity": 1,
+      "functions": [
+        {
+          "name": "constructor",
+          "line": 2,
+          "complexity": 1
+        }
+      ],
+      "sha256": "3c24608effe6bf6c9409810513cf018d8433d47eb31a33e5d00ebdca5e3e5685"
+    },
+    {
       "file": "src/application/EditCommand.ts",
       "role": "应用事务与扩展调度",
       "category": "kernel",
@@ -1850,77 +1866,87 @@
       "file": "src/application/ExtensionRegistry.ts",
       "role": "应用事务与扩展调度",
       "category": "kernel",
-      "lines": 48,
-      "nonblankLines": 47,
-      "complexity": 27,
+      "lines": 58,
+      "nonblankLines": 57,
+      "complexity": 29,
       "functions": [
         {
           "name": "registerShape",
-          "line": 13,
+          "line": 14,
           "complexity": 6
         },
         {
           "name": "<anonymous>",
-          "line": 17,
+          "line": 18,
           "complexity": 2
         },
         {
           "name": "registerCommand",
-          "line": 22,
+          "line": 23,
           "complexity": 3
         },
         {
           "name": "<anonymous>",
-          "line": 24,
+          "line": 25,
           "complexity": 1
         },
         {
           "name": "registerDecorator",
-          "line": 27,
+          "line": 28,
           "complexity": 1
         },
         {
           "name": "registerAttribute",
-          "line": 30,
+          "line": 31,
           "complexity": 1
         },
         {
           "name": "shapeProviders",
-          "line": 33,
-          "complexity": 1
-        },
-        {
-          "name": "commandPlugins",
           "line": 34,
           "complexity": 1
         },
         {
-          "name": "treeDecorators",
+          "name": "commandPlugins",
           "line": 35,
           "complexity": 1
         },
         {
-          "name": "attributeHandlers",
+          "name": "treeDecorators",
           "line": 36,
           "complexity": 1
         },
         {
-          "name": "validate",
+          "name": "attributeHandlers",
           "line": 37,
+          "complexity": 1
+        },
+        {
+          "name": "fork",
+          "line": 38,
+          "complexity": 1
+        },
+        {
+          "name": "replaceWith",
+          "line": 42,
+          "complexity": 1
+        },
+        {
+          "name": "validate",
+          "line": 47,
           "complexity": 6
         },
         {
           "name": "<anonymous>",
-          "line": 40,
+          "line": 50,
           "complexity": 1
         },
         {
           "name": "add",
-          "line": 44,
+          "line": 54,
           "complexity": 2
         }
       ],
-      "sha256": "41aec52e7b57511e29eb723eb021af07a7dd4a9b2e2daf82730e93dc9523b6f0"
+      "sha256": "01852736d76d9b93cea0763185c0960b953751fc2a709734fd2cd2bd6a92ef40"
     },
     {
       "file": "src/application/HistoryEntry.ts",
@@ -3042,31 +3068,215 @@
       "sha256": "8c0c2b8ad4f29fdb6005d595aae4d1ca2505cdbb32cd9d631bce92f4deb4b614"
     },
     {
+      "file": "src/host/CliStartup.ts",
+      "role": "宿主对象装配",
+      "category": "composition",
+      "lines": 16,
+      "nonblankLines": 15,
+      "complexity": 5,
+      "functions": [
+        {
+          "name": "start",
+          "line": 6,
+          "complexity": 4
+        },
+        {
+          "name": "<anonymous>",
+          "line": 13,
+          "complexity": 1
+        }
+      ],
+      "sha256": "327c4f7f5fbb32f1cd76cf72553e039383653c3eb3ae5db7eb22b5ba450386e2"
+    },
+    {
       "file": "src/host/DefaultHost.ts",
       "role": "宿主对象装配",
       "category": "composition",
-      "lines": 27,
-      "nonblankLines": 26,
+      "lines": 31,
+      "nonblankLines": 30,
       "complexity": 7,
       "functions": [
         {
           "name": "<anonymous>",
+          "line": 21,
+          "complexity": 1
+        },
+        {
+          "name": "<anonymous>",
+          "line": 24,
+          "complexity": 1
+        },
+        {
+          "name": "<anonymous>",
+          "line": 24,
+          "complexity": 1
+        },
+        {
+          "name": "<anonymous>",
+          "line": 26,
+          "complexity": 1
+        },
+        {
+          "name": "<anonymous>",
+          "line": 27,
+          "complexity": 1
+        },
+        {
+          "name": "constructor",
+          "line": 28,
+          "complexity": 2
+        }
+      ],
+      "sha256": "8038d14766d149bcb7ffcb79ce83f91e30adc6f8c410e92d26713de52d4eab03"
+    },
+    {
+      "file": "src/host/PluginConfigLoader.ts",
+      "role": "宿主对象装配",
+      "category": "composition",
+      "lines": 81,
+      "nonblankLines": 79,
+      "complexity": 47,
+      "functions": [
+        {
+          "name": "constructor",
+          "line": 14,
+          "complexity": 1
+        },
+        {
+          "name": "load",
+          "line": 15,
+          "complexity": 7
+        },
+        {
+          "name": "<anonymous>",
+          "line": 20,
+          "complexity": 1
+        },
+        {
+          "name": "loadEntry",
+          "line": 30,
+          "complexity": 22
+        },
+        {
+          "name": "manifest",
+          "line": 59,
+          "complexity": 4
+        },
+        {
+          "name": "object",
+          "line": 69,
+          "complexity": 3
+        },
+        {
+          "name": "validEntry",
+          "line": 72,
+          "complexity": 7
+        },
+        {
+          "name": "failed",
+          "line": 77,
+          "complexity": 2
+        }
+      ],
+      "sha256": "5d576d8097e9d032566bffcc497007daa60570e29539ff0ca8f617c3cb79bba3"
+    },
+    {
+      "file": "src/host/PluginInstaller.ts",
+      "role": "宿主对象装配",
+      "category": "composition",
+      "lines": 58,
+      "nonblankLines": 57,
+      "complexity": 35,
+      "functions": [
+        {
+          "name": "constructor",
+          "line": 8,
+          "complexity": 1
+        },
+        {
+          "name": "install",
+          "line": 9,
+          "complexity": 19
+        },
+        {
+          "name": "<anonymous>",
+          "line": 24,
+          "complexity": 1
+        },
+        {
+          "name": "declarations",
+          "line": 42,
+          "complexity": 11
+        },
+        {
+          "name": "<anonymous>",
+          "line": 47,
+          "complexity": 1
+        },
+        {
+          "name": "<anonymous>",
+          "line": 51,
+          "complexity": 2
+        }
+      ],
+      "sha256": "f241431ab8a3f2215c0dfd43963bdb0909b561ff7c49a7b5c6dbd95191b48a5b"
+    },
+    {
+      "file": "src/host/RegistrationTransaction.ts",
+      "role": "宿主对象装配",
+      "category": "composition",
+      "lines": 33,
+      "nonblankLines": 32,
+      "complexity": 17,
+      "functions": [
+        {
+          "name": "constructor",
+          "line": 10,
+          "complexity": 1
+        },
+        {
+          "name": "registerShape",
+          "line": 11,
+          "complexity": 1
+        },
+        {
+          "name": "<anonymous>",
+          "line": 12,
+          "complexity": 1
+        },
+        {
+          "name": "registerCommand",
+          "line": 14,
+          "complexity": 1
+        },
+        {
+          "name": "<anonymous>",
+          "line": 15,
+          "complexity": 1
+        },
+        {
+          "name": "registerDecorator",
           "line": 17,
           "complexity": 1
         },
         {
           "name": "<anonymous>",
+          "line": 18,
+          "complexity": 1
+        },
+        {
+          "name": "registerAttribute",
           "line": 20,
           "complexity": 1
         },
         {
           "name": "<anonymous>",
-          "line": 20,
+          "line": 21,
           "complexity": 1
         },
         {
-          "name": "<anonymous>",
-          "line": 22,
+          "name": "registered",
+          "line": 23,
           "complexity": 1
         },
         {
@@ -3075,12 +3285,22 @@
           "complexity": 1
         },
         {
-          "name": "constructor",
+          "name": "close",
           "line": 24,
+          "complexity": 1
+        },
+        {
+          "name": "assertSucceeded",
+          "line": 25,
           "complexity": 2
+        },
+        {
+          "name": "register",
+          "line": 26,
+          "complexity": 3
         }
       ],
-      "sha256": "75098408cb724461b21e52bf145cfc15acf351d1d4bc3e74c71b948cf1286371"
+      "sha256": "e0cff22a1bf96d17a989eede89c6f5cb0a22375d3eed57a2b15656bac6f9d23e"
     },
     {
       "file": "src/infrastructure/FileDocumentStore.ts",
@@ -3244,11 +3464,17 @@
       "file": "src/main.ts",
       "role": "宿主对象装配",
       "category": "composition",
-      "lines": 4,
-      "nonblankLines": 3,
-      "complexity": 0,
-      "functions": [],
-      "sha256": "1a5b8e7ff745e4dc038dad4af5c761640226bb9182317a3ec1a74ce234e17d7d"
+      "lines": 5,
+      "nonblankLines": 4,
+      "complexity": 1,
+      "functions": [
+        {
+          "name": "<anonymous>",
+          "line": 3,
+          "complexity": 1
+        }
+      ],
+      "sha256": "a557215b0580dc070a8ba6bcb766e527123e80fb08d3d109ca5cf17b1c53b070"
     },
     {
       "file": "src/plugins/builtin/BuiltinCommand.ts",
