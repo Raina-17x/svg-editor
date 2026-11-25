@@ -1,0 +1,37 @@
+# Additional compatibility session; not an official example.
+help
+stats
+dir
+canvas
+init 400 300
+create box absent 1 2 3 4 "title"
+create g outer
+create g inner in outer
+create rect r 1 2 3 4 red in inner
+create circle c 10 20 3 in inner
+create ellipse e 20 30 4 5 in outer
+create line l 0 0 10 10 black in outer
+create text t 20 40 "in" in outer
+show r
+set r fill blue
+set r label invalid
+set t text "two words & 中文"
+scale outer 2
+front r
+back c
+tree
+show t
+canvas
+save core.svg
+undo
+read core.svg
+move r 1 2
+undo
+redo
+group collected r c
+addto outer collected
+ungroup collected
+delete l
+undo
+tree outer
+help

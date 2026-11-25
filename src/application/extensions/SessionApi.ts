@@ -14,12 +14,15 @@ export interface EditOperation {
 
 /** Public facade; getters return detached snapshots, never the live document. */
 export interface SessionApi {
+  readonly document: SvgDocument;
   snapshot(): SvgDocument | undefined;
   edit(operation: EditOperation): readonly string[];
-  init(width: number, height: number): readonly string[];
-  read(path: string): readonly string[];
-  save(path?: string): readonly string[];
-  canvas(width?: number, height?: number): readonly string[];
-  undo(): readonly string[];
-  redo(): readonly string[];
+  init(width: number, height: number): string[];
+  read(path: string): string[];
+  save(path?: string): string[];
+  canvas(width?: number, height?: number): string[];
+  undo(): string[];
+  redo(): string[];
+  setAttribute(id: string, attribute: string, value: string): string[];
+  tree(id?: string): string[];
 }

@@ -4,7 +4,7 @@
 
 第 1 步已完成：核对完整 `phase_cli_1.md`、`phase_cli_2.md` 和 final；建立 §6、§6.1 A 的固定回归输出，预留 §6.1 B 输入。命令见 [基线说明](transcript/README.md)。
 
-第 2 步交付的是可编译的公开接口和以下设计决策。接口位于 `src/application/extensions/`，统一类型导出为 `index.ts`。目前尚未被运行中的 CLI 调用：原 `CommandRegistry`、`ShapeFactory`、`EditorSession`、`SetCommand` 和 `TreeCommand` 保持原逻辑。不得把下表当作已经满足 Phase 2 的最终扩展点清单；接入后须补上实际文件/函数、插件实现和测试证据。
+第 2 步交付公开接口和以下设计决策。第 3 步现已把四个扩展点接入运行，实际调用位置、公开 API 补充及测试见 [框架接入说明](phase2-framework.md)。接口统一从 `src/application/extensions/index.ts` 导出。下表保留设计时的调用计划；配置加载和正式可选插件仍属于后续步骤。
 
 ## 扩展点与调用计划
 

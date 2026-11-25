@@ -6,3 +6,7 @@ export type { SessionApi, EditContext, EditOperation } from './SessionApi.js';
 export type { DirectoryAccess, DirectoryEntry } from './DirectoryAccess.js';
 export type { PluginContext } from './PluginContext.js';
 export type { Plugin, PluginManifest } from './Plugin.js';
+export type { ShapeAccess } from './ShapeAccess.js';
+export { Command as ExecutableCommand } from '../Command.js';
+export { EditCommand } from '../EditCommand.js';
+export { Args } from '../Args.js';

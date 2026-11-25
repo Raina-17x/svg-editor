@@ -1,6 +1,6 @@
-import { EditCommand } from '../EditCommand.js';
-import { Args } from '../Args.js';
-import { SvgDocument } from '../../domain/SvgDocument.js';
+import { EditCommand } from '../../../application/extensions/index.js';
+import { Args } from '../../../application/extensions/index.js';
+import { SvgDocument } from '../../../domain/SvgDocument.js';
 export class MoveCommand extends EditCommand {
   constructor(private readonly args: string[]) { super(); Args.count(args, 3); }
   apply(document: SvgDocument): string {

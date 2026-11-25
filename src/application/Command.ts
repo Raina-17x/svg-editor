@@ -1,4 +1,4 @@
-import { EditorSession } from './EditorSession.js';
+import { SessionApi } from './extensions/SessionApi.js';
 export abstract class Command {
-  abstract execute(session: EditorSession): string[];
+  abstract execute(session: SessionApi): readonly string[];
 }

@@ -1,7 +1,6 @@
 import { XMLParser, XMLValidator } from 'fast-xml-parser';
 import { SvgDocument } from '../domain/SvgDocument.js';
 import { Shape } from '../domain/Shape.js';
-import { Group } from '../domain/Group.js';
 import { Value } from '../domain/Value.js';
 import { ShapeFactory } from '../application/ShapeFactory.js';
 
@@ -18,10 +17,12 @@ export class SvgCodec {
   encode(document: SvgDocument): string {
     const render = (shape: Shape, depth: number): string => {
       const indent = '  '.repeat(depth);
-      const attrs = [['id', shape.id], ...shape.attributes].map(([key, value]) => `${key}="${this.escape(value)}"`).join(' ');
-      if (shape.content !== undefined) return `${indent}<${shape.type} ${attrs}>${this.escape(shape.content)}</${shape.type}>`;
-      if (!shape.children.length) return `${indent}<${shape.type} ${attrs}/>`;
-      return `${indent}<${shape.type} ${attrs}>\n${shape.children.map(child => render(child, depth + 1)).join('\n')}\n${indent}</${shape.type}>`;
+      const output = this.factory.toSvg(shape);
+      const attrs = [['id', shape.id], ...Object.entries(output.attributes).filter(([key]) => key !== 'id')]
+        .map(([key, value]) => `${key}="${this.escape(value)}"`).join(' ');
+      if (output.content !== undefined) return `${indent}<${output.tag} ${attrs}>${this.escape(output.content)}</${output.tag}>`;
+      if (!output.children.length) return `${indent}<${output.tag} ${attrs}/>`;
+      return `${indent}<${output.tag} ${attrs}>\n${output.children.map(child => render(child, depth + 1)).join('\n')}\n${indent}</${output.tag}>`;
     };
     return `<?xml version="1.0" encoding="UTF-8"?>\n<svg xmlns="http://www.w3.org/2000/svg" width="${document.width}" height="${document.height}" viewBox="0 0 ${document.width} ${document.height}">\n${document.children.map(shape => render(shape, 1)).join('\n')}\n</svg>\n`;
   }
@@ -67,7 +68,8 @@ export class SvgCodec {
     reserve(children);
     const warnings: string[] = [];
     const counters = new Map<string, number>();
-    const read = (nodes: XmlNode[], parent?: Group): void => {
+    const read = (nodes: XmlNode[]): Shape[] => {
+      const result: Shape[] = [];
       for (const node of nodes) {
         const tag = this.tag(node);
         if (!tag) {
@@ -84,14 +86,14 @@ export class SvgCodec {
         }
         const childNodes = node[tag] as XmlNode[];
         const text = childNodes.map(child => String(child['#text'] ?? '')).join('');
-        const shape = this.factory.fromSvg(tag, id, attributes, text);
-        if (!shape.isContainer && elements(childNodes).length) throw new Error(`unsupported nested element inside ${tag}`);
-        if (!shape.isContainer && shape.content === undefined && text.trim()) throw new Error(`invalid SVG: unexpected text inside ${tag}`);
-        document.add(shape, parent?.id);
-        if (shape instanceof Group) read(childNodes, shape);
+        const children = read(elements(childNodes));
+        const shape = this.factory.fromSvg({ tag, id, attributes, content: text, children });
+        result.push(shape);
       }
+      return result;
     };
-    read(children);
+    for (const shape of read(children)) document.add(shape);
+    document.validate();
     return { document, warnings };
   }
   private tag(node: XmlNode): string | undefined { return Object.keys(node).find(key => key !== ':@' && !key.startsWith('#') && !key.startsWith('?')); }

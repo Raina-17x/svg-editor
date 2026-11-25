@@ -7,18 +7,20 @@ export class Group extends Shape {
   override get children(): readonly Shape[] { return [...this.nodes]; }
   protected emptyCopy(): Shape { return new Group(this.id); }
   summary(): string { return `${this.label} ${this.styles()}`.trim(); }
-  insert(shape: Shape, index = this.nodes.length): void {
+  override insert(shape: Shape, index = this.nodes.length): void {
     if (shape === this || shape.children.some(child => this.contains(child, this))) throw new Error(`cannot move a container into its own descendant: ${shape.id}`);
     if (this.nodes.includes(shape)) throw new Error(`shape already in container: ${shape.id}`);
     this.nodes.splice(index, 0, shape);
   }
   private contains(node: Shape, target: Shape): boolean { return node === target || node.children.some(child => this.contains(child, target)); }
-  remove(shape: Shape): void {
+  override remove(shape: Shape): void {
+    this.assertCanDetach(shape);
     const index = this.nodes.indexOf(shape);
     if (index < 0) throw new Error(`no such child: ${shape.id}`);
     this.nodes.splice(index, 1);
   }
   override move(dx: number, dy: number): void { for (const child of this.nodes) child.move(dx, dy); }
+  override assertCanUngroup(): void {}
   override scale(factor: number): void { super.scale(factor); for (const child of this.nodes) child.scale(factor); }
   override clone(): Group {
     const copy = super.clone() as Group;

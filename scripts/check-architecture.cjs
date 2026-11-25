@@ -10,7 +10,9 @@ class ArchitectureCheck {
       application: new Set(['application', 'domain']),
       infrastructure: new Set(['infrastructure', 'application', 'domain']),
       cli: new Set(['cli', 'application', 'domain']),
-      'main.ts': new Set(['cli', 'application', 'domain', 'infrastructure']),
+      host: new Set(['host', 'cli', 'application', 'domain', 'infrastructure', 'plugins']),
+      plugins: new Set(['plugins', 'application', 'domain']),
+      'main.ts': new Set(['host', 'cli']),
     };
     const files = this.walk(root);
     let imports = 0;
@@ -25,12 +27,21 @@ class ArchitectureCheck {
       }
       for (const statement of source.statements) {
         if (ts.isFunctionDeclaration(statement)) failures.push(`${relative}: top-level procedural function`);
-        if (!ts.isImportDeclaration(statement)) continue;
+        if ((!ts.isImportDeclaration(statement) && !ts.isExportDeclaration(statement)) || !statement.moduleSpecifier) continue;
         imports++;
         const specifier = statement.moduleSpecifier.text;
         if (specifier.startsWith('.')) {
           const destination = path.relative(root, path.resolve(path.dirname(file), specifier)).split(path.sep)[0];
           if (!allowed[module]?.has(destination)) failures.push(`${relative}: forbidden dependency on ${destination}`);
+          if (module === 'plugins') {
+            const resolved = path.relative(root, path.resolve(path.dirname(file), specifier)).replaceAll('\\', '/');
+            if (destination === 'application' && resolved !== 'application/extensions/index.js') {
+              failures.push(`${relative}: plugin must use the public API barrel: ${specifier}`);
+            }
+            if (destination === 'plugins' && resolved.split('/')[1] !== relative.split(path.sep)[1]) {
+              failures.push(`${relative}: plugin depends on another plugin`);
+            }
+          }
         } else if ((module === 'domain' || module === 'application') || (module === 'cli' && specifier !== 'node:readline')) {
           failures.push(`${relative}: external dependency ${specifier} is not allowed here`);
         }

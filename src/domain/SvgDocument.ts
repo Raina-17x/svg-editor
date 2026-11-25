@@ -28,15 +28,15 @@ export class SvgDocument {
     if (!shape) throw new Error(`no such shape: ${id}`);
     return shape;
   }
-  container(id?: string): Group {
+  container(id?: string): Shape {
     if (id === undefined) return this.rootNode;
     if (!this.has(id)) throw new Error(`no such container: ${id}`);
     const shape = this.require(id);
-    if (!(shape instanceof Group)) throw new Error(`not a container: ${id}`);
+    if (!shape.isContainer) throw new Error(`not a container: ${id}`);
     return shape;
   }
-  parent(shape: Shape): Group {
-    const parent = [this.rootNode, ...this.all().filter(node => node instanceof Group)]
+  parent(shape: Shape): Shape {
+    const parent = [this.rootNode, ...this.all().filter(node => node.isContainer)]
       .find(node => node.children.includes(shape));
     if (!parent) throw new Error(`no parent for shape: ${shape.id}`);
     return parent;
@@ -53,7 +53,10 @@ export class SvgDocument {
     }
     this.container(parentId).insert(shape);
   }
-  delete(id: string): void { const shape = this.require(id); this.parent(shape).remove(shape); }
+  delete(id: string): void { this.detach(this.require(id)); }
+  private detach(shape: Shape): void {
+    const parent = this.parent(shape); parent.assertCanDetach(shape); parent.remove(shape);
+  }
   group(id: string, ids: string[]): void {
     if (this.has(id)) throw new Error(`id already exists: ${id}`);
     if (new Set(ids).size !== ids.length) throw new Error('duplicate group member');
@@ -65,30 +68,55 @@ export class SvgDocument {
     // Preserve document traversal order, even when CLI arguments are reversed.
     const ordered = this.all().filter(shape => requested.includes(shape));
     const group = new Group(id);
-    for (const shape of ordered) { this.parent(shape).remove(shape); group.insert(shape); }
+    for (const shape of ordered) { this.detach(shape); group.insert(shape); }
     this.rootNode.insert(group);
   }
   ungroup(id: string): void {
     const group = this.container(id);
+    group.assertCanUngroup();
     const parent = this.parent(group);
     if (parent === this.rootNode) throw new Error(`cannot ungroup top-level container: ${id}`);
     const position = parent.children.indexOf(group);
     const children = [...group.children];
-    parent.remove(group);
-    children.forEach((child, offset) => { group.remove(child); parent.insert(child, position + offset); });
+    parent.assertCanDetach(group); parent.remove(group);
+    children.forEach((child, offset) => { group.assertCanDetach(child); group.remove(child); parent.insert(child, position + offset); });
   }
   addto(gid: string, id: string): void {
     const target = this.container(gid);
     const shape = this.require(id);
     const includes = (node: Shape): boolean => node === target || node.children.some(includes);
     if (includes(shape)) throw new Error(`cannot move a container into its own descendant: ${id}`);
-    this.parent(shape).remove(shape); target.insert(shape);
+    this.detach(shape); target.insert(shape);
   }
   reorder(id: string, front: boolean): void {
     const shape = this.require(id); const parent = this.parent(shape);
-    parent.remove(shape); parent.insert(shape, front ? parent.children.length : 0);
+    this.detach(shape); parent.insert(shape, front ? parent.children.length : 0);
   }
   clone(): SvgDocument {
-    const copy = new SvgDocument(this.width, this.height); copy.rootNode = this.rootNode.clone(); return copy;
+    this.validate();
+    const copy = new SvgDocument(this.width, this.height); copy.rootNode = this.rootNode.clone();
+    copy.validate();
+    const compare = (left: Shape, right: Shape): void => {
+      if (left === right || left.constructor !== right.constructor || left.id !== right.id || left.type !== right.type ||
+          left.content !== right.content || left.children.length !== right.children.length ||
+          JSON.stringify([...left.attributes]) !== JSON.stringify([...right.attributes])) throw new Error(`invalid shape clone: ${left.id}`);
+      left.children.forEach((child, index) => compare(child, right.children[index]));
+    };
+    compare(this.rootNode, copy.rootNode);
+    return copy;
+  }
+  validate(): void {
+    const ids = new Set<string>();
+    const seen = new Set<Shape>();
+    const visit = (shape: Shape): void => {
+      if (seen.has(shape)) throw new Error(`shared or cyclic shape: ${shape.id}`);
+      seen.add(shape);
+      if (ids.has(shape.id)) throw new Error(`id already exists: ${shape.id}`);
+      ids.add(shape.id);
+      shape.assertValid();
+      if (!shape.isContainer && shape.children.length) throw new Error(`not a container: ${shape.id}`);
+      shape.children.forEach(visit);
+    };
+    this.children.forEach(visit);
   }
 }

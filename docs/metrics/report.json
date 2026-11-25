@@ -1,0 +1,4044 @@
+{
+  "from": {
+    "ref": "final",
+    "commit": "1fe4a0cb36c84caf1f135ebe534739c98d5d2db6"
+  },
+  "to": {
+    "ref": "WORKTREE",
+    "commit": "d332878d07863e4cfdfd085f1c95977e17729ccf",
+    "dirtySnapshot": true
+  },
+  "method": "Physical lines; function complexity = 1 + if/loops/catch/nondefault-case/ternary/&&/||/??; nested functions measured independently. No optional-chain or default-parameter increments. CLI runtime TypeScript only; VSCode separate; tests, scripts, dependencies and build output excluded.",
+  "beforeTotals": {
+    "kernel": {
+      "files": 41,
+      "lines": 842,
+      "complexity": 386
+    },
+    "composition": {
+      "files": 1,
+      "lines": 11,
+      "complexity": 0
+    },
+    "plugins": {
+      "files": 0,
+      "lines": 0,
+      "complexity": 0
+    },
+    "vscode": {
+      "files": 0,
+      "lines": 0,
+      "complexity": 0
+    }
+  },
+  "afterTotals": {
+    "kernel": {
+      "files": 39,
+      "lines": 1009,
+      "complexity": 431
+    },
+    "composition": {
+      "files": 2,
+      "lines": 31,
+      "complexity": 7
+    },
+    "plugins": {
+      "files": 21,
+      "lines": 286,
+      "complexity": 118
+    },
+    "vscode": {
+      "files": 4,
+      "lines": 152,
+      "complexity": 35
+    }
+  },
+  "delta": {
+    "kernel": {
+      "files": -2,
+      "lines": 167,
+      "complexity": 45
+    },
+    "composition": {
+      "files": 1,
+      "lines": 20,
+      "complexity": 7
+    },
+    "plugins": {
+      "files": 21,
+      "lines": 286,
+      "complexity": 118
+    },
+    "vscode": {
+      "files": 4,
+      "lines": 152,
+      "complexity": 35
+    }
+  },
+  "before": [
+    {
+      "file": "src/application/Args.ts",
+      "role": "应用事务与扩展调度",
+      "category": "kernel",
+      "lines": 7,
+      "nonblankLines": 7,
+      "complexity": 5,
+      "functions": [
+        {
+          "name": "count",
+          "line": 3,
+          "complexity": 3
+        },
+        {
+          "name": "numbers",
+          "line": 6,
+          "complexity": 1
+        },
+        {
+          "name": "<anonymous>",
+          "line": 6,
+          "complexity": 1
+        }
+      ],
+      "sha256": "204b016f4dfc58abb06ad64eeba96cf799d0770570c630b7c2337d31c001eaaa"
+    },
+    {
+      "file": "src/application/Command.ts",
+      "role": "应用事务与扩展调度",
+      "category": "kernel",
+      "lines": 4,
+      "nonblankLines": 4,
+      "complexity": 0,
+      "functions": [],
+      "sha256": "aebb778e5cbc1140b110148f1cb872c5ddf58868261319064bb8f8df0419471a"
+    },
+    {
+      "file": "src/application/DocumentStore.ts",
+      "role": "应用事务与扩展调度",
+      "category": "kernel",
+      "lines": 5,
+      "nonblankLines": 5,
+      "complexity": 0,
+      "functions": [],
+      "sha256": "db1fec599f3479e8422da7a0b06bf5ddb52f53f7ae69436121acc3cf87c0a1e5"
+    },
+    {
+      "file": "src/application/EditCommand.ts",
+      "role": "应用事务与扩展调度",
+      "category": "kernel",
+      "lines": 8,
+      "nonblankLines": 8,
+      "complexity": 1,
+      "functions": [
+        {
+          "name": "execute",
+          "line": 5,
+          "complexity": 1
+        }
+      ],
+      "sha256": "896f367bdee1a57be6f6db488b4d37528e078cb1ac2f03a13f04f884f1f0427b"
+    },
+    {
+      "file": "src/application/EditorSession.ts",
+      "role": "应用事务与扩展调度",
+      "category": "kernel",
+      "lines": 66,
+      "nonblankLines": 65,
+      "complexity": 19,
+      "functions": [
+        {
+          "name": "constructor",
+          "line": 12,
+          "complexity": 1
+        },
+        {
+          "name": "document",
+          "line": 13,
+          "complexity": 2
+        },
+        {
+          "name": "barrier",
+          "line": 17,
+          "complexity": 1
+        },
+        {
+          "name": "init",
+          "line": 18,
+          "complexity": 1
+        },
+        {
+          "name": "read",
+          "line": 23,
+          "complexity": 1
+        },
+        {
+          "name": "save",
+          "line": 28,
+          "complexity": 3
+        },
+        {
+          "name": "canvas",
+          "line": 36,
+          "complexity": 3
+        },
+        {
+          "name": "edit",
+          "line": 41,
+          "complexity": 1
+        },
+        {
+          "name": "undo",
+          "line": 50,
+          "complexity": 3
+        },
+        {
+          "name": "redo",
+          "line": 58,
+          "complexity": 3
+        }
+      ],
+      "sha256": "77f12654f7a3153648f85823814bdb91c3d9d777712b7880ad1cb228bfd50649"
+    },
+    {
+      "file": "src/application/HistoryEntry.ts",
+      "role": "应用事务与扩展调度",
+      "category": "kernel",
+      "lines": 9,
+      "nonblankLines": 9,
+      "complexity": 5,
+      "functions": [
+        {
+          "name": "constructor",
+          "line": 4,
+          "complexity": 1
+        },
+        {
+          "name": "undo",
+          "line": 5,
+          "complexity": 1
+        },
+        {
+          "name": "redo",
+          "line": 6,
+          "complexity": 1
+        },
+        {
+          "name": "undoMessage",
+          "line": 7,
+          "complexity": 1
+        },
+        {
+          "name": "redoMessage",
+          "line": 8,
+          "complexity": 1
+        }
+      ],
+      "sha256": "dcfef67b3027b64d93fa13351ba962de9cf714c87bea90527de381456b62465c"
+    },
+    {
+      "file": "src/application/ShapeFactory.ts",
+      "role": "应用事务与扩展调度",
+      "category": "kernel",
+      "lines": 45,
+      "nonblankLines": 44,
+      "complexity": 20,
+      "functions": [
+        {
+          "name": "<anonymous>",
+          "line": 13,
+          "complexity": 1
+        },
+        {
+          "name": "<anonymous>",
+          "line": 14,
+          "complexity": 1
+        },
+        {
+          "name": "<anonymous>",
+          "line": 15,
+          "complexity": 1
+        },
+        {
+          "name": "<anonymous>",
+          "line": 16,
+          "complexity": 1
+        },
+        {
+          "name": "<anonymous>",
+          "line": 17,
+          "complexity": 1
+        },
+        {
+          "name": "<anonymous>",
+          "line": 18,
+          "complexity": 1
+        },
+        {
+          "name": "provider",
+          "line": 20,
+          "complexity": 2
+        },
+        {
+          "name": "create",
+          "line": 25,
+          "complexity": 6
+        },
+        {
+          "name": "fromSvg",
+          "line": 34,
+          "complexity": 6
+        }
+      ],
+      "sha256": "6db4e67653a1c1d035fb5eafd1d85b7fdd4e0733b981152df66b8c9e5e2244e8"
+    },
+    {
+      "file": "src/application/commands/AddToCommand.ts",
+      "role": "Phase 1 内置命令（历史内核）",
+      "category": "kernel",
+      "lines": 11,
+      "nonblankLines": 11,
+      "complexity": 3,
+      "functions": [
+        {
+          "name": "constructor",
+          "line": 5,
+          "complexity": 1
+        },
+        {
+          "name": "apply",
+          "line": 6,
+          "complexity": 1
+        },
+        {
+          "name": "undoMessage",
+          "line": 7,
+          "complexity": 1
+        }
+      ],
+      "sha256": "2c9acdba2036923ab453267c3f9f69e1854db1fa1ceb6abb0351f5fed3852218"
+    },
+    {
+      "file": "src/application/commands/CanvasCommand.ts",
+      "role": "Phase 1 内置命令（历史内核）",
+      "category": "kernel",
+      "lines": 7,
+      "nonblankLines": 7,
+      "complexity": 4,
+      "functions": [
+        {
+          "name": "constructor",
+          "line": 5,
+          "complexity": 3
+        },
+        {
+          "name": "execute",
+          "line": 6,
+          "complexity": 1
+        }
+      ],
+      "sha256": "64f456fac2fb099101f5cd8201b21d22978b79e9df15953f6e618df100f4ea11"
+    },
+    {
+      "file": "src/application/commands/CreateCommand.ts",
+      "role": "Phase 1 内置命令（历史内核）",
+      "category": "kernel",
+      "lines": 15,
+      "nonblankLines": 15,
+      "complexity": 5,
+      "functions": [
+        {
+          "name": "constructor",
+          "line": 6,
+          "complexity": 1
+        },
+        {
+          "name": "apply",
+          "line": 7,
+          "complexity": 3
+        },
+        {
+          "name": "undoMessage",
+          "line": 14,
+          "complexity": 1
+        }
+      ],
+      "sha256": "e575f8ba08b18ed8ecbf92dc5ac11b28a7189fa956b9a24d51a347e6201846f8"
+    },
+    {
+      "file": "src/application/commands/DeleteCommand.ts",
+      "role": "Phase 1 内置命令（历史内核）",
+      "category": "kernel",
+      "lines": 11,
+      "nonblankLines": 11,
+      "complexity": 3,
+      "functions": [
+        {
+          "name": "constructor",
+          "line": 5,
+          "complexity": 1
+        },
+        {
+          "name": "apply",
+          "line": 6,
+          "complexity": 1
+        },
+        {
+          "name": "undoMessage",
+          "line": 7,
+          "complexity": 1
+        }
+      ],
+      "sha256": "09e2137b191979ae9baf66057f20cc5ef51e7d1d15ae93ddb140852e11a67ce3"
+    },
+    {
+      "file": "src/application/commands/GroupCommand.ts",
+      "role": "Phase 1 内置命令（历史内核）",
+      "category": "kernel",
+      "lines": 8,
+      "nonblankLines": 8,
+      "complexity": 3,
+      "functions": [
+        {
+          "name": "constructor",
+          "line": 5,
+          "complexity": 1
+        },
+        {
+          "name": "apply",
+          "line": 6,
+          "complexity": 1
+        },
+        {
+          "name": "undoMessage",
+          "line": 7,
+          "complexity": 1
+        }
+      ],
+      "sha256": "d998c2f7042cffba67de046052c8a9e45cb4145ac3af7238cbe4f1c2cfa9c1f1"
+    },
+    {
+      "file": "src/application/commands/HelpCommand.ts",
+      "role": "Phase 1 内置命令（历史内核）",
+      "category": "kernel",
+      "lines": 19,
+      "nonblankLines": 19,
+      "complexity": 2,
+      "functions": [
+        {
+          "name": "constructor",
+          "line": 4,
+          "complexity": 1
+        },
+        {
+          "name": "execute",
+          "line": 5,
+          "complexity": 1
+        }
+      ],
+      "sha256": "16f65b9d308fb294e47879151650cbeffccda30d7d47ee3bf95b9bf05a2a4e94"
+    },
+    {
+      "file": "src/application/commands/InitCommand.ts",
+      "role": "Phase 1 内置命令（历史内核）",
+      "category": "kernel",
+      "lines": 7,
+      "nonblankLines": 7,
+      "complexity": 4,
+      "functions": [
+        {
+          "name": "constructor",
+          "line": 5,
+          "complexity": 1
+        },
+        {
+          "name": "execute",
+          "line": 6,
+          "complexity": 3
+        }
+      ],
+      "sha256": "774a6a1c87e1f4bd3e6b518a1b5bdffe4ac8619f65ebc01d52df10d8e2b1c4be"
+    },
+    {
+      "file": "src/application/commands/MoveCommand.ts",
+      "role": "Phase 1 内置命令（历史内核）",
+      "category": "kernel",
+      "lines": 19,
+      "nonblankLines": 19,
+      "complexity": 5,
+      "functions": [
+        {
+          "name": "constructor",
+          "line": 5,
+          "complexity": 1
+        },
+        {
+          "name": "apply",
+          "line": 6,
+          "complexity": 2
+        },
+        {
+          "name": "undoMessage",
+          "line": 12,
+          "complexity": 2
+        }
+      ],
+      "sha256": "61efacc45d08b1aa10c9522f7fb043c0d8496e042c12665eef9a8bb2708283c4"
+    },
+    {
+      "file": "src/application/commands/OrderCommand.ts",
+      "role": "Phase 1 内置命令（历史内核）",
+      "category": "kernel",
+      "lines": 8,
+      "nonblankLines": 8,
+      "complexity": 4,
+      "functions": [
+        {
+          "name": "constructor",
+          "line": 5,
+          "complexity": 1
+        },
+        {
+          "name": "apply",
+          "line": 6,
+          "complexity": 2
+        },
+        {
+          "name": "undoMessage",
+          "line": 7,
+          "complexity": 1
+        }
+      ],
+      "sha256": "cd8fcba9719061edfe50093d502b5c0af1c1e0b3e55b410282f6bb9e15a465eb"
+    },
+    {
+      "file": "src/application/commands/ReadCommand.ts",
+      "role": "Phase 1 内置命令（历史内核）",
+      "category": "kernel",
+      "lines": 7,
+      "nonblankLines": 7,
+      "complexity": 2,
+      "functions": [
+        {
+          "name": "constructor",
+          "line": 5,
+          "complexity": 1
+        },
+        {
+          "name": "execute",
+          "line": 6,
+          "complexity": 1
+        }
+      ],
+      "sha256": "11b696c73d137c8aa512a403e6f9ab1b1196d449a8fb4f2c013e5d2d3a5c91b6"
+    },
+    {
+      "file": "src/application/commands/RedoCommand.ts",
+      "role": "Phase 1 内置命令（历史内核）",
+      "category": "kernel",
+      "lines": 7,
+      "nonblankLines": 7,
+      "complexity": 2,
+      "functions": [
+        {
+          "name": "constructor",
+          "line": 5,
+          "complexity": 1
+        },
+        {
+          "name": "execute",
+          "line": 6,
+          "complexity": 1
+        }
+      ],
+      "sha256": "d469c99c79f92be9fe697a0901ef1abda472de7a50a9b70bebc3dd5cd5694f66"
+    },
+    {
+      "file": "src/application/commands/SaveCommand.ts",
+      "role": "Phase 1 内置命令（历史内核）",
+      "category": "kernel",
+      "lines": 7,
+      "nonblankLines": 7,
+      "complexity": 2,
+      "functions": [
+        {
+          "name": "constructor",
+          "line": 5,
+          "complexity": 1
+        },
+        {
+          "name": "execute",
+          "line": 6,
+          "complexity": 1
+        }
+      ],
+      "sha256": "edaffa043ba30c8c00ba61696de7216942492892193efbe3c244d40867a4ae2e"
+    },
+    {
+      "file": "src/application/commands/ScaleCommand.ts",
+      "role": "Phase 1 内置命令（历史内核）",
+      "category": "kernel",
+      "lines": 8,
+      "nonblankLines": 8,
+      "complexity": 3,
+      "functions": [
+        {
+          "name": "constructor",
+          "line": 5,
+          "complexity": 1
+        },
+        {
+          "name": "apply",
+          "line": 6,
+          "complexity": 1
+        },
+        {
+          "name": "undoMessage",
+          "line": 7,
+          "complexity": 1
+        }
+      ],
+      "sha256": "c03426f730c84665fc9c031edd0ca216d48645c24fc9852724a42564343af479"
+    },
+    {
+      "file": "src/application/commands/SetCommand.ts",
+      "role": "Phase 1 内置命令（历史内核）",
+      "category": "kernel",
+      "lines": 13,
+      "nonblankLines": 13,
+      "complexity": 5,
+      "functions": [
+        {
+          "name": "constructor",
+          "line": 5,
+          "complexity": 1
+        },
+        {
+          "name": "apply",
+          "line": 6,
+          "complexity": 1
+        },
+        {
+          "name": "undoMessage",
+          "line": 7,
+          "complexity": 3
+        }
+      ],
+      "sha256": "0430164803159219e9bed8f1d6f41398024ddeecb9b9a272baeda85c929f0244"
+    },
+    {
+      "file": "src/application/commands/ShowCommand.ts",
+      "role": "Phase 1 内置命令（历史内核）",
+      "category": "kernel",
+      "lines": 13,
+      "nonblankLines": 13,
+      "complexity": 4,
+      "functions": [
+        {
+          "name": "constructor",
+          "line": 5,
+          "complexity": 1
+        },
+        {
+          "name": "execute",
+          "line": 6,
+          "complexity": 3
+        }
+      ],
+      "sha256": "8b179e96fca56f47c4672e7a4d00b9ae6189b7bfa840aeaed790715a5790d931"
+    },
+    {
+      "file": "src/application/commands/TreeCommand.ts",
+      "role": "Phase 1 内置命令（历史内核）",
+      "category": "kernel",
+      "lines": 22,
+      "nonblankLines": 22,
+      "complexity": 7,
+      "functions": [
+        {
+          "name": "constructor",
+          "line": 6,
+          "complexity": 1
+        },
+        {
+          "name": "execute",
+          "line": 7,
+          "complexity": 2
+        },
+        {
+          "name": "<anonymous>",
+          "line": 10,
+          "complexity": 1
+        },
+        {
+          "name": "<anonymous>",
+          "line": 11,
+          "complexity": 3
+        }
+      ],
+      "sha256": "914398cd3ef50c4f3eee5e7c48f897d4e7c020866e33f9d835a8c42e9d25a91a"
+    },
+    {
+      "file": "src/application/commands/UndoCommand.ts",
+      "role": "Phase 1 内置命令（历史内核）",
+      "category": "kernel",
+      "lines": 7,
+      "nonblankLines": 7,
+      "complexity": 2,
+      "functions": [
+        {
+          "name": "constructor",
+          "line": 5,
+          "complexity": 1
+        },
+        {
+          "name": "execute",
+          "line": 6,
+          "complexity": 1
+        }
+      ],
+      "sha256": "c8bba9ba1a17c6d3771babc86d94962731d21e845971a2be8d765ae4abd5aff0"
+    },
+    {
+      "file": "src/application/commands/UngroupCommand.ts",
+      "role": "Phase 1 内置命令（历史内核）",
+      "category": "kernel",
+      "lines": 11,
+      "nonblankLines": 11,
+      "complexity": 3,
+      "functions": [
+        {
+          "name": "constructor",
+          "line": 5,
+          "complexity": 1
+        },
+        {
+          "name": "apply",
+          "line": 6,
+          "complexity": 1
+        },
+        {
+          "name": "undoMessage",
+          "line": 7,
+          "complexity": 1
+        }
+      ],
+      "sha256": "7c3eb26543edb41ec1e6f67beb51eba1f34429eb21bdabb57280ec9aaf3377a5"
+    },
+    {
+      "file": "src/cli/CommandProcessor.ts",
+      "role": "输入解析与命令分派",
+      "category": "kernel",
+      "lines": 15,
+      "nonblankLines": 15,
+      "complexity": 5,
+      "functions": [
+        {
+          "name": "constructor",
+          "line": 5,
+          "complexity": 1
+        },
+        {
+          "name": "run",
+          "line": 6,
+          "complexity": 4
+        }
+      ],
+      "sha256": "8ce6f4ca67db1772ce5f7ab5dafa44fc5a241f34bbb9de1d73e39061096d2e77"
+    },
+    {
+      "file": "src/cli/CommandRegistry.ts",
+      "role": "输入解析与命令分派",
+      "category": "kernel",
+      "lines": 58,
+      "nonblankLines": 57,
+      "complexity": 30,
+      "functions": [
+        {
+          "name": "constructor",
+          "line": 25,
+          "complexity": 1
+        },
+        {
+          "name": "<anonymous>",
+          "line": 26,
+          "complexity": 1
+        },
+        {
+          "name": "<anonymous>",
+          "line": 26,
+          "complexity": 1
+        },
+        {
+          "name": "<anonymous>",
+          "line": 26,
+          "complexity": 1
+        },
+        {
+          "name": "<anonymous>",
+          "line": 27,
+          "complexity": 1
+        },
+        {
+          "name": "<anonymous>",
+          "line": 28,
+          "complexity": 1
+        },
+        {
+          "name": "<anonymous>",
+          "line": 29,
+          "complexity": 1
+        },
+        {
+          "name": "<anonymous>",
+          "line": 30,
+          "complexity": 1
+        },
+        {
+          "name": "<anonymous>",
+          "line": 31,
+          "complexity": 5
+        },
+        {
+          "name": "<anonymous>",
+          "line": 34,
+          "complexity": 1
+        },
+        {
+          "name": "<anonymous>",
+          "line": 37,
+          "complexity": 1
+        },
+        {
+          "name": "<anonymous>",
+          "line": 38,
+          "complexity": 1
+        },
+        {
+          "name": "<anonymous>",
+          "line": 39,
+          "complexity": 1
+        },
+        {
+          "name": "<anonymous>",
+          "line": 40,
+          "complexity": 1
+        },
+        {
+          "name": "<anonymous>",
+          "line": 41,
+          "complexity": 1
+        },
+        {
+          "name": "<anonymous>",
+          "line": 42,
+          "complexity": 1
+        },
+        {
+          "name": "<anonymous>",
+          "line": 43,
+          "complexity": 1
+        },
+        {
+          "name": "<anonymous>",
+          "line": 44,
+          "complexity": 1
+        },
+        {
+          "name": "<anonymous>",
+          "line": 45,
+          "complexity": 1
+        },
+        {
+          "name": "<anonymous>",
+          "line": 46,
+          "complexity": 1
+        },
+        {
+          "name": "<anonymous>",
+          "line": 47,
+          "complexity": 1
+        },
+        {
+          "name": "<anonymous>",
+          "line": 48,
+          "complexity": 1
+        },
+        {
+          "name": "<anonymous>",
+          "line": 49,
+          "complexity": 1
+        },
+        {
+          "name": "<anonymous>",
+          "line": 50,
+          "complexity": 1
+        },
+        {
+          "name": "parse",
+          "line": 52,
+          "complexity": 2
+        }
+      ],
+      "sha256": "3583c9f5ac25423af2f260a6cdbe27cc6e5383de90cb8e30528c4f65f246f3be"
+    },
+    {
+      "file": "src/cli/Repl.ts",
+      "role": "输入解析与命令分派",
+      "category": "kernel",
+      "lines": 16,
+      "nonblankLines": 16,
+      "complexity": 6,
+      "functions": [
+        {
+          "name": "constructor",
+          "line": 4,
+          "complexity": 1
+        },
+        {
+          "name": "start",
+          "line": 5,
+          "complexity": 2
+        },
+        {
+          "name": "<anonymous>",
+          "line": 11,
+          "complexity": 3
+        }
+      ],
+      "sha256": "182006d342eecfb7584a641189416e91ffa8e7e1f6ffe421cf387f46a0cd9746"
+    },
+    {
+      "file": "src/cli/Token.ts",
+      "role": "输入解析与命令分派",
+      "category": "kernel",
+      "lines": 5,
+      "nonblankLines": 5,
+      "complexity": 3,
+      "functions": [
+        {
+          "name": "constructor",
+          "line": 2,
+          "complexity": 1
+        },
+        {
+          "name": "value",
+          "line": 3,
+          "complexity": 1
+        },
+        {
+          "name": "isQuoted",
+          "line": 4,
+          "complexity": 1
+        }
+      ],
+      "sha256": "0d0a01e81bc862e1615bcbebf597ff80221f146105830e309e10f13357ac5054"
+    },
+    {
+      "file": "src/cli/Tokenizer.ts",
+      "role": "输入解析与命令分派",
+      "category": "kernel",
+      "lines": 19,
+      "nonblankLines": 19,
+      "complexity": 13,
+      "functions": [
+        {
+          "name": "tokenize",
+          "line": 3,
+          "complexity": 13
+        }
+      ],
+      "sha256": "7cc3027bf4897d90c8ee02bc47a48350d70166ab8e89098eed8cebe5bab996f2"
+    },
+    {
+      "file": "src/domain/Circle.ts",
+      "role": "公开领域模型与不变量",
+      "category": "kernel",
+      "lines": 7,
+      "nonblankLines": 7,
+      "complexity": 4,
+      "functions": [
+        {
+          "name": "constructor",
+          "line": 3,
+          "complexity": 1
+        },
+        {
+          "name": "type",
+          "line": 4,
+          "complexity": 1
+        },
+        {
+          "name": "emptyCopy",
+          "line": 5,
+          "complexity": 1
+        },
+        {
+          "name": "summary",
+          "line": 6,
+          "complexity": 1
+        }
+      ],
+      "sha256": "f3c74a30cdb9cd52f1aee6dbf3a3061b76eaf633f4068cf2385ab89fe351e80e"
+    },
+    {
+      "file": "src/domain/Ellipse.ts",
+      "role": "公开领域模型与不变量",
+      "category": "kernel",
+      "lines": 7,
+      "nonblankLines": 7,
+      "complexity": 4,
+      "functions": [
+        {
+          "name": "constructor",
+          "line": 3,
+          "complexity": 1
+        },
+        {
+          "name": "type",
+          "line": 4,
+          "complexity": 1
+        },
+        {
+          "name": "emptyCopy",
+          "line": 5,
+          "complexity": 1
+        },
+        {
+          "name": "summary",
+          "line": 6,
+          "complexity": 1
+        }
+      ],
+      "sha256": "6c4a2956ed674cd068e81ac187cc2dbef12aed8105ee18a3bd6718a61ab79a27"
+    },
+    {
+      "file": "src/domain/Group.ts",
+      "role": "公开领域模型与不变量",
+      "category": "kernel",
+      "lines": 28,
+      "nonblankLines": 28,
+      "complexity": 22,
+      "functions": [
+        {
+          "name": "constructor",
+          "line": 4,
+          "complexity": 1
+        },
+        {
+          "name": "type",
+          "line": 5,
+          "complexity": 1
+        },
+        {
+          "name": "isContainer",
+          "line": 6,
+          "complexity": 1
+        },
+        {
+          "name": "children",
+          "line": 7,
+          "complexity": 1
+        },
+        {
+          "name": "emptyCopy",
+          "line": 8,
+          "complexity": 1
+        },
+        {
+          "name": "summary",
+          "line": 9,
+          "complexity": 1
+        },
+        {
+          "name": "insert",
+          "line": 10,
+          "complexity": 4
+        },
+        {
+          "name": "<anonymous>",
+          "line": 11,
+          "complexity": 1
+        },
+        {
+          "name": "contains",
+          "line": 15,
+          "complexity": 2
+        },
+        {
+          "name": "<anonymous>",
+          "line": 15,
+          "complexity": 1
+        },
+        {
+          "name": "remove",
+          "line": 16,
+          "complexity": 2
+        },
+        {
+          "name": "move",
+          "line": 21,
+          "complexity": 2
+        },
+        {
+          "name": "scale",
+          "line": 22,
+          "complexity": 2
+        },
+        {
+          "name": "clone",
+          "line": 23,
+          "complexity": 2
+        }
+      ],
+      "sha256": "fac8752c1a2a2fd9d24db7a0b8a7b12afcf3664a7c4e9f03304243723c467143"
+    },
+    {
+      "file": "src/domain/Line.ts",
+      "role": "公开领域模型与不变量",
+      "category": "kernel",
+      "lines": 7,
+      "nonblankLines": 7,
+      "complexity": 4,
+      "functions": [
+        {
+          "name": "constructor",
+          "line": 3,
+          "complexity": 1
+        },
+        {
+          "name": "type",
+          "line": 4,
+          "complexity": 1
+        },
+        {
+          "name": "emptyCopy",
+          "line": 5,
+          "complexity": 1
+        },
+        {
+          "name": "summary",
+          "line": 6,
+          "complexity": 1
+        }
+      ],
+      "sha256": "94f6fe8b4c01b72664446baf6c8d1ec05126f818ad0b315229c3d0d3bebae8bd"
+    },
+    {
+      "file": "src/domain/Rect.ts",
+      "role": "公开领域模型与不变量",
+      "category": "kernel",
+      "lines": 9,
+      "nonblankLines": 9,
+      "complexity": 4,
+      "functions": [
+        {
+          "name": "constructor",
+          "line": 3,
+          "complexity": 1
+        },
+        {
+          "name": "type",
+          "line": 6,
+          "complexity": 1
+        },
+        {
+          "name": "emptyCopy",
+          "line": 7,
+          "complexity": 1
+        },
+        {
+          "name": "summary",
+          "line": 8,
+          "complexity": 1
+        }
+      ],
+      "sha256": "146304946d042d2a5d3ef53def673259af509f066a6d8b7bf710d36849d488fb"
+    },
+    {
+      "file": "src/domain/Shape.ts",
+      "role": "公开领域模型与不变量",
+      "category": "kernel",
+      "lines": 65,
+      "nonblankLines": 58,
+      "complexity": 35,
+      "functions": [
+        {
+          "name": "constructor",
+          "line": 8,
+          "complexity": 2
+        },
+        {
+          "name": "id",
+          "line": 17,
+          "complexity": 1
+        },
+        {
+          "name": "label",
+          "line": 18,
+          "complexity": 1
+        },
+        {
+          "name": "isContainer",
+          "line": 19,
+          "complexity": 1
+        },
+        {
+          "name": "children",
+          "line": 20,
+          "complexity": 1
+        },
+        {
+          "name": "content",
+          "line": 21,
+          "complexity": 1
+        },
+        {
+          "name": "position",
+          "line": 22,
+          "complexity": 3
+        },
+        {
+          "name": "<anonymous>",
+          "line": 24,
+          "complexity": 1
+        },
+        {
+          "name": "<anonymous>",
+          "line": 25,
+          "complexity": 1
+        },
+        {
+          "name": "attributes",
+          "line": 28,
+          "complexity": 1
+        },
+        {
+          "name": "get",
+          "line": 29,
+          "complexity": 1
+        },
+        {
+          "name": "n",
+          "line": 30,
+          "complexity": 1
+        },
+        {
+          "name": "styles",
+          "line": 31,
+          "complexity": 1
+        },
+        {
+          "name": "<anonymous>",
+          "line": 32,
+          "complexity": 1
+        },
+        {
+          "name": "<anonymous>",
+          "line": 33,
+          "complexity": 1
+        },
+        {
+          "name": "set",
+          "line": 36,
+          "complexity": 9
+        },
+        {
+          "name": "move",
+          "line": 49,
+          "complexity": 4
+        },
+        {
+          "name": "scale",
+          "line": 55,
+          "complexity": 2
+        },
+        {
+          "name": "clone",
+          "line": 60,
+          "complexity": 2
+        }
+      ],
+      "sha256": "65e2e91ce1c2a6b9661f4c3113aeb995e596878b40134ce6cbb090e3d41d677e"
+    },
+    {
+      "file": "src/domain/SvgDocument.ts",
+      "role": "公开领域模型与不变量",
+      "category": "kernel",
+      "lines": 94,
+      "nonblankLines": 93,
+      "complexity": 51,
+      "functions": [
+        {
+          "name": "constructor",
+          "line": 9,
+          "complexity": 1
+        },
+        {
+          "name": "width",
+          "line": 13,
+          "complexity": 1
+        },
+        {
+          "name": "height",
+          "line": 14,
+          "complexity": 1
+        },
+        {
+          "name": "children",
+          "line": 15,
+          "complexity": 1
+        },
+        {
+          "name": "resize",
+          "line": 16,
+          "complexity": 1
+        },
+        {
+          "name": "all",
+          "line": 21,
+          "complexity": 1
+        },
+        {
+          "name": "<anonymous>",
+          "line": 22,
+          "complexity": 1
+        },
+        {
+          "name": "<anonymous>",
+          "line": 22,
+          "complexity": 1
+        },
+        {
+          "name": "has",
+          "line": 25,
+          "complexity": 1
+        },
+        {
+          "name": "<anonymous>",
+          "line": 25,
+          "complexity": 1
+        },
+        {
+          "name": "require",
+          "line": 26,
+          "complexity": 2
+        },
+        {
+          "name": "<anonymous>",
+          "line": 27,
+          "complexity": 1
+        },
+        {
+          "name": "container",
+          "line": 31,
+          "complexity": 4
+        },
+        {
+          "name": "parent",
+          "line": 38,
+          "complexity": 2
+        },
+        {
+          "name": "<anonymous>",
+          "line": 39,
+          "complexity": 1
+        },
+        {
+          "name": "<anonymous>",
+          "line": 40,
+          "complexity": 1
+        },
+        {
+          "name": "parentLabel",
+          "line": 44,
+          "complexity": 2
+        },
+        {
+          "name": "add",
+          "line": 45,
+          "complexity": 3
+        },
+        {
+          "name": "<anonymous>",
+          "line": 47,
+          "complexity": 2
+        },
+        {
+          "name": "<anonymous>",
+          "line": 49,
+          "complexity": 1
+        },
+        {
+          "name": "delete",
+          "line": 56,
+          "complexity": 1
+        },
+        {
+          "name": "group",
+          "line": 57,
+          "complexity": 6
+        },
+        {
+          "name": "<anonymous>",
+          "line": 60,
+          "complexity": 1
+        },
+        {
+          "name": "<anonymous>",
+          "line": 62,
+          "complexity": 1
+        },
+        {
+          "name": "<anonymous>",
+          "line": 62,
+          "complexity": 2
+        },
+        {
+          "name": "<anonymous>",
+          "line": 66,
+          "complexity": 1
+        },
+        {
+          "name": "ungroup",
+          "line": 71,
+          "complexity": 2
+        },
+        {
+          "name": "<anonymous>",
+          "line": 78,
+          "complexity": 1
+        },
+        {
+          "name": "addto",
+          "line": 80,
+          "complexity": 2
+        },
+        {
+          "name": "<anonymous>",
+          "line": 83,
+          "complexity": 2
+        },
+        {
+          "name": "reorder",
+          "line": 87,
+          "complexity": 2
+        },
+        {
+          "name": "clone",
+          "line": 91,
+          "complexity": 1
+        }
+      ],
+      "sha256": "1901eb5bf550d59d21d5c104f5764c29159908c9775c7ccf03ef156854c15938"
+    },
+    {
+      "file": "src/domain/Text.ts",
+      "role": "公开领域模型与不变量",
+      "category": "kernel",
+      "lines": 14,
+      "nonblankLines": 14,
+      "complexity": 7,
+      "functions": [
+        {
+          "name": "constructor",
+          "line": 5,
+          "complexity": 1
+        },
+        {
+          "name": "type",
+          "line": 6,
+          "complexity": 1
+        },
+        {
+          "name": "content",
+          "line": 7,
+          "complexity": 1
+        },
+        {
+          "name": "emptyCopy",
+          "line": 8,
+          "complexity": 1
+        },
+        {
+          "name": "set",
+          "line": 9,
+          "complexity": 2
+        },
+        {
+          "name": "summary",
+          "line": 13,
+          "complexity": 1
+        }
+      ],
+      "sha256": "60500bc61f1987349261f5c66b4b2ec386f47019cb99665c659926da3394e74a"
+    },
+    {
+      "file": "src/domain/Value.ts",
+      "role": "公开领域模型与不变量",
+      "category": "kernel",
+      "lines": 32,
+      "nonblankLines": 29,
+      "complexity": 21,
+      "functions": [
+        {
+          "name": "number",
+          "line": 2,
+          "complexity": 5
+        },
+        {
+          "name": "positive",
+          "line": 11,
+          "complexity": 2
+        },
+        {
+          "name": "id",
+          "line": 17,
+          "complexity": 3
+        },
+        {
+          "name": "xmlText",
+          "line": 22,
+          "complexity": 11
+        }
+      ],
+      "sha256": "8c0c2b8ad4f29fdb6005d595aae4d1ca2505cdbb32cd9d631bce92f4deb4b614"
+    },
+    {
+      "file": "src/infrastructure/FileDocumentStore.ts",
+      "role": "IO 适配与 SVG 编解码",
+      "category": "kernel",
+      "lines": 23,
+      "nonblankLines": 23,
+      "complexity": 6,
+      "functions": [
+        {
+          "name": "constructor",
+          "line": 7,
+          "complexity": 1
+        },
+        {
+          "name": "read",
+          "line": 8,
+          "complexity": 2
+        },
+        {
+          "name": "write",
+          "line": 13,
+          "complexity": 3
+        }
+      ],
+      "sha256": "417fa8f88d2530bacd88a0ab6451e5018c0b1a97502f4c887bcdcb1f00b57f4d"
+    },
+    {
+      "file": "src/infrastructure/SvgCodec.ts",
+      "role": "IO 适配与 SVG 编解码",
+      "category": "kernel",
+      "lines": 99,
+      "nonblankLines": 97,
+      "complexity": 58,
+      "functions": [
+        {
+          "name": "constructor",
+          "line": 11,
+          "complexity": 1
+        },
+        {
+          "name": "escape",
+          "line": 12,
+          "complexity": 1
+        },
+        {
+          "name": "encode",
+          "line": 18,
+          "complexity": 1
+        },
+        {
+          "name": "<anonymous>",
+          "line": 19,
+          "complexity": 3
+        },
+        {
+          "name": "<anonymous>",
+          "line": 21,
+          "complexity": 1
+        },
+        {
+          "name": "<anonymous>",
+          "line": 24,
+          "complexity": 1
+        },
+        {
+          "name": "<anonymous>",
+          "line": 26,
+          "complexity": 1
+        },
+        {
+          "name": "decode",
+          "line": 28,
+          "complexity": 18
+        },
+        {
+          "name": "<anonymous>",
+          "line": 35,
+          "complexity": 1
+        },
+        {
+          "name": "<anonymous>",
+          "line": 35,
+          "complexity": 1
+        },
+        {
+          "name": "<anonymous>",
+          "line": 44,
+          "complexity": 2
+        },
+        {
+          "name": "<anonymous>",
+          "line": 45,
+          "complexity": 1
+        },
+        {
+          "name": "<anonymous>",
+          "line": 55,
+          "complexity": 4
+        },
+        {
+          "name": "<anonymous>",
+          "line": 70,
+          "complexity": 14
+        },
+        {
+          "name": "<anonymous>",
+          "line": 86,
+          "complexity": 2
+        },
+        {
+          "name": "tag",
+          "line": 97,
+          "complexity": 1
+        },
+        {
+          "name": "<anonymous>",
+          "line": 97,
+          "complexity": 3
+        },
+        {
+          "name": "attrs",
+          "line": 98,
+          "complexity": 2
+        }
+      ],
+      "sha256": "e89ab4cda98fb79b00e3933d8747d290ed2809002e9f06315ea67ee95ac6f8ae"
+    },
+    {
+      "file": "src/main.ts",
+      "role": "宿主对象装配",
+      "category": "composition",
+      "lines": 11,
+      "nonblankLines": 10,
+      "complexity": 0,
+      "functions": [],
+      "sha256": "896d12d7122a52a71f8eecb7aa4e3c3466b7a09d7c7d624845a9cc4b73aaba06"
+    }
+  ],
+  "after": [
+    {
+      "file": "src/application/Args.ts",
+      "role": "应用事务与扩展调度",
+      "category": "kernel",
+      "lines": 7,
+      "nonblankLines": 7,
+      "complexity": 5,
+      "functions": [
+        {
+          "name": "count",
+          "line": 3,
+          "complexity": 3
+        },
+        {
+          "name": "numbers",
+          "line": 6,
+          "complexity": 1
+        },
+        {
+          "name": "<anonymous>",
+          "line": 6,
+          "complexity": 1
+        }
+      ],
+      "sha256": "204b016f4dfc58abb06ad64eeba96cf799d0770570c630b7c2337d31c001eaaa"
+    },
+    {
+      "file": "src/application/AttributeService.ts",
+      "role": "应用事务与扩展调度",
+      "category": "kernel",
+      "lines": 21,
+      "nonblankLines": 20,
+      "complexity": 10,
+      "functions": [
+        {
+          "name": "constructor",
+          "line": 5,
+          "complexity": 1
+        },
+        {
+          "name": "apply",
+          "line": 6,
+          "complexity": 8
+        },
+        {
+          "name": "<anonymous>",
+          "line": 8,
+          "complexity": 1
+        }
+      ],
+      "sha256": "ec578acbb989ccd903ff5d90eada7024d3a566646c316c3686db0cffa8d69466"
+    },
+    {
+      "file": "src/application/Command.ts",
+      "role": "应用事务与扩展调度",
+      "category": "kernel",
+      "lines": 4,
+      "nonblankLines": 4,
+      "complexity": 0,
+      "functions": [],
+      "sha256": "b9fea2f73404ca1c3800aaaa730fedd052c1e3cbe1a5ab269ef3270df288b049"
+    },
+    {
+      "file": "src/application/DocumentStore.ts",
+      "role": "应用事务与扩展调度",
+      "category": "kernel",
+      "lines": 5,
+      "nonblankLines": 5,
+      "complexity": 0,
+      "functions": [],
+      "sha256": "db1fec599f3479e8422da7a0b06bf5ddb52f53f7ae69436121acc3cf87c0a1e5"
+    },
+    {
+      "file": "src/application/EditCommand.ts",
+      "role": "应用事务与扩展调度",
+      "category": "kernel",
+      "lines": 13,
+      "nonblankLines": 13,
+      "complexity": 3,
+      "functions": [
+        {
+          "name": "execute",
+          "line": 5,
+          "complexity": 1
+        },
+        {
+          "name": "<anonymous>",
+          "line": 7,
+          "complexity": 1
+        },
+        {
+          "name": "<anonymous>",
+          "line": 8,
+          "complexity": 1
+        }
+      ],
+      "sha256": "9c810f8103b0eb9e1d730bd628a4ad225fc65bf5d88738e9bd2f748d1a439af4"
+    },
+    {
+      "file": "src/application/EditorSession.ts",
+      "role": "应用事务与扩展调度",
+      "category": "kernel",
+      "lines": 101,
+      "nonblankLines": 100,
+      "complexity": 30,
+      "functions": [
+        {
+          "name": "constructor",
+          "line": 15,
+          "complexity": 1
+        },
+        {
+          "name": "<anonymous>",
+          "line": 16,
+          "complexity": 1
+        },
+        {
+          "name": "<anonymous>",
+          "line": 17,
+          "complexity": 1
+        },
+        {
+          "name": "document",
+          "line": 18,
+          "complexity": 2
+        },
+        {
+          "name": "snapshot",
+          "line": 22,
+          "complexity": 1
+        },
+        {
+          "name": "diagnostics",
+          "line": 23,
+          "complexity": 1
+        },
+        {
+          "name": "tree",
+          "line": 24,
+          "complexity": 1
+        },
+        {
+          "name": "barrier",
+          "line": 25,
+          "complexity": 1
+        },
+        {
+          "name": "init",
+          "line": 26,
+          "complexity": 1
+        },
+        {
+          "name": "read",
+          "line": 32,
+          "complexity": 1
+        },
+        {
+          "name": "save",
+          "line": 40,
+          "complexity": 3
+        },
+        {
+          "name": "canvas",
+          "line": 49,
+          "complexity": 3
+        },
+        {
+          "name": "edit",
+          "line": 57,
+          "complexity": 3
+        },
+        {
+          "name": "<anonymous>",
+          "line": 60,
+          "complexity": 1
+        },
+        {
+          "name": "setAttribute",
+          "line": 73,
+          "complexity": 1
+        },
+        {
+          "name": "<anonymous>",
+          "line": 76,
+          "complexity": 1
+        },
+        {
+          "name": "<anonymous>",
+          "line": 80,
+          "complexity": 1
+        },
+        {
+          "name": "undo",
+          "line": 83,
+          "complexity": 3
+        },
+        {
+          "name": "redo",
+          "line": 92,
+          "complexity": 3
+        }
+      ],
+      "sha256": "7dd9908ddacc426cda70df055406f2b659669fa2716e4fa4745defc61f9d8dd7"
+    },
+    {
+      "file": "src/application/ExtensionRegistry.ts",
+      "role": "应用事务与扩展调度",
+      "category": "kernel",
+      "lines": 48,
+      "nonblankLines": 47,
+      "complexity": 27,
+      "functions": [
+        {
+          "name": "registerShape",
+          "line": 13,
+          "complexity": 6
+        },
+        {
+          "name": "<anonymous>",
+          "line": 17,
+          "complexity": 2
+        },
+        {
+          "name": "registerCommand",
+          "line": 22,
+          "complexity": 3
+        },
+        {
+          "name": "<anonymous>",
+          "line": 24,
+          "complexity": 1
+        },
+        {
+          "name": "registerDecorator",
+          "line": 27,
+          "complexity": 1
+        },
+        {
+          "name": "registerAttribute",
+          "line": 30,
+          "complexity": 1
+        },
+        {
+          "name": "shapeProviders",
+          "line": 33,
+          "complexity": 1
+        },
+        {
+          "name": "commandPlugins",
+          "line": 34,
+          "complexity": 1
+        },
+        {
+          "name": "treeDecorators",
+          "line": 35,
+          "complexity": 1
+        },
+        {
+          "name": "attributeHandlers",
+          "line": 36,
+          "complexity": 1
+        },
+        {
+          "name": "validate",
+          "line": 37,
+          "complexity": 6
+        },
+        {
+          "name": "<anonymous>",
+          "line": 40,
+          "complexity": 1
+        },
+        {
+          "name": "add",
+          "line": 44,
+          "complexity": 2
+        }
+      ],
+      "sha256": "41aec52e7b57511e29eb723eb021af07a7dd4a9b2e2daf82730e93dc9523b6f0"
+    },
+    {
+      "file": "src/application/HistoryEntry.ts",
+      "role": "应用事务与扩展调度",
+      "category": "kernel",
+      "lines": 7,
+      "nonblankLines": 7,
+      "complexity": 3,
+      "functions": [
+        {
+          "name": "constructor",
+          "line": 3,
+          "complexity": 1
+        },
+        {
+          "name": "undo",
+          "line": 5,
+          "complexity": 1
+        },
+        {
+          "name": "redo",
+          "line": 6,
+          "complexity": 1
+        }
+      ],
+      "sha256": "3c6a6390c0209316a4484241cefb5e9b55cd4263df6a13be7b067054190f99c6"
+    },
+    {
+      "file": "src/application/SessionFacade.ts",
+      "role": "应用事务与扩展调度",
+      "category": "kernel",
+      "lines": 22,
+      "nonblankLines": 21,
+      "complexity": 13,
+      "functions": [
+        {
+          "name": "constructor",
+          "line": 6,
+          "complexity": 1
+        },
+        {
+          "name": "document",
+          "line": 7,
+          "complexity": 2
+        },
+        {
+          "name": "snapshot",
+          "line": 12,
+          "complexity": 1
+        },
+        {
+          "name": "edit",
+          "line": 13,
+          "complexity": 1
+        },
+        {
+          "name": "init",
+          "line": 14,
+          "complexity": 1
+        },
+        {
+          "name": "read",
+          "line": 15,
+          "complexity": 1
+        },
+        {
+          "name": "save",
+          "line": 16,
+          "complexity": 1
+        },
+        {
+          "name": "canvas",
+          "line": 17,
+          "complexity": 1
+        },
+        {
+          "name": "undo",
+          "line": 18,
+          "complexity": 1
+        },
+        {
+          "name": "redo",
+          "line": 19,
+          "complexity": 1
+        },
+        {
+          "name": "setAttribute",
+          "line": 20,
+          "complexity": 1
+        },
+        {
+          "name": "tree",
+          "line": 21,
+          "complexity": 1
+        }
+      ],
+      "sha256": "1d02c750e2c926c4e6ca4030f92bdf67cf60584d4923dae7ed2780ebec984713"
+    },
+    {
+      "file": "src/application/ShapeFactory.ts",
+      "role": "应用事务与扩展调度",
+      "category": "kernel",
+      "lines": 41,
+      "nonblankLines": 40,
+      "complexity": 36,
+      "functions": [
+        {
+          "name": "constructor",
+          "line": 7,
+          "complexity": 1
+        },
+        {
+          "name": "create",
+          "line": 8,
+          "complexity": 2
+        },
+        {
+          "name": "<anonymous>",
+          "line": 9,
+          "complexity": 1
+        },
+        {
+          "name": "fromSvg",
+          "line": 13,
+          "complexity": 3
+        },
+        {
+          "name": "<anonymous>",
+          "line": 14,
+          "complexity": 1
+        },
+        {
+          "name": "<anonymous>",
+          "line": 15,
+          "complexity": 2
+        },
+        {
+          "name": "<anonymous>",
+          "line": 16,
+          "complexity": 1
+        },
+        {
+          "name": "toSvg",
+          "line": 20,
+          "complexity": 16
+        },
+        {
+          "name": "<anonymous>",
+          "line": 21,
+          "complexity": 1
+        },
+        {
+          "name": "<anonymous>",
+          "line": 27,
+          "complexity": 2
+        },
+        {
+          "name": "<anonymous>",
+          "line": 29,
+          "complexity": 1
+        },
+        {
+          "name": "help",
+          "line": 35,
+          "complexity": 1
+        },
+        {
+          "name": "<anonymous>",
+          "line": 35,
+          "complexity": 1
+        },
+        {
+          "name": "checked",
+          "line": 36,
+          "complexity": 3
+        }
+      ],
+      "sha256": "b1e82f1f6df36bedd245fea0b704922ccfd33cc32e635eee41b7989e6893ce2f"
+    },
+    {
+      "file": "src/application/TreeLabels.ts",
+      "role": "应用事务与扩展调度",
+      "category": "kernel",
+      "lines": 29,
+      "nonblankLines": 28,
+      "complexity": 17,
+      "functions": [
+        {
+          "name": "constructor",
+          "line": 7,
+          "complexity": 1
+        },
+        {
+          "name": "notify",
+          "line": 8,
+          "complexity": 2
+        },
+        {
+          "name": "<anonymous>",
+          "line": 9,
+          "complexity": 1
+        },
+        {
+          "name": "suffix",
+          "line": 11,
+          "complexity": 2
+        },
+        {
+          "name": "<anonymous>",
+          "line": 13,
+          "complexity": 5
+        },
+        {
+          "name": "<anonymous>",
+          "line": 19,
+          "complexity": 1
+        },
+        {
+          "name": "diagnostics",
+          "line": 21,
+          "complexity": 1
+        },
+        {
+          "name": "guard",
+          "line": 22,
+          "complexity": 4
+        }
+      ],
+      "sha256": "41c9d1a9739767193a429dd9ee38e387a2f3bd0bc3bcc8ca14fe8bc11888272e"
+    },
+    {
+      "file": "src/application/TreeRenderer.ts",
+      "role": "应用事务与扩展调度",
+      "category": "kernel",
+      "lines": 24,
+      "nonblankLines": 23,
+      "complexity": 7,
+      "functions": [
+        {
+          "name": "constructor",
+          "line": 6,
+          "complexity": 1
+        },
+        {
+          "name": "render",
+          "line": 7,
+          "complexity": 2
+        },
+        {
+          "name": "<anonymous>",
+          "line": 9,
+          "complexity": 1
+        },
+        {
+          "name": "<anonymous>",
+          "line": 10,
+          "complexity": 3
+        }
+      ],
+      "sha256": "b3bb6e6faaae4a028544c7af8c10cdec6be4a7912899e966b0164303f0eb2373"
+    },
+    {
+      "file": "src/application/extensions/AttributeHandler.ts",
+      "role": "公开扩展契约",
+      "category": "kernel",
+      "lines": 16,
+      "nonblankLines": 14,
+      "complexity": 0,
+      "functions": [],
+      "sha256": "325668de78785ea06019270c0792992a8d6ec9db60922b2e28d0250815b60c88"
+    },
+    {
+      "file": "src/application/extensions/Command.ts",
+      "role": "公开扩展契约",
+      "category": "kernel",
+      "lines": 22,
+      "nonblankLines": 19,
+      "complexity": 0,
+      "functions": [],
+      "sha256": "0ad39bd51168d266823c817b36b532ddafa0321d479b6a52f8e51f8affa7acfd"
+    },
+    {
+      "file": "src/application/extensions/DirectoryAccess.ts",
+      "role": "公开扩展契约",
+      "category": "kernel",
+      "lines": 10,
+      "nonblankLines": 9,
+      "complexity": 0,
+      "functions": [],
+      "sha256": "4fbaba0b9cf56b7974e7edbc46e6b8940e21f0ce1adfd222ce3532d1d2865027"
+    },
+    {
+      "file": "src/application/extensions/Plugin.ts",
+      "role": "公开扩展契约",
+      "category": "kernel",
+      "lines": 16,
+      "nonblankLines": 14,
+      "complexity": 0,
+      "functions": [],
+      "sha256": "639fbe509b0c40445ac144fcaa2beb241ee3ed9a7ffac2550be08509421bf2e1"
+    },
+    {
+      "file": "src/application/extensions/PluginContext.ts",
+      "role": "公开扩展契约",
+      "category": "kernel",
+      "lines": 12,
+      "nonblankLines": 11,
+      "complexity": 0,
+      "functions": [],
+      "sha256": "ccecd1dcc7869376d94acb7bff205e5349f6c5b8bdcab768d0ddd1bd8ede0e29"
+    },
+    {
+      "file": "src/application/extensions/SessionApi.ts",
+      "role": "公开扩展契约",
+      "category": "kernel",
+      "lines": 28,
+      "nonblankLines": 25,
+      "complexity": 0,
+      "functions": [],
+      "sha256": "a87b29a471de3e9e6139745cff3b734821ca375cdc9c06a7b7d5e04a76a4a449"
+    },
+    {
+      "file": "src/application/extensions/ShapeAccess.ts",
+      "role": "公开扩展契约",
+      "category": "kernel",
+      "lines": 4,
+      "nonblankLines": 4,
+      "complexity": 0,
+      "functions": [],
+      "sha256": "0c6307feb2f8b1081cf5b3c809eed21151ac8d17070e433db59e30976ef613d2"
+    },
+    {
+      "file": "src/application/extensions/ShapeProvider.ts",
+      "role": "公开扩展契约",
+      "category": "kernel",
+      "lines": 29,
+      "nonblankLines": 26,
+      "complexity": 0,
+      "functions": [],
+      "sha256": "6a5c8577042cd1c9c982d6ff654802218312357959d81d99fbfe0904c06cb130"
+    },
+    {
+      "file": "src/application/extensions/TreeDecorator.ts",
+      "role": "公开扩展契约",
+      "category": "kernel",
+      "lines": 21,
+      "nonblankLines": 18,
+      "complexity": 0,
+      "functions": [],
+      "sha256": "dfedd6ced0a1ad2e380a73c3af4c17d227d0f1728e15706cbff9beb0a340894f"
+    },
+    {
+      "file": "src/application/extensions/index.ts",
+      "role": "公开扩展契约",
+      "category": "kernel",
+      "lines": 12,
+      "nonblankLines": 12,
+      "complexity": 0,
+      "functions": [],
+      "sha256": "bf95acf31fa911a40bc105af812584b508202162481a1ba6d1ee2b7e4065cfc5"
+    },
+    {
+      "file": "src/cli/CommandProcessor.ts",
+      "role": "输入解析与命令分派",
+      "category": "kernel",
+      "lines": 24,
+      "nonblankLines": 24,
+      "complexity": 6,
+      "functions": [
+        {
+          "name": "constructor",
+          "line": 8,
+          "complexity": 1
+        },
+        {
+          "name": "run",
+          "line": 11,
+          "complexity": 4
+        },
+        {
+          "name": "<anonymous>",
+          "line": 16,
+          "complexity": 1
+        }
+      ],
+      "sha256": "580fed9210a229048ad4a59dc86898b6b89a056e95a2b8b1476db98e314ea7a0"
+    },
+    {
+      "file": "src/cli/CommandRegistry.ts",
+      "role": "输入解析与命令分派",
+      "category": "kernel",
+      "lines": 17,
+      "nonblankLines": 16,
+      "complexity": 11,
+      "functions": [
+        {
+          "name": "constructor",
+          "line": 4,
+          "complexity": 1
+        },
+        {
+          "name": "execute",
+          "line": 5,
+          "complexity": 4
+        },
+        {
+          "name": "<anonymous>",
+          "line": 7,
+          "complexity": 1
+        },
+        {
+          "name": "<anonymous>",
+          "line": 9,
+          "complexity": 1
+        },
+        {
+          "name": "<anonymous>",
+          "line": 10,
+          "complexity": 1
+        },
+        {
+          "name": "help",
+          "line": 13,
+          "complexity": 1
+        },
+        {
+          "name": "<anonymous>",
+          "line": 14,
+          "complexity": 1
+        },
+        {
+          "name": "<anonymous>",
+          "line": 15,
+          "complexity": 1
+        }
+      ],
+      "sha256": "8325a5e366e83e50c20b5164f3d6dd6cafcd7ce9110fd042ca41570b5baad272"
+    },
+    {
+      "file": "src/cli/Repl.ts",
+      "role": "输入解析与命令分派",
+      "category": "kernel",
+      "lines": 16,
+      "nonblankLines": 16,
+      "complexity": 6,
+      "functions": [
+        {
+          "name": "constructor",
+          "line": 4,
+          "complexity": 1
+        },
+        {
+          "name": "start",
+          "line": 5,
+          "complexity": 2
+        },
+        {
+          "name": "<anonymous>",
+          "line": 11,
+          "complexity": 3
+        }
+      ],
+      "sha256": "182006d342eecfb7584a641189416e91ffa8e7e1f6ffe421cf387f46a0cd9746"
+    },
+    {
+      "file": "src/cli/Token.ts",
+      "role": "输入解析与命令分派",
+      "category": "kernel",
+      "lines": 5,
+      "nonblankLines": 5,
+      "complexity": 3,
+      "functions": [
+        {
+          "name": "constructor",
+          "line": 2,
+          "complexity": 1
+        },
+        {
+          "name": "value",
+          "line": 3,
+          "complexity": 1
+        },
+        {
+          "name": "isQuoted",
+          "line": 4,
+          "complexity": 1
+        }
+      ],
+      "sha256": "0d0a01e81bc862e1615bcbebf597ff80221f146105830e309e10f13357ac5054"
+    },
+    {
+      "file": "src/cli/Tokenizer.ts",
+      "role": "输入解析与命令分派",
+      "category": "kernel",
+      "lines": 19,
+      "nonblankLines": 19,
+      "complexity": 13,
+      "functions": [
+        {
+          "name": "tokenize",
+          "line": 3,
+          "complexity": 13
+        }
+      ],
+      "sha256": "7cc3027bf4897d90c8ee02bc47a48350d70166ab8e89098eed8cebe5bab996f2"
+    },
+    {
+      "file": "src/domain/Circle.ts",
+      "role": "公开领域模型与不变量",
+      "category": "kernel",
+      "lines": 7,
+      "nonblankLines": 7,
+      "complexity": 4,
+      "functions": [
+        {
+          "name": "constructor",
+          "line": 3,
+          "complexity": 1
+        },
+        {
+          "name": "type",
+          "line": 4,
+          "complexity": 1
+        },
+        {
+          "name": "emptyCopy",
+          "line": 5,
+          "complexity": 1
+        },
+        {
+          "name": "summary",
+          "line": 6,
+          "complexity": 1
+        }
+      ],
+      "sha256": "f3c74a30cdb9cd52f1aee6dbf3a3061b76eaf633f4068cf2385ab89fe351e80e"
+    },
+    {
+      "file": "src/domain/Ellipse.ts",
+      "role": "公开领域模型与不变量",
+      "category": "kernel",
+      "lines": 7,
+      "nonblankLines": 7,
+      "complexity": 4,
+      "functions": [
+        {
+          "name": "constructor",
+          "line": 3,
+          "complexity": 1
+        },
+        {
+          "name": "type",
+          "line": 4,
+          "complexity": 1
+        },
+        {
+          "name": "emptyCopy",
+          "line": 5,
+          "complexity": 1
+        },
+        {
+          "name": "summary",
+          "line": 6,
+          "complexity": 1
+        }
+      ],
+      "sha256": "6c4a2956ed674cd068e81ac187cc2dbef12aed8105ee18a3bd6718a61ab79a27"
+    },
+    {
+      "file": "src/domain/Group.ts",
+      "role": "公开领域模型与不变量",
+      "category": "kernel",
+      "lines": 30,
+      "nonblankLines": 30,
+      "complexity": 23,
+      "functions": [
+        {
+          "name": "constructor",
+          "line": 4,
+          "complexity": 1
+        },
+        {
+          "name": "type",
+          "line": 5,
+          "complexity": 1
+        },
+        {
+          "name": "isContainer",
+          "line": 6,
+          "complexity": 1
+        },
+        {
+          "name": "children",
+          "line": 7,
+          "complexity": 1
+        },
+        {
+          "name": "emptyCopy",
+          "line": 8,
+          "complexity": 1
+        },
+        {
+          "name": "summary",
+          "line": 9,
+          "complexity": 1
+        },
+        {
+          "name": "insert",
+          "line": 10,
+          "complexity": 4
+        },
+        {
+          "name": "<anonymous>",
+          "line": 11,
+          "complexity": 1
+        },
+        {
+          "name": "contains",
+          "line": 15,
+          "complexity": 2
+        },
+        {
+          "name": "<anonymous>",
+          "line": 15,
+          "complexity": 1
+        },
+        {
+          "name": "remove",
+          "line": 16,
+          "complexity": 2
+        },
+        {
+          "name": "move",
+          "line": 22,
+          "complexity": 2
+        },
+        {
+          "name": "assertCanUngroup",
+          "line": 23,
+          "complexity": 1
+        },
+        {
+          "name": "scale",
+          "line": 24,
+          "complexity": 2
+        },
+        {
+          "name": "clone",
+          "line": 25,
+          "complexity": 2
+        }
+      ],
+      "sha256": "748c4a2e3b85c91d56d7642e6339bbba73d25bb2d936e524183aa84ae2a26603"
+    },
+    {
+      "file": "src/domain/Line.ts",
+      "role": "公开领域模型与不变量",
+      "category": "kernel",
+      "lines": 7,
+      "nonblankLines": 7,
+      "complexity": 4,
+      "functions": [
+        {
+          "name": "constructor",
+          "line": 3,
+          "complexity": 1
+        },
+        {
+          "name": "type",
+          "line": 4,
+          "complexity": 1
+        },
+        {
+          "name": "emptyCopy",
+          "line": 5,
+          "complexity": 1
+        },
+        {
+          "name": "summary",
+          "line": 6,
+          "complexity": 1
+        }
+      ],
+      "sha256": "94f6fe8b4c01b72664446baf6c8d1ec05126f818ad0b315229c3d0d3bebae8bd"
+    },
+    {
+      "file": "src/domain/Rect.ts",
+      "role": "公开领域模型与不变量",
+      "category": "kernel",
+      "lines": 9,
+      "nonblankLines": 9,
+      "complexity": 4,
+      "functions": [
+        {
+          "name": "constructor",
+          "line": 3,
+          "complexity": 1
+        },
+        {
+          "name": "type",
+          "line": 6,
+          "complexity": 1
+        },
+        {
+          "name": "emptyCopy",
+          "line": 7,
+          "complexity": 1
+        },
+        {
+          "name": "summary",
+          "line": 8,
+          "complexity": 1
+        }
+      ],
+      "sha256": "146304946d042d2a5d3ef53def673259af509f066a6d8b7bf710d36849d488fb"
+    },
+    {
+      "file": "src/domain/Shape.ts",
+      "role": "公开领域模型与不变量",
+      "category": "kernel",
+      "lines": 73,
+      "nonblankLines": 66,
+      "complexity": 42,
+      "functions": [
+        {
+          "name": "constructor",
+          "line": 8,
+          "complexity": 2
+        },
+        {
+          "name": "id",
+          "line": 17,
+          "complexity": 1
+        },
+        {
+          "name": "label",
+          "line": 18,
+          "complexity": 1
+        },
+        {
+          "name": "creationSummary",
+          "line": 19,
+          "complexity": 1
+        },
+        {
+          "name": "isContainer",
+          "line": 20,
+          "complexity": 1
+        },
+        {
+          "name": "children",
+          "line": 21,
+          "complexity": 1
+        },
+        {
+          "name": "content",
+          "line": 22,
+          "complexity": 1
+        },
+        {
+          "name": "insert",
+          "line": 24,
+          "complexity": 1
+        },
+        {
+          "name": "remove",
+          "line": 25,
+          "complexity": 1
+        },
+        {
+          "name": "assertCanDetach",
+          "line": 26,
+          "complexity": 1
+        },
+        {
+          "name": "assertCanUngroup",
+          "line": 27,
+          "complexity": 1
+        },
+        {
+          "name": "assertValid",
+          "line": 28,
+          "complexity": 1
+        },
+        {
+          "name": "position",
+          "line": 29,
+          "complexity": 3
+        },
+        {
+          "name": "<anonymous>",
+          "line": 31,
+          "complexity": 1
+        },
+        {
+          "name": "<anonymous>",
+          "line": 32,
+          "complexity": 1
+        },
+        {
+          "name": "attributes",
+          "line": 35,
+          "complexity": 1
+        },
+        {
+          "name": "get",
+          "line": 36,
+          "complexity": 1
+        },
+        {
+          "name": "n",
+          "line": 37,
+          "complexity": 1
+        },
+        {
+          "name": "styles",
+          "line": 38,
+          "complexity": 1
+        },
+        {
+          "name": "<anonymous>",
+          "line": 39,
+          "complexity": 1
+        },
+        {
+          "name": "<anonymous>",
+          "line": 40,
+          "complexity": 1
+        },
+        {
+          "name": "set",
+          "line": 43,
+          "complexity": 9
+        },
+        {
+          "name": "move",
+          "line": 56,
+          "complexity": 4
+        },
+        {
+          "name": "scale",
+          "line": 62,
+          "complexity": 2
+        },
+        {
+          "name": "clone",
+          "line": 67,
+          "complexity": 3
+        }
+      ],
+      "sha256": "97eef921415132ff1ebbe88ce51e592ccc9446f489325885f40f0eddafe96e66"
+    },
+    {
+      "file": "src/domain/SvgDocument.ts",
+      "role": "公开领域模型与不变量",
+      "category": "kernel",
+      "lines": 122,
+      "nonblankLines": 121,
+      "complexity": 67,
+      "functions": [
+        {
+          "name": "constructor",
+          "line": 9,
+          "complexity": 1
+        },
+        {
+          "name": "width",
+          "line": 13,
+          "complexity": 1
+        },
+        {
+          "name": "height",
+          "line": 14,
+          "complexity": 1
+        },
+        {
+          "name": "children",
+          "line": 15,
+          "complexity": 1
+        },
+        {
+          "name": "resize",
+          "line": 16,
+          "complexity": 1
+        },
+        {
+          "name": "all",
+          "line": 21,
+          "complexity": 1
+        },
+        {
+          "name": "<anonymous>",
+          "line": 22,
+          "complexity": 1
+        },
+        {
+          "name": "<anonymous>",
+          "line": 22,
+          "complexity": 1
+        },
+        {
+          "name": "has",
+          "line": 25,
+          "complexity": 1
+        },
+        {
+          "name": "<anonymous>",
+          "line": 25,
+          "complexity": 1
+        },
+        {
+          "name": "require",
+          "line": 26,
+          "complexity": 2
+        },
+        {
+          "name": "<anonymous>",
+          "line": 27,
+          "complexity": 1
+        },
+        {
+          "name": "container",
+          "line": 31,
+          "complexity": 4
+        },
+        {
+          "name": "parent",
+          "line": 38,
+          "complexity": 2
+        },
+        {
+          "name": "<anonymous>",
+          "line": 39,
+          "complexity": 1
+        },
+        {
+          "name": "<anonymous>",
+          "line": 40,
+          "complexity": 1
+        },
+        {
+          "name": "parentLabel",
+          "line": 44,
+          "complexity": 2
+        },
+        {
+          "name": "add",
+          "line": 45,
+          "complexity": 3
+        },
+        {
+          "name": "<anonymous>",
+          "line": 47,
+          "complexity": 2
+        },
+        {
+          "name": "<anonymous>",
+          "line": 49,
+          "complexity": 1
+        },
+        {
+          "name": "delete",
+          "line": 56,
+          "complexity": 1
+        },
+        {
+          "name": "detach",
+          "line": 57,
+          "complexity": 1
+        },
+        {
+          "name": "group",
+          "line": 60,
+          "complexity": 6
+        },
+        {
+          "name": "<anonymous>",
+          "line": 63,
+          "complexity": 1
+        },
+        {
+          "name": "<anonymous>",
+          "line": 65,
+          "complexity": 1
+        },
+        {
+          "name": "<anonymous>",
+          "line": 65,
+          "complexity": 2
+        },
+        {
+          "name": "<anonymous>",
+          "line": 69,
+          "complexity": 1
+        },
+        {
+          "name": "ungroup",
+          "line": 74,
+          "complexity": 2
+        },
+        {
+          "name": "<anonymous>",
+          "line": 82,
+          "complexity": 1
+        },
+        {
+          "name": "addto",
+          "line": 84,
+          "complexity": 2
+        },
+        {
+          "name": "<anonymous>",
+          "line": 87,
+          "complexity": 2
+        },
+        {
+          "name": "reorder",
+          "line": 91,
+          "complexity": 2
+        },
+        {
+          "name": "clone",
+          "line": 95,
+          "complexity": 1
+        },
+        {
+          "name": "<anonymous>",
+          "line": 99,
+          "complexity": 8
+        },
+        {
+          "name": "<anonymous>",
+          "line": 103,
+          "complexity": 1
+        },
+        {
+          "name": "validate",
+          "line": 108,
+          "complexity": 1
+        },
+        {
+          "name": "<anonymous>",
+          "line": 111,
+          "complexity": 5
+        }
+      ],
+      "sha256": "3ea4a407972eb59221ac7da2937ddad5a49ae3d8dcfaded1b6b501e18ca2ae02"
+    },
+    {
+      "file": "src/domain/Text.ts",
+      "role": "公开领域模型与不变量",
+      "category": "kernel",
+      "lines": 14,
+      "nonblankLines": 14,
+      "complexity": 7,
+      "functions": [
+        {
+          "name": "constructor",
+          "line": 5,
+          "complexity": 1
+        },
+        {
+          "name": "type",
+          "line": 6,
+          "complexity": 1
+        },
+        {
+          "name": "content",
+          "line": 7,
+          "complexity": 1
+        },
+        {
+          "name": "emptyCopy",
+          "line": 8,
+          "complexity": 1
+        },
+        {
+          "name": "set",
+          "line": 9,
+          "complexity": 2
+        },
+        {
+          "name": "summary",
+          "line": 13,
+          "complexity": 1
+        }
+      ],
+      "sha256": "60500bc61f1987349261f5c66b4b2ec386f47019cb99665c659926da3394e74a"
+    },
+    {
+      "file": "src/domain/Value.ts",
+      "role": "公开领域模型与不变量",
+      "category": "kernel",
+      "lines": 32,
+      "nonblankLines": 29,
+      "complexity": 21,
+      "functions": [
+        {
+          "name": "number",
+          "line": 2,
+          "complexity": 5
+        },
+        {
+          "name": "positive",
+          "line": 11,
+          "complexity": 2
+        },
+        {
+          "name": "id",
+          "line": 17,
+          "complexity": 3
+        },
+        {
+          "name": "xmlText",
+          "line": 22,
+          "complexity": 11
+        }
+      ],
+      "sha256": "8c0c2b8ad4f29fdb6005d595aae4d1ca2505cdbb32cd9d631bce92f4deb4b614"
+    },
+    {
+      "file": "src/host/DefaultHost.ts",
+      "role": "宿主对象装配",
+      "category": "composition",
+      "lines": 27,
+      "nonblankLines": 26,
+      "complexity": 7,
+      "functions": [
+        {
+          "name": "<anonymous>",
+          "line": 17,
+          "complexity": 1
+        },
+        {
+          "name": "<anonymous>",
+          "line": 20,
+          "complexity": 1
+        },
+        {
+          "name": "<anonymous>",
+          "line": 20,
+          "complexity": 1
+        },
+        {
+          "name": "<anonymous>",
+          "line": 22,
+          "complexity": 1
+        },
+        {
+          "name": "<anonymous>",
+          "line": 23,
+          "complexity": 1
+        },
+        {
+          "name": "constructor",
+          "line": 24,
+          "complexity": 2
+        }
+      ],
+      "sha256": "75098408cb724461b21e52bf145cfc15acf351d1d4bc3e74c71b948cf1286371"
+    },
+    {
+      "file": "src/infrastructure/FileDocumentStore.ts",
+      "role": "IO 适配与 SVG 编解码",
+      "category": "kernel",
+      "lines": 23,
+      "nonblankLines": 23,
+      "complexity": 6,
+      "functions": [
+        {
+          "name": "constructor",
+          "line": 7,
+          "complexity": 1
+        },
+        {
+          "name": "read",
+          "line": 8,
+          "complexity": 2
+        },
+        {
+          "name": "write",
+          "line": 13,
+          "complexity": 3
+        }
+      ],
+      "sha256": "417fa8f88d2530bacd88a0ab6451e5018c0b1a97502f4c887bcdcb1f00b57f4d"
+    },
+    {
+      "file": "src/infrastructure/NodeDirectoryAdapter.ts",
+      "role": "IO 适配与 SVG 编解码",
+      "category": "kernel",
+      "lines": 11,
+      "nonblankLines": 10,
+      "complexity": 5,
+      "functions": [
+        {
+          "name": "cwd",
+          "line": 5,
+          "complexity": 1
+        },
+        {
+          "name": "list",
+          "line": 6,
+          "complexity": 1
+        },
+        {
+          "name": "<anonymous>",
+          "line": 7,
+          "complexity": 3
+        }
+      ],
+      "sha256": "ce2cebb1606e469b5a301309b9dfbb5c8295ffcd617d4762499e93ee7ddcafbb"
+    },
+    {
+      "file": "src/infrastructure/SvgCodec.ts",
+      "role": "IO 适配与 SVG 编解码",
+      "category": "kernel",
+      "lines": 101,
+      "nonblankLines": 99,
+      "complexity": 54,
+      "functions": [
+        {
+          "name": "constructor",
+          "line": 10,
+          "complexity": 1
+        },
+        {
+          "name": "escape",
+          "line": 11,
+          "complexity": 1
+        },
+        {
+          "name": "encode",
+          "line": 17,
+          "complexity": 1
+        },
+        {
+          "name": "<anonymous>",
+          "line": 18,
+          "complexity": 3
+        },
+        {
+          "name": "<anonymous>",
+          "line": 21,
+          "complexity": 1
+        },
+        {
+          "name": "<anonymous>",
+          "line": 22,
+          "complexity": 1
+        },
+        {
+          "name": "<anonymous>",
+          "line": 25,
+          "complexity": 1
+        },
+        {
+          "name": "<anonymous>",
+          "line": 27,
+          "complexity": 1
+        },
+        {
+          "name": "decode",
+          "line": 29,
+          "complexity": 19
+        },
+        {
+          "name": "<anonymous>",
+          "line": 36,
+          "complexity": 1
+        },
+        {
+          "name": "<anonymous>",
+          "line": 36,
+          "complexity": 1
+        },
+        {
+          "name": "<anonymous>",
+          "line": 45,
+          "complexity": 2
+        },
+        {
+          "name": "<anonymous>",
+          "line": 46,
+          "complexity": 1
+        },
+        {
+          "name": "<anonymous>",
+          "line": 56,
+          "complexity": 4
+        },
+        {
+          "name": "<anonymous>",
+          "line": 71,
+          "complexity": 8
+        },
+        {
+          "name": "<anonymous>",
+          "line": 88,
+          "complexity": 2
+        },
+        {
+          "name": "tag",
+          "line": 99,
+          "complexity": 1
+        },
+        {
+          "name": "<anonymous>",
+          "line": 99,
+          "complexity": 3
+        },
+        {
+          "name": "attrs",
+          "line": 100,
+          "complexity": 2
+        }
+      ],
+      "sha256": "7852b3cdd85165625bdf8b0c6d4f22da01c1ebc2c157c18c22fcaa17d3a322a4"
+    },
+    {
+      "file": "src/main.ts",
+      "role": "宿主对象装配",
+      "category": "composition",
+      "lines": 4,
+      "nonblankLines": 3,
+      "complexity": 0,
+      "functions": [],
+      "sha256": "1a5b8e7ff745e4dc038dad4af5c761640226bb9182317a3ec1a74ce234e17d7d"
+    },
+    {
+      "file": "src/plugins/builtin/BuiltinCommand.ts",
+      "role": "注册式内置能力实现",
+      "category": "plugins",
+      "lines": 9,
+      "nonblankLines": 8,
+      "complexity": 2,
+      "functions": [
+        {
+          "name": "constructor",
+          "line": 4,
+          "complexity": 1
+        },
+        {
+          "name": "execute",
+          "line": 6,
+          "complexity": 1
+        }
+      ],
+      "sha256": "2896f00dab6c8e15a6336fd34d5a2e6428307be81fd3132878abe0fde5362f67"
+    },
+    {
+      "file": "src/plugins/builtin/BuiltinPlugin.ts",
+      "role": "注册式内置能力实现",
+      "category": "plugins",
+      "lines": 78,
+      "nonblankLines": 76,
+      "complexity": 38,
+      "functions": [
+        {
+          "name": "activate",
+          "line": 31,
+          "complexity": 1
+        },
+        {
+          "name": "<anonymous>",
+          "line": 34,
+          "complexity": 1
+        },
+        {
+          "name": "<anonymous>",
+          "line": 36,
+          "complexity": 1
+        },
+        {
+          "name": "<anonymous>",
+          "line": 38,
+          "complexity": 1
+        },
+        {
+          "name": "<anonymous>",
+          "line": 40,
+          "complexity": 1
+        },
+        {
+          "name": "<anonymous>",
+          "line": 42,
+          "complexity": 1
+        },
+        {
+          "name": "<anonymous>",
+          "line": 43,
+          "complexity": 1
+        },
+        {
+          "name": "<anonymous>",
+          "line": 45,
+          "complexity": 1
+        },
+        {
+          "name": "<anonymous>",
+          "line": 46,
+          "complexity": 1
+        },
+        {
+          "name": "<anonymous>",
+          "line": 47,
+          "complexity": 1
+        },
+        {
+          "name": "<anonymous>",
+          "line": 47,
+          "complexity": 1
+        },
+        {
+          "name": "<anonymous>",
+          "line": 49,
+          "complexity": 1
+        },
+        {
+          "name": "<anonymous>",
+          "line": 50,
+          "complexity": 1
+        },
+        {
+          "name": "<anonymous>",
+          "line": 51,
+          "complexity": 1
+        },
+        {
+          "name": "<anonymous>",
+          "line": 52,
+          "complexity": 1
+        },
+        {
+          "name": "<anonymous>",
+          "line": 53,
+          "complexity": 1
+        },
+        {
+          "name": "<anonymous>",
+          "line": 53,
+          "complexity": 5
+        },
+        {
+          "name": "<anonymous>",
+          "line": 56,
+          "complexity": 1
+        },
+        {
+          "name": "<anonymous>",
+          "line": 59,
+          "complexity": 1
+        },
+        {
+          "name": "<anonymous>",
+          "line": 60,
+          "complexity": 1
+        },
+        {
+          "name": "<anonymous>",
+          "line": 61,
+          "complexity": 1
+        },
+        {
+          "name": "<anonymous>",
+          "line": 62,
+          "complexity": 1
+        },
+        {
+          "name": "<anonymous>",
+          "line": 63,
+          "complexity": 1
+        },
+        {
+          "name": "<anonymous>",
+          "line": 64,
+          "complexity": 1
+        },
+        {
+          "name": "<anonymous>",
+          "line": 65,
+          "complexity": 1
+        },
+        {
+          "name": "<anonymous>",
+          "line": 66,
+          "complexity": 1
+        },
+        {
+          "name": "<anonymous>",
+          "line": 67,
+          "complexity": 1
+        },
+        {
+          "name": "<anonymous>",
+          "line": 68,
+          "complexity": 1
+        },
+        {
+          "name": "<anonymous>",
+          "line": 69,
+          "complexity": 1
+        },
+        {
+          "name": "<anonymous>",
+          "line": 70,
+          "complexity": 1
+        },
+        {
+          "name": "<anonymous>",
+          "line": 71,
+          "complexity": 1
+        },
+        {
+          "name": "<anonymous>",
+          "line": 74,
+          "complexity": 1
+        },
+        {
+          "name": "<anonymous>",
+          "line": 74,
+          "complexity": 1
+        },
+        {
+          "name": "<anonymous>",
+          "line": 74,
+          "complexity": 1
+        }
+      ],
+      "sha256": "051a2b843100c11937bfbc3bf581bb75c7a19d7a951f83f5c3ab0f547bb25c12"
+    },
+    {
+      "file": "src/plugins/builtin/BuiltinShapeProvider.ts",
+      "role": "注册式内置能力实现",
+      "category": "plugins",
+      "lines": 37,
+      "nonblankLines": 36,
+      "complexity": 23,
+      "functions": [
+        {
+          "name": "constructor",
+          "line": 7,
+          "complexity": 1
+        },
+        {
+          "name": "create",
+          "line": 12,
+          "complexity": 6
+        },
+        {
+          "name": "read",
+          "line": 20,
+          "complexity": 14
+        },
+        {
+          "name": "supports",
+          "line": 33,
+          "complexity": 1
+        },
+        {
+          "name": "write",
+          "line": 34,
+          "complexity": 1
+        }
+      ],
+      "sha256": "91661777d9d36b7e629da6b1d2a1130ea5833e8ebd834ecbcf357a599d4f80e5"
+    },
+    {
+      "file": "src/plugins/builtin/commands/AddToCommand.ts",
+      "role": "注册式内置能力实现",
+      "category": "plugins",
+      "lines": 11,
+      "nonblankLines": 11,
+      "complexity": 3,
+      "functions": [
+        {
+          "name": "constructor",
+          "line": 5,
+          "complexity": 1
+        },
+        {
+          "name": "apply",
+          "line": 6,
+          "complexity": 1
+        },
+        {
+          "name": "undoMessage",
+          "line": 7,
+          "complexity": 1
+        }
+      ],
+      "sha256": "e41bffa48b3cc8e2e21f4f25d603f69fc084eed16d5b18e225a28c98603c9bad"
+    },
+    {
+      "file": "src/plugins/builtin/commands/CanvasCommand.ts",
+      "role": "注册式内置能力实现",
+      "category": "plugins",
+      "lines": 7,
+      "nonblankLines": 7,
+      "complexity": 4,
+      "functions": [
+        {
+          "name": "constructor",
+          "line": 5,
+          "complexity": 3
+        },
+        {
+          "name": "execute",
+          "line": 6,
+          "complexity": 1
+        }
+      ],
+      "sha256": "55d3bc64a633cdf0e9df7d90a96215b22bdf4701e2d23f31683c1f1cd3834838"
+    },
+    {
+      "file": "src/plugins/builtin/commands/CreateCommand.ts",
+      "role": "注册式内置能力实现",
+      "category": "plugins",
+      "lines": 15,
+      "nonblankLines": 15,
+      "complexity": 5,
+      "functions": [
+        {
+          "name": "constructor",
+          "line": 6,
+          "complexity": 1
+        },
+        {
+          "name": "apply",
+          "line": 7,
+          "complexity": 3
+        },
+        {
+          "name": "undoMessage",
+          "line": 14,
+          "complexity": 1
+        }
+      ],
+      "sha256": "50b7c7e3f5fca4f844f3328b67133b11b18da20536488714b271ea91eb455d30"
+    },
+    {
+      "file": "src/plugins/builtin/commands/DeleteCommand.ts",
+      "role": "注册式内置能力实现",
+      "category": "plugins",
+      "lines": 11,
+      "nonblankLines": 11,
+      "complexity": 3,
+      "functions": [
+        {
+          "name": "constructor",
+          "line": 5,
+          "complexity": 1
+        },
+        {
+          "name": "apply",
+          "line": 6,
+          "complexity": 1
+        },
+        {
+          "name": "undoMessage",
+          "line": 7,
+          "complexity": 1
+        }
+      ],
+      "sha256": "8745312fcdf39fd98fa1ecabff912ce00a9d83f225a42512e41785b4d87fe8ff"
+    },
+    {
+      "file": "src/plugins/builtin/commands/GroupCommand.ts",
+      "role": "注册式内置能力实现",
+      "category": "plugins",
+      "lines": 8,
+      "nonblankLines": 8,
+      "complexity": 3,
+      "functions": [
+        {
+          "name": "constructor",
+          "line": 5,
+          "complexity": 1
+        },
+        {
+          "name": "apply",
+          "line": 6,
+          "complexity": 1
+        },
+        {
+          "name": "undoMessage",
+          "line": 7,
+          "complexity": 1
+        }
+      ],
+      "sha256": "503739761842679ee0077ecaadff0e69b8cf7714e7ff048110cc7a8f1b68f49f"
+    },
+    {
+      "file": "src/plugins/builtin/commands/HelpCommand.ts",
+      "role": "注册式内置能力实现",
+      "category": "plugins",
+      "lines": 5,
+      "nonblankLines": 5,
+      "complexity": 2,
+      "functions": [
+        {
+          "name": "constructor",
+          "line": 3,
+          "complexity": 1
+        },
+        {
+          "name": "execute",
+          "line": 4,
+          "complexity": 1
+        }
+      ],
+      "sha256": "056b74ed22c08dac694b87a670c5d24c90caa958b2968ffd4e8594d38c73bad6"
+    },
+    {
+      "file": "src/plugins/builtin/commands/InitCommand.ts",
+      "role": "注册式内置能力实现",
+      "category": "plugins",
+      "lines": 7,
+      "nonblankLines": 7,
+      "complexity": 4,
+      "functions": [
+        {
+          "name": "constructor",
+          "line": 5,
+          "complexity": 1
+        },
+        {
+          "name": "execute",
+          "line": 6,
+          "complexity": 3
+        }
+      ],
+      "sha256": "4c59b4acac28061667269c19238d4f3942132891c4dd33e065f7608d89c85e6f"
+    },
+    {
+      "file": "src/plugins/builtin/commands/MoveCommand.ts",
+      "role": "注册式内置能力实现",
+      "category": "plugins",
+      "lines": 19,
+      "nonblankLines": 19,
+      "complexity": 5,
+      "functions": [
+        {
+          "name": "constructor",
+          "line": 5,
+          "complexity": 1
+        },
+        {
+          "name": "apply",
+          "line": 6,
+          "complexity": 2
+        },
+        {
+          "name": "undoMessage",
+          "line": 12,
+          "complexity": 2
+        }
+      ],
+      "sha256": "a80193f4bb243aaf5b5ab4bcf95aff4143846437105714cb871d4496d19b43ee"
+    },
+    {
+      "file": "src/plugins/builtin/commands/OrderCommand.ts",
+      "role": "注册式内置能力实现",
+      "category": "plugins",
+      "lines": 8,
+      "nonblankLines": 8,
+      "complexity": 4,
+      "functions": [
+        {
+          "name": "constructor",
+          "line": 5,
+          "complexity": 1
+        },
+        {
+          "name": "apply",
+          "line": 6,
+          "complexity": 2
+        },
+        {
+          "name": "undoMessage",
+          "line": 7,
+          "complexity": 1
+        }
+      ],
+      "sha256": "926879a7b420d3d61b6a5526dab425baab0350874caef04993a7bdc9d480054d"
+    },
+    {
+      "file": "src/plugins/builtin/commands/ReadCommand.ts",
+      "role": "注册式内置能力实现",
+      "category": "plugins",
+      "lines": 7,
+      "nonblankLines": 7,
+      "complexity": 2,
+      "functions": [
+        {
+          "name": "constructor",
+          "line": 5,
+          "complexity": 1
+        },
+        {
+          "name": "execute",
+          "line": 6,
+          "complexity": 1
+        }
+      ],
+      "sha256": "055a4d692011c11060b38af830223d08d81a070f04968b59ed28a536b65c58fc"
+    },
+    {
+      "file": "src/plugins/builtin/commands/RedoCommand.ts",
+      "role": "注册式内置能力实现",
+      "category": "plugins",
+      "lines": 7,
+      "nonblankLines": 7,
+      "complexity": 2,
+      "functions": [
+        {
+          "name": "constructor",
+          "line": 5,
+          "complexity": 1
+        },
+        {
+          "name": "execute",
+          "line": 6,
+          "complexity": 1
+        }
+      ],
+      "sha256": "c53070ebad9806d800a757506ddd2216d92f2862d34bb4e5778384e3f60c7abe"
+    },
+    {
+      "file": "src/plugins/builtin/commands/SaveCommand.ts",
+      "role": "注册式内置能力实现",
+      "category": "plugins",
+      "lines": 7,
+      "nonblankLines": 7,
+      "complexity": 2,
+      "functions": [
+        {
+          "name": "constructor",
+          "line": 5,
+          "complexity": 1
+        },
+        {
+          "name": "execute",
+          "line": 6,
+          "complexity": 1
+        }
+      ],
+      "sha256": "9bd7e7e0b2bbf5c97f7f278f63ae37ba353f873be093843b1f1fc021fef98876"
+    },
+    {
+      "file": "src/plugins/builtin/commands/ScaleCommand.ts",
+      "role": "注册式内置能力实现",
+      "category": "plugins",
+      "lines": 8,
+      "nonblankLines": 8,
+      "complexity": 3,
+      "functions": [
+        {
+          "name": "constructor",
+          "line": 5,
+          "complexity": 1
+        },
+        {
+          "name": "apply",
+          "line": 6,
+          "complexity": 1
+        },
+        {
+          "name": "undoMessage",
+          "line": 7,
+          "complexity": 1
+        }
+      ],
+      "sha256": "3d62d97d11256573bfdc3ab05010555450709b5a78723d2e214e4916a4ac5b89"
+    },
+    {
+      "file": "src/plugins/builtin/commands/SetCommand.ts",
+      "role": "注册式内置能力实现",
+      "category": "plugins",
+      "lines": 5,
+      "nonblankLines": 5,
+      "complexity": 2,
+      "functions": [
+        {
+          "name": "constructor",
+          "line": 3,
+          "complexity": 1
+        },
+        {
+          "name": "execute",
+          "line": 4,
+          "complexity": 1
+        }
+      ],
+      "sha256": "5368794e261a0a0c372fa5846e6fb61b2d990c8660798e92e826cac8311fd9e2"
+    },
+    {
+      "file": "src/plugins/builtin/commands/ShowCommand.ts",
+      "role": "注册式内置能力实现",
+      "category": "plugins",
+      "lines": 14,
+      "nonblankLines": 14,
+      "complexity": 4,
+      "functions": [
+        {
+          "name": "constructor",
+          "line": 5,
+          "complexity": 1
+        },
+        {
+          "name": "execute",
+          "line": 6,
+          "complexity": 3
+        }
+      ],
+      "sha256": "8fd40753c5e8e0838c2d404035035c5e5593a028770c11f509d609a06d46a599"
+    },
+    {
+      "file": "src/plugins/builtin/commands/TreeCommand.ts",
+      "role": "注册式内置能力实现",
+      "category": "plugins",
+      "lines": 5,
+      "nonblankLines": 5,
+      "complexity": 2,
+      "functions": [
+        {
+          "name": "constructor",
+          "line": 3,
+          "complexity": 1
+        },
+        {
+          "name": "execute",
+          "line": 4,
+          "complexity": 1
+        }
+      ],
+      "sha256": "5b4686c91cc922950027c8e850f382c5359551c42d1ba78d1a7920b7a76f2973"
+    },
+    {
+      "file": "src/plugins/builtin/commands/UndoCommand.ts",
+      "role": "注册式内置能力实现",
+      "category": "plugins",
+      "lines": 7,
+      "nonblankLines": 7,
+      "complexity": 2,
+      "functions": [
+        {
+          "name": "constructor",
+          "line": 5,
+          "complexity": 1
+        },
+        {
+          "name": "execute",
+          "line": 6,
+          "complexity": 1
+        }
+      ],
+      "sha256": "4801819a47dd98a0b61325d97647b9137653984725b99d4ae75c023003d384a9"
+    },
+    {
+      "file": "src/plugins/builtin/commands/UngroupCommand.ts",
+      "role": "注册式内置能力实现",
+      "category": "plugins",
+      "lines": 11,
+      "nonblankLines": 11,
+      "complexity": 3,
+      "functions": [
+        {
+          "name": "constructor",
+          "line": 5,
+          "complexity": 1
+        },
+        {
+          "name": "apply",
+          "line": 6,
+          "complexity": 1
+        },
+        {
+          "name": "undoMessage",
+          "line": 7,
+          "complexity": 1
+        }
+      ],
+      "sha256": "716770632a2ac4c52ffc1bff1d9bd6f3495870f98fd97bf44e928d5be28fed09"
+    },
+    {
+      "file": "vscode-extension/src/SvgDecorationProvider.ts",
+      "role": "VSCode 扩展（单独统计）",
+      "category": "vscode",
+      "lines": 38,
+      "nonblankLines": 32,
+      "complexity": 9,
+      "functions": [
+        {
+          "name": "provideFileDecoration",
+          "line": 8,
+          "complexity": 6
+        },
+        {
+          "name": "refresh",
+          "line": 31,
+          "complexity": 2
+        },
+        {
+          "name": "dispose",
+          "line": 35,
+          "complexity": 1
+        }
+      ],
+      "sha256": "59fd15453be36f7e0e17ee8688fc4f986cab81c9fbae76ade0e8f50834f95020"
+    },
+    {
+      "file": "vscode-extension/src/SvgOutlineProvider.ts",
+      "role": "VSCode 扩展（单独统计）",
+      "category": "vscode",
+      "lines": 32,
+      "nonblankLines": 29,
+      "complexity": 8,
+      "functions": [
+        {
+          "name": "constructor",
+          "line": 5,
+          "complexity": 1
+        },
+        {
+          "name": "provideDocumentSymbols",
+          "line": 7,
+          "complexity": 3
+        },
+        {
+          "name": "<anonymous>",
+          "line": 14,
+          "complexity": 1
+        },
+        {
+          "name": "toSymbol",
+          "line": 21,
+          "complexity": 2
+        },
+        {
+          "name": "<anonymous>",
+          "line": 29,
+          "complexity": 1
+        }
+      ],
+      "sha256": "7629913d00b99d8a09287d0caa04b4b0ca3aea88ec8b5358d8c2c4aba7a24ed7"
+    },
+    {
+      "file": "vscode-extension/src/SvgStructureParser.ts",
+      "role": "VSCode 扩展（单独统计）",
+      "category": "vscode",
+      "lines": 57,
+      "nonblankLines": 54,
+      "complexity": 14,
+      "functions": [
+        {
+          "name": "parse",
+          "line": 15,
+          "complexity": 3
+        },
+        {
+          "name": "<anonymous>",
+          "line": 21,
+          "complexity": 1
+        },
+        {
+          "name": "<anonymous>",
+          "line": 23,
+          "complexity": 1
+        },
+        {
+          "name": "<anonymous>",
+          "line": 24,
+          "complexity": 1
+        },
+        {
+          "name": "<anonymous>",
+          "line": 30,
+          "complexity": 6
+        },
+        {
+          "name": "<anonymous>",
+          "line": 48,
+          "complexity": 2
+        }
+      ],
+      "sha256": "ed763c1267fe21b456c8237f12660354d2712b84ac69ac6194fd6f83841dd7ae"
+    },
+    {
+      "file": "vscode-extension/src/extension.ts",
+      "role": "VSCode 扩展（单独统计）",
+      "category": "vscode",
+      "lines": 25,
+      "nonblankLines": 23,
+      "complexity": 4,
+      "functions": [
+        {
+          "name": "activate",
+          "line": 5,
+          "complexity": 1
+        },
+        {
+          "name": "<anonymous>",
+          "line": 21,
+          "complexity": 1
+        },
+        {
+          "name": "<anonymous>",
+          "line": 22,
+          "complexity": 1
+        },
+        {
+          "name": "<anonymous>",
+          "line": 23,
+          "complexity": 1
+        }
+      ],
+      "sha256": "6a005824d39a404c500645e516dbab80b400e4ee87404a66f1acb495314125bd"
+    }
+  ]
+}

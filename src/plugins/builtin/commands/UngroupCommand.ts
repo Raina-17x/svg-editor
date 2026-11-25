@@ -1,6 +1,6 @@
-import { EditCommand } from '../EditCommand.js';
-import { Args } from '../Args.js';
-import { SvgDocument } from '../../domain/SvgDocument.js';
+import { EditCommand } from '../../../application/extensions/index.js';
+import { Args } from '../../../application/extensions/index.js';
+import { SvgDocument } from '../../../domain/SvgDocument.js';
 export class UngroupCommand extends EditCommand {
   constructor(private readonly args: string[]) { super(); Args.count(args, 1); }
   apply(document: SvgDocument): string { document.ungroup(this.args[0]); return `g#${this.args[0]} ungrouped`; }

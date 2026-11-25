@@ -1,19 +1,15 @@
 import assert from 'node:assert/strict';
 import { mkdtempSync, rmSync } from 'node:fs';
 import { join } from 'node:path';
-import { ShapeFactory } from '../src/application/ShapeFactory.js';
-import { EditorSession } from '../src/application/EditorSession.js';
-import { FileDocumentStore } from '../src/infrastructure/FileDocumentStore.js';
-import { SvgCodec } from '../src/infrastructure/SvgCodec.js';
-import { CommandRegistry } from '../src/cli/CommandRegistry.js';
-import { CommandProcessor } from '../src/cli/CommandProcessor.js';
+import { DefaultHost } from '../src/host/DefaultHost.js';
 
 export class Fixture {
   readonly directory = mkdtempSync(join(process.cwd(), '.svg-editor-test-'));
-  readonly factory = new ShapeFactory();
-  readonly codec = new SvgCodec(this.factory);
-  readonly session = new EditorSession(new FileDocumentStore(this.codec));
-  readonly cli = new CommandProcessor(this.session, new CommandRegistry(this.factory));
+  readonly host = new DefaultHost();
+  readonly factory = this.host.factory;
+  readonly codec = this.host.codec;
+  readonly session = this.host.session;
+  readonly cli = this.host.cli;
   file(name: string): string { return join(this.directory, name); }
   run(line: string): string[] { return this.cli.run(line); }
   ok(line: string): string[] {

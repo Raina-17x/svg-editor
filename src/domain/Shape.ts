@@ -16,9 +16,16 @@ export abstract class Shape {
   abstract summary(): string;
   get id(): string { return this.identifier; }
   get label(): string { return `${this.type}#${this.id}`; }
+  creationSummary(): string { return `${this.label} created`; }
   get isContainer(): boolean { return false; }
   get children(): readonly Shape[] { return []; }
   get content(): string | undefined { return undefined; }
+  /** Structural hooks let composite plugins own their invariants. */
+  insert(_shape: Shape, _index?: number): void { throw new Error(`not a container: ${this.id}`); }
+  remove(_shape: Shape): void { throw new Error(`not a container: ${this.id}`); }
+  assertCanDetach(_child: Shape): void {}
+  assertCanUngroup(): void { throw new Error(`cannot ungroup composite shape: ${this.id}`); }
+  assertValid(): void {}
   get position(): readonly [number, number] | undefined {
     const axes = Object.entries(this.geometry);
     const x = axes.find(([, axis]) => axis === 'x')?.[0];
@@ -59,6 +66,7 @@ export abstract class Shape {
 
   clone(): Shape {
     const copy = this.emptyCopy();
+    if (copy.constructor !== this.constructor) throw new Error(`clone lost shape type: ${this.id}`);
     for (const [key, value] of this.values) copy.set(key, value);
     return copy;
   }

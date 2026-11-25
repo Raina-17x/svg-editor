@@ -1,0 +1,80 @@
+svg-editor 0.1 — type 'help' for commands
+init [w] [h] | read <file.svg> | save [file.svg] | canvas [w h]
+create rect <id> <x> <y> <w> <h> [fill] [in <gid>]
+create circle <id> <cx> <cy> <r> [fill] [in <gid>]
+create ellipse <id> <cx> <cy> <rx> <ry> [fill] [in <gid>]
+create line <id> <x1> <y1> <x2> <y2> [stroke] [in <gid>]
+create text <id> <x> <y> "content" [in <gid>]
+create g <id> [in <gid>]
+delete <id> | move <id> <dx> <dy> | scale <id> <factor>
+set <id> <attr> <value> | group <newGid> <id1> <id2>...
+ungroup <gid> | addto <gid> <id> | front <id> | back <id>
+tree [id] | show <id> | help | undo | redo
+Use double quotes for spaces; # at line start is a comment. EOF (Ctrl+Z then Enter on Windows) exits.
+error: unknown command: stats
+error: unknown command: dir
+error: no document. use 'init' or 'read' first
+canvas 400x300 created
+error: unknown shape type: box (is the plugin loaded?)
+g#outer created
+g#inner created in g#outer
+rect#r created in g#inner
+circle#c created in g#inner
+ellipse#e created in g#outer
+line#l created in g#outer
+text#t created in g#outer
+rect#r parent=g#inner
+  x=1
+  y=2
+  width=3
+  height=4
+  fill=red
+rect#r updated: fill="blue"
+error: unknown attribute: label
+text#t updated: text="two words & 中文"
+g#outer scaled by 2
+rect#r moved to front
+circle#c moved to back
+svg (400x300)
+└── g#outer
+    ├── g#inner
+    │   ├── circle#c cx=20 cy=40 r=6
+    │   └── rect#r x=2 y=4 w=6 h=8 fill=blue
+    ├── ellipse#e cx=40 cy=60 rx=8 ry=10
+    ├── line#l (0,0) -> (20,20) stroke=black
+    └── text#t (40,80) "two words & 中文"
+text#t parent=g#outer
+  x=40
+  y=80
+  text="two words & 中文"
+canvas 400x300
+saved to core.svg (7 elements)
+error: undo not allowed after io command
+read core.svg (7 elements)
+rect#r moved to (3,6)
+rect#r moved back to (2,4)
+rect#r moved to (3,6)
+g#collected created with 2 children
+g#collected moved into g#outer
+g#collected ungrouped
+line#l deleted
+line#l restored into g#outer
+g#outer
+├── g#inner
+├── ellipse#e cx=40 cy=60 rx=8 ry=10
+├── line#l (0,0) -> (20,20) stroke=black
+├── text#t (40,80) "two words & 中文"
+├── circle#c cx=20 cy=40 r=6
+└── rect#r x=3 y=6 w=6 h=8 fill=blue
+init [w] [h] | read <file.svg> | save [file.svg] | canvas [w h]
+create rect <id> <x> <y> <w> <h> [fill] [in <gid>]
+create circle <id> <cx> <cy> <r> [fill] [in <gid>]
+create ellipse <id> <cx> <cy> <rx> <ry> [fill] [in <gid>]
+create line <id> <x1> <y1> <x2> <y2> [stroke] [in <gid>]
+create text <id> <x> <y> "content" [in <gid>]
+create g <id> [in <gid>]
+delete <id> | move <id> <dx> <dy> | scale <id> <factor>
+set <id> <attr> <value> | group <newGid> <id1> <id2>...
+ungroup <gid> | addto <gid> <id> | front <id> | back <id>
+tree [id] | show <id> | help | undo | redo
+Use double quotes for spaces; # at line start is a comment. EOF (Ctrl+Z then Enter on Windows) exits.

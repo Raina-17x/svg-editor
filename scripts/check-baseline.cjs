@@ -24,7 +24,7 @@ class BaselineCheck {
       }
       execFileSync(process.execPath, [compiler, '-p', baseline], { cwd: root, stdio: 'pipe' });
       execFileSync(process.execPath, [compiler, '-p', root], { cwd: root, stdio: 'pipe' });
-      for (const name of ['cli-1', 'cli-1a']) {
+      for (const name of ['cli-1', 'cli-1a', 'cli-core']) {
         const input = fs.readFileSync(path.join(transcript, `${name}.txt`));
         const expectedFile = path.join(transcript, `${name}.expected.txt`);
         const results = [];
