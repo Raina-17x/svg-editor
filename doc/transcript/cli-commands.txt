@@ -1,0 +1,26 @@
+# Additional command-plugin session, run inside the fixed work directory.
+dir
+stats
+help
+init 800 600
+stats
+create g flow
+create rect r 1 2 3 4 red in flow
+create circle c 10 20 3 in flow
+create text t 20 30 "hello" in flow
+stats
+move r 5 0
+undo
+dir
+stats
+redo
+tree
+save ../output.svg
+dir
+undo
+read ../input.svg
+dir
+stats
+dir extra
+stats extra
+canvas

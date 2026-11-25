@@ -5,7 +5,7 @@
   },
   "to": {
     "ref": "WORKTREE",
-    "commit": "043234dac4968bc346795473b41d2bd5ecf5606b",
+    "commit": "b3efbfa035f52186be43539bd794783a4ae3372b",
     "dirtySnapshot": true
   },
   "method": "Physical lines; function complexity = 1 + if/loops/catch/nondefault-case/ternary/&&/||/??; nested functions measured independently. No optional-chain or default-parameter increments. CLI runtime TypeScript only; VSCode separate; tests, scripts, dependencies and build output excluded.",
@@ -39,13 +39,13 @@
     },
     "composition": {
       "files": 6,
-      "lines": 224,
-      "complexity": 112
+      "lines": 230,
+      "complexity": 114
     },
     "plugins": {
-      "files": 21,
-      "lines": 286,
-      "complexity": 118
+      "files": 25,
+      "lines": 342,
+      "complexity": 137
     },
     "vscode": {
       "files": 4,
@@ -61,13 +61,13 @@
     },
     "composition": {
       "files": 5,
-      "lines": 213,
-      "complexity": 112
+      "lines": 219,
+      "complexity": 114
     },
     "plugins": {
-      "files": 21,
-      "lines": 286,
-      "complexity": 118
+      "files": 25,
+      "lines": 342,
+      "complexity": 137
     },
     "vscode": {
       "files": 4,
@@ -3071,22 +3071,22 @@
       "file": "src/host/CliStartup.ts",
       "role": "宿主对象装配",
       "category": "composition",
-      "lines": 16,
-      "nonblankLines": 15,
-      "complexity": 5,
+      "lines": 22,
+      "nonblankLines": 21,
+      "complexity": 7,
       "functions": [
         {
           "name": "start",
-          "line": 6,
-          "complexity": 4
+          "line": 10,
+          "complexity": 6
         },
         {
           "name": "<anonymous>",
-          "line": 13,
+          "line": 19,
           "complexity": 1
         }
       ],
-      "sha256": "327c4f7f5fbb32f1cd76cf72553e039383653c3eb3ae5db7eb22b5ba450386e2"
+      "sha256": "3c050d1ca292a6b79f17a5a61648b4156d9a81093173d68b32f2ad6ca64abf15"
     },
     {
       "file": "src/host/DefaultHost.ts",
@@ -4131,6 +4131,90 @@
         }
       ],
       "sha256": "716770632a2ac4c52ffc1bff1d9bd6f3495870f98fd97bf44e928d5be28fed09"
+    },
+    {
+      "file": "src/plugins/command-dir/DirCommand.ts",
+      "role": "注册式内置能力实现",
+      "category": "plugins",
+      "lines": 18,
+      "nonblankLines": 17,
+      "complexity": 10,
+      "functions": [
+        {
+          "name": "execute",
+          "line": 6,
+          "complexity": 3
+        },
+        {
+          "name": "<anonymous>",
+          "line": 14,
+          "complexity": 2
+        },
+        {
+          "name": "<anonymous>",
+          "line": 14,
+          "complexity": 4
+        },
+        {
+          "name": "<anonymous>",
+          "line": 16,
+          "complexity": 1
+        }
+      ],
+      "sha256": "b1659ae7c8e730b344b1cb82ac5a0f2376805bced0bed1beaed2d9666a3fe513"
+    },
+    {
+      "file": "src/plugins/command-dir/DirPlugin.ts",
+      "role": "注册式内置能力实现",
+      "category": "plugins",
+      "lines": 8,
+      "nonblankLines": 6,
+      "complexity": 1,
+      "functions": [
+        {
+          "name": "activate",
+          "line": 5,
+          "complexity": 1
+        }
+      ],
+      "sha256": "4eb520cd56ce5ee950ed5f08e3b95cf2bd2cb9187dc5a12d18c6370824505d09"
+    },
+    {
+      "file": "src/plugins/command-stats/StatsCommand.ts",
+      "role": "注册式内置能力实现",
+      "category": "plugins",
+      "lines": 22,
+      "nonblankLines": 21,
+      "complexity": 7,
+      "functions": [
+        {
+          "name": "execute",
+          "line": 6,
+          "complexity": 6
+        },
+        {
+          "name": "<anonymous>",
+          "line": 19,
+          "complexity": 1
+        }
+      ],
+      "sha256": "a384de3c79e994f21c7dde5db867f78cbebbbb8d6e8519b0933c47481a89f2f5"
+    },
+    {
+      "file": "src/plugins/command-stats/StatsPlugin.ts",
+      "role": "注册式内置能力实现",
+      "category": "plugins",
+      "lines": 8,
+      "nonblankLines": 6,
+      "complexity": 1,
+      "functions": [
+        {
+          "name": "activate",
+          "line": 5,
+          "complexity": 1
+        }
+      ],
+      "sha256": "98419eae080b71a5a63fdca18dd54a7c368db6d3ad5059324b2684bd6bb5c181"
     },
     {
       "file": "vscode-extension/src/SvgDecorationProvider.ts",

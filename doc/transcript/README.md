@@ -7,6 +7,7 @@
 | `cli-1.txt` | `phase_cli_1.md` §6，仅提取 `svg>` 后的命令 |
 | `cli-1a.txt` | §6.1 版本 A，手工组合流程图 |
 | `cli-core.txt` | 第 3 步补充的兼容性会话，覆盖 help/show、六种图形、错误与结构编辑；不是官方示例 |
+| `cli-commands.txt` | 第 5 步新增 stats/dir 会话，command-plugins.test.ts 验证代码/配置装配与固定预期，不交给 final 执行 |
 | `cli-1-box.txt` | §6.1 版本 B，待 box 插件接入后运行，不纳入 Phase 1 成功基线 |
 | `fixtures/other.svg` | §6 的外部 SVG，含缺失 id 元素 |
 | `*.expected.txt` | 从固定 final 源码实际执行得到的原始 stdout，含启动横幅，不含交互提示符 |
@@ -24,4 +25,4 @@
 
 第 3 步只为新增 cli-core 会话补录固定 final 的预期；两个官方会话的预期内容没有改变。`.gitattributes` 强制预期输出使用 LF，避免 Windows Git 自动换行转换破坏字节比较。
 
-默认入口只装内置能力，没有新增可选插件和树标签。脚本继续比较该入口与 final。第 4 步已提供 --config 配置装配及 enabled 开关；根配置为空。后续加入正式插件时另加双装配及 stats/dir 会话。box 的成功预期不能用不支持 box 的 final 生成。
+默认无参数入口只装内置能力，基线脚本继续比较该入口与 final。根配置现已启用 stats/dir，--code 也启用同一集合。新增命令会话由 command-plugins.test.ts 验证，目录固定、日志在内存、输出 SVG 位于列举目录之外；预期输出和输入/输出 SVG 分开保存。box 的成功预期不能用不支持 box 的 final 生成。
