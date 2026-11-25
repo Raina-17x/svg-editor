@@ -85,10 +85,16 @@ test('injected box handler failure after two modifications preserves document an
 test('official Phase 1 section 6.1 B runs byte-identically in code and config assembly', t => {
   const f = new LoaderFixture(); t.after(() => f.close());
   const entry = resolve('dist/src/main.js'); const input = readFileSync('doc/transcript/cli-1-box.txt');
-  const code = spawnSync(process.execPath, [entry, '--code'], { cwd: f.root, input });
+  // Preserve the original no-star box session while later labels are added.
+  const bootstrap = f.write('box-code.cjs', `const {DefaultHost}=require(${JSON.stringify(resolve('dist/src/host/DefaultHost.js'))});
+    const {Repl}=require(${JSON.stringify(resolve('dist/src/cli/Repl.js'))}); const host=new DefaultHost();
+    for(const name of ['command-stats','command-dir','shape-box']) { const pkg=${JSON.stringify(resolve('dist/src/plugins'))}+'/'+name;
+      host.installer.install(require(pkg+'/package.json'),require(pkg).default); } new Repl(host.cli).start();`);
+  const config = f.config(['command-stats', 'command-dir', 'shape-box'].map(name => ({ module: resolve('dist/src/plugins', name) })));
+  const code = spawnSync(process.execPath, [bootstrap], { cwd: f.root, input });
   assert.equal(code.status, 0, code.stderr.toString());
   const svg = readFileSync(resolve(f.root, 'flowchart-box.svg'));
-  const configured = spawnSync(process.execPath, [entry, '--config', resolve('plugins.config.json')], { cwd: f.root, input });
+  const configured = spawnSync(process.execPath, [entry, '--config', config], { cwd: f.root, input });
   assert.equal(configured.status, 0, configured.stderr.toString()); assert.deepEqual(code.stdout, configured.stdout);
   assert.deepEqual(code.stdout, readFileSync('doc/transcript/cli-1-box.expected.txt'));
   assert.deepEqual(svg, readFileSync('doc/transcript/fixtures/flowchart-box.svg'));

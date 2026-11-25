@@ -1,0 +1,18 @@
+# Both type and modified labels, with save-point undo and redo.
+init
+tree
+create g flow
+create box n 120 100 160 60 "开始" in flow
+tree
+save labels.svg
+tree
+set n label "处理数据"
+tree
+undo
+tree
+redo
+tree
+save
+tree
+read labels.svg
+tree

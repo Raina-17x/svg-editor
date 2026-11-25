@@ -10,8 +10,9 @@
 | `cli-commands.txt` | 第 5 步新增 stats/dir 会话，command-plugins.test.ts 验证代码/配置装配与固定预期，不交给 final 执行 |
 | `cli-1-box.txt` | §6.1 版本 B，第 6 步由 box-integration.test.ts 验证；不交给不支持 box 的 final 执行 |
 | `cli-1-box.expected.txt` / `fixtures/flowchart-box.svg` | 正式 box 会话的 stdout 和保存 SVG，独立保存并用于双装配比较 |
+| `cli-labels.txt` / `cli-labels.expected.txt` / `fixtures/labels.svg` | 第 7 步完整装配的标签会话、预期 stdout 和保存 SVG；验证保存点、撤销/重做及两个标签并存 |
 | `fixtures/other.svg` | §6 的外部 SVG，含缺失 id 元素 |
-| `*.expected.txt` | 从固定 final 源码实际执行得到的原始 stdout，含启动横幅，不含交互提示符 |
+| `cli-1/cli-1a/cli-core.expected.txt` | 从固定 final 实际运行得到的 stdout；其余扩展会话的预期由对应功能版本运行验证，不冒充 final 的能力 |
 
 运行 `npm run check:baseline`：
 

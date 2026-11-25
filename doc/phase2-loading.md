@@ -16,7 +16,7 @@ npm run cli
 npm run cli -- --config plugins.config.json
 ```
 
-根配置现启用 stats、dir、box，也可通过 `npm run cli -- --code` 用代码装配同一集合。无参数启动仍仅有 Phase 1 能力。没有自动发现或自动加载配置；只有传 --config 时读取。配置不存在或不合法时打印 invalid plugin config，并继续以默认内置能力启动。用法见 [命令插件](phase2-command-plugins.md) 和 [box 插件](phase2-box.md)。
+根配置现按顺序启用 stats、dir、box、tree-star，也可通过 `npm run cli -- --code` 用代码装配同一集合。无参数启动仍仅有 Phase 1 能力。没有自动发现或自动加载配置；只有传 --config 时读取。配置不存在或不合法时打印 invalid plugin config，并继续以默认内置能力启动。用法见 [命令插件](phase2-command-plugins.md)、[box 插件](phase2-box.md) 和 [树标签](phase2-tree-labels.md)。
 
 配置项格式：
 
