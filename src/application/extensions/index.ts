@@ -1,0 +1,8 @@
+export type { ShapeProvider, ShapeReadInput, ShapeWriteOutput } from './ShapeProvider.js';
+export type { Command, CommandArgument, CommandContext } from './Command.js';
+export type { AttributeHandler, AttributeResult } from './AttributeHandler.js';
+export type { TreeDecorator, TreeLine, SessionChange } from './TreeDecorator.js';
+export type { SessionApi, EditContext, EditOperation } from './SessionApi.js';
+export type { DirectoryAccess, DirectoryEntry } from './DirectoryAccess.js';
+export type { PluginContext } from './PluginContext.js';
+export type { Plugin, PluginManifest } from './Plugin.js';

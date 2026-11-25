@@ -1,0 +1,23 @@
+@startuml
+title Phase 1 实际依赖（final）
+package "main（装配）" as main
+package cli
+package application
+package domain
+package infrastructure
+main --> cli
+main --> application
+main --> infrastructure
+cli --> application
+cli --> domain
+application --> domain
+infrastructure --> application
+infrastructure --> domain
+note right of application
+  ShapeFactory 枚举六种实现
+  Command 依赖具体 EditorSession
+end note
+note right of cli
+  CommandRegistry 导入内置命令
+end note
+@enduml
