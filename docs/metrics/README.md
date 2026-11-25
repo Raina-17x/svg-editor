@@ -1,6 +1,6 @@
 # CLI 重构指标（脚本生成）
 
-比较：final (1fe4a0cb36c84caf1f135ebe534739c98d5d2db6) → WORKTREE (b3efbfa035f52186be43539bd794783a4ae3372b)。
+比较：final (1fe4a0cb36c84caf1f135ebe534739c98d5d2db6) → WORKTREE (734a50ebb46767a6e5cec51a525cee0b993b59b2)。
 当前是框架阶段的工作树快照，并非最终 p2 指标；源文件哈希见 report.json。
 
 运行 `npm run metrics` 更新工作树快照；最终运行 `npm run metrics -- --from final --to p2` 比较两个历史标签。
@@ -13,8 +13,8 @@ kernel 包含领域、应用、CLI 和基础设施；composition 是 main 与 ho
 | 分类 | 基线文件 | 当前文件 | 基线行数 | 当前行数 | 行数增量 | 复杂度增量 |
 | --- | ---: | ---: | ---: | ---: | ---: | ---: |
 | kernel | 41 | 40 | 842 | 1022 | 180 | 48 |
-| composition | 1 | 6 | 11 | 230 | 219 | 114 |
-| plugins | 0 | 25 | 0 | 342 | 342 | 137 |
+| composition | 1 | 6 | 11 | 233 | 222 | 114 |
+| plugins | 0 | 30 | 0 | 461 | 461 | 187 |
 | vscode | 0 | 4 | 0 | 152 | 152 | 35 |
 
 ## 文件清单与职责
@@ -58,7 +58,7 @@ kernel 包含领域、应用、CLI 和基础设施；composition 是 main 与 ho
 | src/domain/SvgDocument.ts | 公开领域模型与不变量 | kernel | 122 | 67 |
 | src/domain/Text.ts | 公开领域模型与不变量 | kernel | 14 | 7 |
 | src/domain/Value.ts | 公开领域模型与不变量 | kernel | 32 | 21 |
-| src/host/CliStartup.ts | 宿主对象装配 | composition | 22 | 7 |
+| src/host/CliStartup.ts | 宿主对象装配 | composition | 25 | 7 |
 | src/host/DefaultHost.ts | 宿主对象装配 | composition | 31 | 7 |
 | src/host/PluginConfigLoader.ts | 宿主对象装配 | composition | 81 | 47 |
 | src/host/PluginInstaller.ts | 宿主对象装配 | composition | 58 | 35 |
@@ -92,6 +92,11 @@ kernel 包含领域、应用、CLI 和基础设施；composition 是 main 与 ho
 | src/plugins/command-dir/DirPlugin.ts | 注册式内置能力实现 | plugins | 8 | 1 |
 | src/plugins/command-stats/StatsCommand.ts | 注册式内置能力实现 | plugins | 22 | 7 |
 | src/plugins/command-stats/StatsPlugin.ts | 注册式内置能力实现 | plugins | 8 | 1 |
+| src/plugins/shape-box/Box.ts | 注册式内置能力实现 | plugins | 39 | 27 |
+| src/plugins/shape-box/BoxAttributeHandler.ts | 注册式内置能力实现 | plugins | 23 | 8 |
+| src/plugins/shape-box/BoxPlugin.ts | 注册式内置能力实现 | plugins | 14 | 1 |
+| src/plugins/shape-box/BoxProvider.ts | 注册式内置能力实现 | plugins | 35 | 11 |
+| src/plugins/shape-box/BoxTypeDecorator.ts | 注册式内置能力实现 | plugins | 8 | 3 |
 | vscode-extension/src/SvgDecorationProvider.ts | VSCode 扩展（单独统计） | vscode | 38 | 9 |
 | vscode-extension/src/SvgOutlineProvider.ts | VSCode 扩展（单独统计） | vscode | 32 | 8 |
 | vscode-extension/src/SvgStructureParser.ts | VSCode 扩展（单独统计） | vscode | 57 | 14 |

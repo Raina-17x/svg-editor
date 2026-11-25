@@ -14,8 +14,8 @@ NodeDirectoryAdapter 已接到命令上下文，但 dir 命令属于第 5 步。
 | --- | --- | --- | --- | --- |
 | ShapeProvider | application/ShapeFactory.create/fromSvg/toSvg；infrastructure/SvgCodec.encode/decode | plugins/builtin/BuiltinShapeProvider 六个实例；测试 PanelProvider | 默认六种图形；未知类型报错；未知 data-kind 的 g 降级普通分组 | 重复注册或读回选择键拒绝；错误 id/无效树报错；序列化字段无效报 invalid shape serialization；supports 不唯一报 shape provider conflict |
 | Command | cli/CommandRegistry.execute/help | plugins/builtin/BuiltinCommand 装配各命令；测试 ProbeCommand | 未加载报 unknown command；默认 help 保持原输出 | 同名拒绝；参数由命令校验；非字符串数组反馈报 invalid command result |
-| AttributeHandler | application/AttributeService.apply，经 SessionFacade.setAttribute → EditorSession.setAttribute/edit 调用 | 测试 AccentHandler；正式处理器后续实现 | 无命中走 Shape.set 原白名单 | 多重命中拒绝；探测或修改抛错、反馈无效，回滚工作文档与历史，不默认回退 |
-| TreeDecorator | application/TreeLabels.notify/suffix，经 EditorSession 成功操作与 TreeRenderer.render 调用 | 测试 SuffixDecorator；正式标签后续实现 | 无标签时 tree 逐字节不变，无尾空格 | 回调异常或标签非字符串/含换行，禁用故障实例并输出 error，其他标签继续 |
+| AttributeHandler | application/AttributeService.apply，经 SessionFacade.setAttribute → EditorSession.setAttribute/edit 调用 | 第 6 步 BoxAttributeHandler；测试 AccentHandler | 无命中走 Shape.set 原白名单 | 多重命中拒绝；探测或修改抛错、反馈无效，回滚工作文档与历史，不默认回退 |
+| TreeDecorator | application/TreeLabels.notify/suffix，经 EditorSession 成功操作与 TreeRenderer.render 调用 | 第 6 步 BoxTypeDecorator；测试 SuffixDecorator；modified-star 待第 7 步 | 无标签时 tree 逐字节不变，无尾空格 | 回调异常或标签非字符串/含换行，禁用故障实例并输出 error，其他标签继续 |
 
 `test/plugins/` 中的实现都是用于验证接口的类，不装入默认 CLI，也不冒充已经完成的正式可选插件包。正式 stats/dir、box、标签在后续步骤提供。
 

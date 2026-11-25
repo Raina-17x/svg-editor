@@ -16,7 +16,7 @@ npm run cli
 npm run cli -- --config plugins.config.json
 ```
 
-第 5 步已将根配置设为启用 stats、dir。也可通过 `npm run cli -- --code` 用代码装配同一组插件。无参数启动仍仅有 Phase 1 能力。没有自动发现或自动加载配置；只有传 --config 时读取。配置不存在或不合法时打印 invalid plugin config，并继续以默认内置能力启动。具体命令用法见 [第 5 步说明](phase2-command-plugins.md)。
+根配置现启用 stats、dir、box，也可通过 `npm run cli -- --code` 用代码装配同一集合。无参数启动仍仅有 Phase 1 能力。没有自动发现或自动加载配置；只有传 --config 时读取。配置不存在或不合法时打印 invalid plugin config，并继续以默认内置能力启动。用法见 [命令插件](phase2-command-plugins.md) 和 [box 插件](phase2-box.md)。
 
 配置项格式：
 
@@ -87,6 +87,6 @@ error: invalid plugin config
 
 执行 `npm run check` 和 `npm run check:baseline`。新增 test/loader.test.ts 共 11 组，覆盖四类同时提交/回滚、清单不符、激活抛错、重复、上下文失效、非法配置全量预检、disabled、options、相对路径、包名、依赖失败分类、ESM、实际编译后的 TypeScript 默认导出，以及真实 CLI 子进程继续启动。
 
-A/B 一致性测试在相同工作目录、插件实现与 options 下比较完整 CLI stdout 字节（包含启动横幅），并比较直接执行会话结果。第 5 步已补充正式 stats/dir 的双装配会话；box 会话和最终接入提交差异证明仍在后续步骤完成。
+A/B 一致性测试在相同工作目录、插件实现与 options 下比较完整 CLI stdout 字节（包含启动横幅），并比较直接执行会话结果。stats/dir 和官方 box 会话均已补充；box 两条独立接入演示提交见 [第 6 步说明](phase2-box.md) 与 box-demo-evidence.json。最终验收仍须汇总全部证据。
 
 本轮实现没有移动 final 或创建 p2。加载器中的分支仅处理通用模块格式、配置和错误，不列举具体插件名字。当前指标更新为 final → WORKTREE 快照，最终仍需从 p2 重算。

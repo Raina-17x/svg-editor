@@ -1,0 +1,56 @@
+{
+  "base": "734a50ebb46767a6e5cec51a525cee0b993b59b2",
+  "currentBranch": "main",
+  "demos": [
+    {
+      "mode": "code",
+      "ref": "refs/heads/codex/box-code-demo",
+      "commit": "4be36258298ab0d8f5110a2b674065229aa98c45",
+      "files": [
+        ".gitattributes",
+        "src/host/CliStartup.ts",
+        "src/plugins/shape-box/Box.ts",
+        "src/plugins/shape-box/BoxAttributeHandler.ts",
+        "src/plugins/shape-box/BoxPlugin.ts",
+        "src/plugins/shape-box/BoxProvider.ts",
+        "src/plugins/shape-box/BoxTypeDecorator.ts",
+        "src/plugins/shape-box/package.json",
+        "test/box.test.ts",
+        "test/command-plugins.test.ts"
+      ],
+      "architecture": "Architecture check passed: 76 source files, 234 imports, dependency rules and class filenames verified.",
+      "testSummary": [
+        "✔ paths are based on config location, package names use Node resolution, options pass unchanged (20.2925ms)",
+        "ℹ tests 47",
+        "ℹ pass 47",
+        "ℹ fail 0"
+      ],
+      "officialBoxSession": "stdout and SVG match frozen expected bytes"
+    },
+    {
+      "mode": "config",
+      "ref": "refs/heads/codex/box-config-demo",
+      "commit": "b82bd1e5c15ce35dc04d15a3aef09d3bf82a6c7a",
+      "files": [
+        ".gitattributes",
+        "plugins.config.json",
+        "src/plugins/shape-box/Box.ts",
+        "src/plugins/shape-box/BoxAttributeHandler.ts",
+        "src/plugins/shape-box/BoxPlugin.ts",
+        "src/plugins/shape-box/BoxProvider.ts",
+        "src/plugins/shape-box/BoxTypeDecorator.ts",
+        "src/plugins/shape-box/package.json",
+        "test/box.test.ts",
+        "test/command-plugins.test.ts"
+      ],
+      "architecture": "Architecture check passed: 76 source files, 232 imports, dependency rules and class filenames verified.",
+      "testSummary": [
+        "✔ paths are based on config location, package names use Node resolution, options pass unchanged (26.8685ms)",
+        "ℹ tests 47",
+        "ℹ pass 47",
+        "ℹ fail 0"
+      ],
+      "officialBoxSession": "stdout and SVG match frozen expected bytes"
+    }
+  ]
+}

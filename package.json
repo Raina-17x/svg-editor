@@ -9,6 +9,7 @@
     "test": "npm run build --silent && node --test dist/test/*.test.js",
     "test:stats": "npm run build --silent && node --test dist/test/stats.test.js",
     "test:dir": "npm run build --silent && node --test dist/test/dir.test.js",
+    "test:box": "npm run build --silent && node --test dist/test/box.test.js",
     "check": "npm test && node scripts/check-architecture.cjs",
     "check:baseline": "node scripts/check-baseline.cjs",
     "metrics": "node scripts/generate-metrics.cjs"

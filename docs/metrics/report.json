@@ -5,7 +5,7 @@
   },
   "to": {
     "ref": "WORKTREE",
-    "commit": "b3efbfa035f52186be43539bd794783a4ae3372b",
+    "commit": "734a50ebb46767a6e5cec51a525cee0b993b59b2",
     "dirtySnapshot": true
   },
   "method": "Physical lines; function complexity = 1 + if/loops/catch/nondefault-case/ternary/&&/||/??; nested functions measured independently. No optional-chain or default-parameter increments. CLI runtime TypeScript only; VSCode separate; tests, scripts, dependencies and build output excluded.",
@@ -39,13 +39,13 @@
     },
     "composition": {
       "files": 6,
-      "lines": 230,
+      "lines": 233,
       "complexity": 114
     },
     "plugins": {
-      "files": 25,
-      "lines": 342,
-      "complexity": 137
+      "files": 30,
+      "lines": 461,
+      "complexity": 187
     },
     "vscode": {
       "files": 4,
@@ -61,13 +61,13 @@
     },
     "composition": {
       "files": 5,
-      "lines": 219,
+      "lines": 222,
       "complexity": 114
     },
     "plugins": {
-      "files": 25,
-      "lines": 342,
-      "complexity": 137
+      "files": 30,
+      "lines": 461,
+      "complexity": 187
     },
     "vscode": {
       "files": 4,
@@ -3071,22 +3071,22 @@
       "file": "src/host/CliStartup.ts",
       "role": "宿主对象装配",
       "category": "composition",
-      "lines": 22,
-      "nonblankLines": 21,
+      "lines": 25,
+      "nonblankLines": 24,
       "complexity": 7,
       "functions": [
         {
           "name": "start",
-          "line": 10,
+          "line": 12,
           "complexity": 6
         },
         {
           "name": "<anonymous>",
-          "line": 19,
+          "line": 22,
           "complexity": 1
         }
       ],
-      "sha256": "3c050d1ca292a6b79f17a5a61648b4156d9a81093173d68b32f2ad6ca64abf15"
+      "sha256": "a1c22ba047e64395055813eca7a228311d8629d1a651d7e87d0a0f8dd26c9a78"
     },
     {
       "file": "src/host/DefaultHost.ts",
@@ -4215,6 +4215,206 @@
         }
       ],
       "sha256": "98419eae080b71a5a63fdca18dd54a7c368db6d3ad5059324b2684bd6bb5c181"
+    },
+    {
+      "file": "src/plugins/shape-box/Box.ts",
+      "role": "注册式内置能力实现",
+      "category": "plugins",
+      "lines": 39,
+      "nonblankLines": 38,
+      "complexity": 27,
+      "functions": [
+        {
+          "name": "constructor",
+          "line": 7,
+          "complexity": 1
+        },
+        {
+          "name": "<anonymous>",
+          "line": 9,
+          "complexity": 1
+        },
+        {
+          "name": "type",
+          "line": 12,
+          "complexity": 1
+        },
+        {
+          "name": "summary",
+          "line": 13,
+          "complexity": 1
+        },
+        {
+          "name": "creationSummary",
+          "line": 14,
+          "complexity": 1
+        },
+        {
+          "name": "fill",
+          "line": 17,
+          "complexity": 1
+        },
+        {
+          "name": "title",
+          "line": 18,
+          "complexity": 1
+        },
+        {
+          "name": "setFill",
+          "line": 19,
+          "complexity": 1
+        },
+        {
+          "name": "setTitle",
+          "line": 20,
+          "complexity": 1
+        },
+        {
+          "name": "assertCanDetach",
+          "line": 21,
+          "complexity": 3
+        },
+        {
+          "name": "assertCanUngroup",
+          "line": 24,
+          "complexity": 1
+        },
+        {
+          "name": "assertValid",
+          "line": 25,
+          "complexity": 5
+        },
+        {
+          "name": "<anonymous>",
+          "line": 26,
+          "complexity": 1
+        },
+        {
+          "name": "<anonymous>",
+          "line": 27,
+          "complexity": 1
+        },
+        {
+          "name": "clone",
+          "line": 32,
+          "complexity": 2
+        },
+        {
+          "name": "<anonymous>",
+          "line": 33,
+          "complexity": 1
+        },
+        {
+          "name": "rectangle",
+          "line": 37,
+          "complexity": 1
+        },
+        {
+          "name": "<anonymous>",
+          "line": 37,
+          "complexity": 1
+        },
+        {
+          "name": "titleShape",
+          "line": 38,
+          "complexity": 1
+        },
+        {
+          "name": "<anonymous>",
+          "line": 38,
+          "complexity": 1
+        }
+      ],
+      "sha256": "e33e888308942583a80921fd66472dfe16ca233eff14ef6346bad12b69a2d3e9"
+    },
+    {
+      "file": "src/plugins/shape-box/BoxAttributeHandler.ts",
+      "role": "注册式内置能力实现",
+      "category": "plugins",
+      "lines": 23,
+      "nonblankLines": 22,
+      "complexity": 8,
+      "functions": [
+        {
+          "name": "handles",
+          "line": 7,
+          "complexity": 3
+        },
+        {
+          "name": "apply",
+          "line": 8,
+          "complexity": 5
+        }
+      ],
+      "sha256": "6cdb622e6da70626a4a6ecb8b545666be3208d6af2472739190c0c02320032b4"
+    },
+    {
+      "file": "src/plugins/shape-box/BoxPlugin.ts",
+      "role": "注册式内置能力实现",
+      "category": "plugins",
+      "lines": 14,
+      "nonblankLines": 12,
+      "complexity": 1,
+      "functions": [
+        {
+          "name": "activate",
+          "line": 7,
+          "complexity": 1
+        }
+      ],
+      "sha256": "4bd2f5fa039e873f2d939425c7940522731f1613f7f433f570c9dcc8066b649e"
+    },
+    {
+      "file": "src/plugins/shape-box/BoxProvider.ts",
+      "role": "注册式内置能力实现",
+      "category": "plugins",
+      "lines": 35,
+      "nonblankLines": 34,
+      "complexity": 11,
+      "functions": [
+        {
+          "name": "create",
+          "line": 12,
+          "complexity": 1
+        },
+        {
+          "name": "read",
+          "line": 19,
+          "complexity": 7
+        },
+        {
+          "name": "supports",
+          "line": 29,
+          "complexity": 1
+        },
+        {
+          "name": "write",
+          "line": 30,
+          "complexity": 2
+        }
+      ],
+      "sha256": "a1133bb527944d7bd225177734a93dd2ac4becdb8fcb48ff0b7f738ef41808ed"
+    },
+    {
+      "file": "src/plugins/shape-box/BoxTypeDecorator.ts",
+      "role": "注册式内置能力实现",
+      "category": "plugins",
+      "lines": 8,
+      "nonblankLines": 7,
+      "complexity": 3,
+      "functions": [
+        {
+          "name": "onChange",
+          "line": 6,
+          "complexity": 1
+        },
+        {
+          "name": "decorate",
+          "line": 7,
+          "complexity": 2
+        }
+      ],
+      "sha256": "cc058c7dac70e5376c64cb9d8dc5b84c65a0ce824c5b7c874d8b9da7536582f7"
     },
     {
       "file": "vscode-extension/src/SvgDecorationProvider.ts",
