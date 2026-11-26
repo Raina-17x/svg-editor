@@ -71,7 +71,9 @@ class MetricsReport {
     const args = process.argv.slice(2);
     const option = (name, fallback) => args.includes(name) ? args[args.indexOf(name) + 1] : fallback;
     const from = option('--from', 'final'); const to = option('--to', 'WORKTREE');
-    if (!from || !to) throw new Error('Usage: --from <git-ref> --to <git-ref|WORKTREE>');
+    const label = option('--label', to);
+    if (!from || !to || !label) throw new Error('Usage: --from <git-ref> --to <git-ref|WORKTREE> [--label <release-name>]');
+    if (to === 'WORKTREE' && label !== to) throw new Error('--label requires a Git revision in --to');
     const before = this.readRevision(from); const after = this.readRevision(to);
     const beforeTotals = this.totals(before); const afterTotals = this.totals(after);
     const delta = Object.fromEntries(Object.keys(beforeTotals).map(category => [category, {
@@ -81,7 +83,8 @@ class MetricsReport {
     }]));
     const report = {
       from: { ref: from, commit: this.git(['rev-parse', from]) },
-      to: { ref: to, commit: this.git(['rev-parse', to === 'WORKTREE' ? 'HEAD' : to]), dirtySnapshot: to === 'WORKTREE' },
+      to: { ref: label, sourceSha256: crypto.createHash('sha256')
+        .update(JSON.stringify(after.map(row => [row.file, row.sha256]))).digest('hex'), dirtySnapshot: to === 'WORKTREE' },
       method: 'Physical lines; function complexity = 1 + if/loops/catch/nondefault-case/ternary/&&/||/??; nested functions measured independently. No optional-chain or default-parameter increments. CLI runtime TypeScript only; VSCode separate; tests, scripts, dependencies and build output excluded.',
       beforeTotals, afterTotals, delta, before, after
     };
@@ -91,9 +94,12 @@ class MetricsReport {
     const totals = Object.keys(delta).map(key => `| ${key} | ${beforeTotals[key].files} | ${afterTotals[key].files} | ${beforeTotals[key].lines} | ${afterTotals[key].lines} | ${delta[key].lines} | ${delta[key].complexity} |`);
     const inventory = after.map(row => `| ${row.file} | ${row.role} | ${row.category} | ${row.lines} | ${row.complexity} |`);
     fs.writeFileSync(path.join(directory, 'README.md'), [
-      '# CLI 重构指标（脚本生成）', '', `比较：${from} (${report.from.commit}) → ${to} (${report.to.commit})。`,
-      to === 'WORKTREE' ? '当前版本读取工作目录中的源文件。report.json 保存各文件的 SHA-256 校验值，可用于核对文件内容。' : '两个版本的源文件均从 Git 历史读取。创建 p2 标签后，可以用下面的命令更新最终报告。', '',
+      '# CLI 重构指标（脚本生成）', '', `比较：${from} (${report.from.commit}) → ${label}。`,
+      to === 'WORKTREE' ? '当前版本读取工作目录中的源文件。' : '两个版本的源文件均从 Git 历史读取。',
+      `当前版本源码校验值（SHA-256）：${report.to.sourceSha256}。`,
+      '校验值根据统计范围内的文件路径和文件内容生成。仅更新文档和报告时，源码校验值保持相同。report.json 同时保存各文件的校验值和逐函数统计。', '',
       '运行 `npm run metrics`，比较 final 与工作目录中的当前代码。运行 `npm run metrics -- --from final --to p2`，比较 final 和 p2 两个标签对应的代码。', '',
+      '正式打标签前，先提交源码，再运行 `npm run metrics -- --from final --to HEAD --label p2` 准备 p2 报告。将报告提交后创建 p2 标签。最后运行 `npm run metrics -- --from final --to p2` 核对，生成结果应与已提交报告完全一致。', '',
       'CLI 的统计范围是 src 下的 TypeScript 源码。VSCode 扩展的源码位于 vscode-extension/src，单独统计。',
       '表中的 kernel 表示内核，包括图形数据、文档操作、命令处理和文件读写。composition 表示装配处，包括 main 和 host，负责启动和加载插件。plugins 表示 src/plugins 下的插件。vscode 表示 VSCode 扩展。Phase 1 的命令位于 application/commands，按该版本的目录归入内核。', '',
       '行数按源文件的实际行数统计，包含空行和注释。增量等于当前值减去基线值。', '',

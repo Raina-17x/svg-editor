@@ -4,8 +4,8 @@
     "commit": "1fe4a0cb36c84caf1f135ebe534739c98d5d2db6"
   },
   "to": {
-    "ref": "HEAD",
-    "commit": "ebcdf7df9445b69c7cee5d5f4364c82391dd4fa1",
+    "ref": "p2",
+    "sourceSha256": "cbbf360d559c5d9d26b04c3d758e1a62c668082140dfa2903f695b3ccfe59044",
     "dirtySnapshot": false
   },
   "method": "Physical lines; function complexity = 1 + if/loops/catch/nondefault-case/ternary/&&/||/??; nested functions measured independently. No optional-chain or default-parameter increments. CLI runtime TypeScript only; VSCode separate; tests, scripts, dependencies and build output excluded.",

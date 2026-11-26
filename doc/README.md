@@ -79,55 +79,12 @@ npm run acceptance
 
 **重构前 PlantUML**：
 
-```plantuml
-@startuml
-package main
-package cli
-package application
-package domain
-package infrastructure
-main --> cli
-main --> application
-main --> infrastructure
-cli --> application
-application --> domain
-infrastructure --> application
-infrastructure --> domain
-note right of application
-  ShapeFactory 枚举具体图形
-end note
-note right of cli
-  CommandRegistry 导入具体命令
-end note
-@enduml
-```
+![alt text](images/phase2/before_puml.png)
+
 
 **重构后 PlantUML**：
 
-```plantuml
-@startuml
-package "host / composition" as host
-package "host / generic loading" as loader
-package "kernel / application + cli" as kernel
-package "public extensions" as api
-package "public domain" as domain
-package "builtin + optional plugins" as plugins
-package "infrastructure adapters" as io
-host --> loader
-host --> kernel
-host --> plugins : 仅代码装配
-host --> io
-loader --> kernel : 注册事务
-loader --> api
-kernel --> api
-kernel --> domain
-api --> domain
-plugins --> api
-plugins --> domain
-io --> api
-io --> domain
-@enduml
-```
+![alt text](images/phase2/after_puml.png)
 
 ## 3. 四个扩展点清单
 
@@ -383,7 +340,9 @@ git --no-pager diff --name-status "codex/box-config-demo~1" "codex/box-config-de
 
 结果保存在 [docs/metrics](../docs/metrics/README.md)。VSCode 扩展单独统计。统计范围是运行源码，排除依赖、编译结果、测试和脚本。评估重构时，同时检查旧功能是否保持、依赖方向是否正确，以及新增插件实际修改了哪些文件。
 
-使用 `npm run metrics -- --from final --to HEAD` 生成已提交代码候选指标。最终版本的历史对照使用 `--to p2`。
+正式打标签前，先提交源码，再运行 `npm run metrics -- --from final --to HEAD --label p2` 准备报告。此时数据读取自 HEAD，p2 是准备交付的版本名称。报告用源码校验值标识被统计的内容。
+
+提交报告后创建 p2 标签，再运行 `npm run metrics -- --from final --to p2`。两次读取的源码相同，生成的报告也应完全相同。这样 p2 对应的提交中就同时包含源码、统计脚本和最终报告。
 
 ## 9. AI 协作检查与修正
 

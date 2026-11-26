@@ -22,4 +22,4 @@
 | VSCode 文件标记、大纲和异常输入 | images/phase2 中的四张截图展示文件标记、大纲定位、编辑后更新及不完整 SVG 的处理结果。validation/extension-tests.log 保存文件标记和大纲的自动测试结果 |
 | VSCode 设计模式与代码复用 | README 第 7 节说明 VSCode 与扩展各自负责什么、注册后怎样被调用，以及各模块可以怎样复用 |
 | 架构图、设计决策与 AI 协作记录 | README 第 2、6、9 节分别提供重构前后架构图、四项设计决策，以及使用 AI 时的检查和修正记录 |
-| 自动生成的代码指标 | docs/metrics 保存文件清单、职责、行数和复杂度。scripts/generate-metrics.cjs 从 Git 历史生成统计。当前报告比较 final 与 HEAD，创建 p2 后再生成 final 与 p2 的最终比较 |
+| 自动生成的代码指标 | docs/metrics 保存文件清单、职责、行数和复杂度。scripts/generate-metrics.cjs 从 Git 历史生成统计。先用 HEAD 准备标为 p2 的报告，提交报告并创建标签后，再从 p2 生成并核对结果。用源码校验值确认前后统计的文件内容一致 |
