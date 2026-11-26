@@ -1,0 +1,226 @@
+{
+  "results": [
+    {
+      "ref": "codex/box-code-demo",
+      "commit": "4be36258298ab0d8f5110a2b674065229aa98c45",
+      "parent": "734a50ebb46767a6e5cec51a525cee0b993b59b2",
+      "excluded": [
+        "src/plugins/shape-box"
+      ],
+      "verifiedExistingPaths": [
+        "src/application",
+        "src/domain",
+        "src/cli",
+        "src/infrastructure",
+        "src/plugins"
+      ],
+      "protectedDiff": "empty",
+      "changedFiles": [
+        "A\t.gitattributes",
+        "M\tsrc/host/CliStartup.ts",
+        "A\tsrc/plugins/shape-box/Box.ts",
+        "A\tsrc/plugins/shape-box/BoxAttributeHandler.ts",
+        "A\tsrc/plugins/shape-box/BoxPlugin.ts",
+        "A\tsrc/plugins/shape-box/BoxProvider.ts",
+        "A\tsrc/plugins/shape-box/BoxTypeDecorator.ts",
+        "A\tsrc/plugins/shape-box/package.json",
+        "A\ttest/box.test.ts",
+        "M\ttest/command-plugins.test.ts"
+      ],
+      "result": "PASS"
+    },
+    {
+      "ref": "codex/box-config-demo",
+      "commit": "b82bd1e5c15ce35dc04d15a3aef09d3bf82a6c7a",
+      "parent": "734a50ebb46767a6e5cec51a525cee0b993b59b2",
+      "excluded": [
+        "src/plugins/shape-box"
+      ],
+      "verifiedExistingPaths": [
+        "src/application",
+        "src/domain",
+        "src/cli",
+        "src/infrastructure",
+        "src/plugins"
+      ],
+      "protectedDiff": "empty",
+      "changedFiles": [
+        "A\t.gitattributes",
+        "M\tplugins.config.json",
+        "A\tsrc/plugins/shape-box/Box.ts",
+        "A\tsrc/plugins/shape-box/BoxAttributeHandler.ts",
+        "A\tsrc/plugins/shape-box/BoxPlugin.ts",
+        "A\tsrc/plugins/shape-box/BoxProvider.ts",
+        "A\tsrc/plugins/shape-box/BoxTypeDecorator.ts",
+        "A\tsrc/plugins/shape-box/package.json",
+        "A\ttest/box.test.ts",
+        "M\ttest/command-plugins.test.ts"
+      ],
+      "result": "PASS"
+    },
+    {
+      "ref": "734a50e",
+      "commit": "734a50ebb46767a6e5cec51a525cee0b993b59b2",
+      "parent": "b3efbfa035f52186be43539bd794783a4ae3372b",
+      "excluded": [
+        "src/plugins/command-dir",
+        "src/plugins/command-stats"
+      ],
+      "verifiedExistingPaths": [
+        "src/application",
+        "src/domain",
+        "src/cli",
+        "src/infrastructure",
+        "src/plugins"
+      ],
+      "protectedDiff": "empty",
+      "changedFiles": [
+        "M\tdoc/README.md",
+        "A\tdoc/phase2-command-plugins.md",
+        "M\tdoc/phase2-loading.md",
+        "M\tdoc/transcript/README.md",
+        "A\tdoc/transcript/cli-commands.expected.txt",
+        "A\tdoc/transcript/cli-commands.txt",
+        "A\tdoc/transcript/fixtures/commands-input.svg",
+        "A\tdoc/transcript/fixtures/commands-output.svg",
+        "M\tdocs/metrics/README.md",
+        "M\tdocs/metrics/report.json",
+        "M\tpackage.json",
+        "M\tplugins.config.json",
+        "M\tsrc/host/CliStartup.ts",
+        "A\tsrc/plugins/command-dir/DirCommand.ts",
+        "A\tsrc/plugins/command-dir/DirPlugin.ts",
+        "A\tsrc/plugins/command-dir/package.json",
+        "A\tsrc/plugins/command-stats/StatsCommand.ts",
+        "A\tsrc/plugins/command-stats/StatsPlugin.ts",
+        "A\tsrc/plugins/command-stats/package.json",
+        "A\ttest/CommandTestContext.ts",
+        "A\ttest/command-plugins.test.ts",
+        "A\ttest/dir.test.ts",
+        "A\ttest/stats.test.ts"
+      ],
+      "result": "PASS"
+    },
+    {
+      "ref": "ebcdf7d",
+      "commit": "ebcdf7df9445b69c7cee5d5f4364c82391dd4fa1",
+      "parent": "47e8a71ff6eec3cb62d72b3dfe86a4731a861415",
+      "excluded": [
+        "src/plugins/tree-star"
+      ],
+      "verifiedExistingPaths": [
+        "src/application",
+        "src/domain",
+        "src/cli",
+        "src/infrastructure",
+        "src/plugins"
+      ],
+      "protectedDiff": "empty",
+      "changedFiles": [
+        "M\tdoc/README.md",
+        "M\tdoc/phase2-box.md",
+        "M\tdoc/phase2-framework.md",
+        "M\tdoc/phase2-loading.md",
+        "A\tdoc/phase2-tree-labels.md",
+        "M\tdoc/transcript/README.md",
+        "A\tdoc/transcript/cli-labels.expected.txt",
+        "A\tdoc/transcript/cli-labels.txt",
+        "A\tdoc/transcript/fixtures/labels.svg",
+        "M\tdocs/metrics/README.md",
+        "M\tdocs/metrics/report.json",
+        "M\tpackage.json",
+        "M\tplugins.config.json",
+        "M\tsrc/host/CliStartup.ts",
+        "A\tsrc/plugins/tree-star/ModifiedStarDecorator.ts",
+        "A\tsrc/plugins/tree-star/TreeStarPlugin.ts",
+        "A\tsrc/plugins/tree-star/package.json",
+        "M\ttest/box-integration.test.ts",
+        "A\ttest/modified-star.test.ts",
+        "A\ttest/tree-labels.test.ts"
+      ],
+      "result": "PASS"
+    }
+  ],
+  "loaderReview": [
+    {
+      "file": "src/host/PluginConfigLoader.ts",
+      "matches": [
+        {
+          "line": 1,
+          "text": "import { readFileSync, existsSync } from 'node:fs';"
+        },
+        {
+          "line": 2,
+          "text": "import { createRequire } from 'node:module';"
+        },
+        {
+          "line": 3,
+          "text": "import { resolve, dirname, join, isAbsolute } from 'node:path';"
+        },
+        {
+          "line": 4,
+          "text": "import { pathToFileURL } from 'node:url';"
+        },
+        {
+          "line": 5,
+          "text": "import { PluginInstaller } from './PluginInstaller.js';"
+        },
+        {
+          "line": 31,
+          "text": "    const requireModule = createRequire(configPath);"
+        },
+        {
+          "line": 36,
+          "text": "      filename = requireModule.resolve(specifier);"
+        },
+        {
+          "line": 48,
+          "text": "      try { exports = requireModule(filename); } catch (error) {"
+        },
+        {
+          "line": 51,
+          "text": "        exports = await import(pathToFileURL(filename).href);"
+        }
+      ]
+    },
+    {
+      "file": "src/host/PluginInstaller.ts",
+      "matches": [
+        {
+          "line": 1,
+          "text": "import { ExtensionRegistry } from '../application/ExtensionRegistry.js';"
+        },
+        {
+          "line": 2,
+          "text": "import { DuplicateRegistrationError } from '../application/DuplicateRegistrationError.js';"
+        },
+        {
+          "line": 3,
+          "text": "import { Plugin } from '../application/extensions/index.js';"
+        },
+        {
+          "line": 4,
+          "text": "import { RegistrationTransaction } from './RegistrationTransaction.js';"
+        },
+        {
+          "line": 6,
+          "text": "/** Both code and config assembly must enter here. No concrete plugin imports. */"
+        }
+      ]
+    },
+    {
+      "file": "src/host/RegistrationTransaction.ts",
+      "matches": [
+        {
+          "line": 1,
+          "text": "import { ExtensionRegistry } from '../application/ExtensionRegistry.js';"
+        },
+        {
+          "line": 2,
+          "text": "import { PluginContext, ShapeProvider, Command, TreeDecorator, AttributeHandler } from '../application/extensions/index.js';"
+        }
+      ]
+    }
+  ],
+  "review": "Manual review: generic module resolution, manifest inspection and error branches only; concrete imports are in CliStartup composition root, not loader files. Search supports rather than replaces this review."
+}

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600" viewBox="0 0 800 600">
+  <g id="flow">
+    <rect id="r" x="6" y="2" width="3" height="4" fill="red"/>
+    <circle id="c" cx="10" cy="20" r="3"/>
+    <text id="t" x="20" y="30">hello</text>
+  </g>
+</svg>

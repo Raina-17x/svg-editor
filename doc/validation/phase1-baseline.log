@@ -1,0 +1,4 @@
+cli-1: stdout and 2 SVG files match final byte for byte
+cli-1a: stdout and 2 SVG files match final byte for byte
+cli-core: stdout and 2 SVG files match final byte for byte
+Baseline verified: final 1fe4a0cb36c84caf1f135ebe534739c98d5d2db6. Box session is reserved for the later plugin step.

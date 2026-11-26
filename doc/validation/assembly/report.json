@@ -1,0 +1,92 @@
+[
+  {
+    "session": "cli-1",
+    "plugins": [
+      "command-stats",
+      "command-dir",
+      "shape-box",
+      "tree-star"
+    ],
+    "options": {},
+    "identicalCwd": true,
+    "restoredInitialFiles": true,
+    "stdoutBytes": 1131,
+    "stdoutSha256": "dd85605825d4c640049fe4e20e3c25406d642dc71b8245e4180f916b4fd0b275",
+    "svgFiles": [
+      "demo.svg"
+    ],
+    "result": "PASS"
+  },
+  {
+    "session": "cli-1a",
+    "plugins": [
+      "command-stats",
+      "command-dir",
+      "shape-box",
+      "tree-star"
+    ],
+    "options": {},
+    "identicalCwd": true,
+    "restoredInitialFiles": true,
+    "stdoutBytes": 879,
+    "stdoutSha256": "2dd354596dee17f33cb4123e560b7c2d7b265a321f0d9a41a92ff9541dd38ac8",
+    "svgFiles": [
+      "flowchart.svg"
+    ],
+    "result": "PASS"
+  },
+  {
+    "session": "cli-1-box",
+    "plugins": [
+      "command-stats",
+      "command-dir",
+      "shape-box",
+      "tree-star"
+    ],
+    "options": {},
+    "identicalCwd": true,
+    "restoredInitialFiles": true,
+    "stdoutBytes": 851,
+    "stdoutSha256": "e54c3be50ec9396f517c42efb7acf0c0d04bcdabde847c97feff8bda86953ebe",
+    "svgFiles": [
+      "flowchart-box.svg"
+    ],
+    "result": "PASS"
+  },
+  {
+    "session": "cli-commands",
+    "plugins": [
+      "command-stats",
+      "command-dir",
+      "shape-box",
+      "tree-star"
+    ],
+    "options": {},
+    "identicalCwd": true,
+    "restoredInitialFiles": true,
+    "stdoutBytes": 1957,
+    "stdoutSha256": "513e534f4f952667507b1b20618560c3060c5d340d0e7683cbbc2c81e8ef19dc",
+    "svgFiles": [
+      "../output.svg"
+    ],
+    "result": "PASS"
+  },
+  {
+    "session": "cli-labels",
+    "plugins": [
+      "command-stats",
+      "command-dir",
+      "shape-box",
+      "tree-star"
+    ],
+    "options": {},
+    "identicalCwd": true,
+    "restoredInitialFiles": true,
+    "stdoutBytes": 1600,
+    "stdoutSha256": "0d4ab22b8d6c99f604f3e786022052c3c15cdacdee353f50c886696acf174dfe",
+    "svgFiles": [
+      "labels.svg"
+    ],
+    "result": "PASS"
+  }
+]

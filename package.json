@@ -13,7 +13,8 @@
     "test:star": "npm run build --silent && node --test dist/test/modified-star.test.js",
     "check": "npm test && node scripts/check-architecture.cjs",
     "check:baseline": "node scripts/check-baseline.cjs",
-    "metrics": "node scripts/generate-metrics.cjs"
+    "metrics": "node scripts/generate-metrics.cjs",
+    "acceptance": "node scripts/acceptance.cjs"
   },
   "engines": { "node": ">=22" },
   "dependencies": { "fast-xml-parser": "^5.0.0" },

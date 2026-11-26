@@ -4,9 +4,9 @@
     "commit": "1fe4a0cb36c84caf1f135ebe534739c98d5d2db6"
   },
   "to": {
-    "ref": "WORKTREE",
-    "commit": "47e8a71ff6eec3cb62d72b3dfe86a4731a861415",
-    "dirtySnapshot": true
+    "ref": "HEAD",
+    "commit": "ebcdf7df9445b69c7cee5d5f4364c82391dd4fa1",
+    "dirtySnapshot": false
   },
   "method": "Physical lines; function complexity = 1 + if/loops/catch/nondefault-case/ternary/&&/||/??; nested functions measured independently. No optional-chain or default-parameter increments. CLI runtime TypeScript only; VSCode separate; tests, scripts, dependencies and build output excluded.",
   "beforeTotals": {
@@ -78,7 +78,7 @@
   "before": [
     {
       "file": "src/application/Args.ts",
-      "role": "应用事务与扩展调度",
+      "role": "管理文档操作并调用插件",
       "category": "kernel",
       "lines": 7,
       "nonblankLines": 7,
@@ -104,7 +104,7 @@
     },
     {
       "file": "src/application/Command.ts",
-      "role": "应用事务与扩展调度",
+      "role": "管理文档操作并调用插件",
       "category": "kernel",
       "lines": 4,
       "nonblankLines": 4,
@@ -114,7 +114,7 @@
     },
     {
       "file": "src/application/DocumentStore.ts",
-      "role": "应用事务与扩展调度",
+      "role": "管理文档操作并调用插件",
       "category": "kernel",
       "lines": 5,
       "nonblankLines": 5,
@@ -124,7 +124,7 @@
     },
     {
       "file": "src/application/EditCommand.ts",
-      "role": "应用事务与扩展调度",
+      "role": "管理文档操作并调用插件",
       "category": "kernel",
       "lines": 8,
       "nonblankLines": 8,
@@ -140,7 +140,7 @@
     },
     {
       "file": "src/application/EditorSession.ts",
-      "role": "应用事务与扩展调度",
+      "role": "管理文档操作并调用插件",
       "category": "kernel",
       "lines": 66,
       "nonblankLines": 65,
@@ -201,7 +201,7 @@
     },
     {
       "file": "src/application/HistoryEntry.ts",
-      "role": "应用事务与扩展调度",
+      "role": "管理文档操作并调用插件",
       "category": "kernel",
       "lines": 9,
       "nonblankLines": 9,
@@ -237,7 +237,7 @@
     },
     {
       "file": "src/application/ShapeFactory.ts",
-      "role": "应用事务与扩展调度",
+      "role": "管理文档操作并调用插件",
       "category": "kernel",
       "lines": 45,
       "nonblankLines": 44,
@@ -726,7 +726,7 @@
     },
     {
       "file": "src/cli/CommandProcessor.ts",
-      "role": "输入解析与命令分派",
+      "role": "读取输入并调用对应命令",
       "category": "kernel",
       "lines": 15,
       "nonblankLines": 15,
@@ -747,7 +747,7 @@
     },
     {
       "file": "src/cli/CommandRegistry.ts",
-      "role": "输入解析与命令分派",
+      "role": "读取输入并调用对应命令",
       "category": "kernel",
       "lines": 58,
       "nonblankLines": 57,
@@ -883,7 +883,7 @@
     },
     {
       "file": "src/cli/Repl.ts",
-      "role": "输入解析与命令分派",
+      "role": "读取输入并调用对应命令",
       "category": "kernel",
       "lines": 16,
       "nonblankLines": 16,
@@ -909,7 +909,7 @@
     },
     {
       "file": "src/cli/Token.ts",
-      "role": "输入解析与命令分派",
+      "role": "读取输入并调用对应命令",
       "category": "kernel",
       "lines": 5,
       "nonblankLines": 5,
@@ -935,7 +935,7 @@
     },
     {
       "file": "src/cli/Tokenizer.ts",
-      "role": "输入解析与命令分派",
+      "role": "读取输入并调用对应命令",
       "category": "kernel",
       "lines": 19,
       "nonblankLines": 19,
@@ -951,7 +951,7 @@
     },
     {
       "file": "src/domain/Circle.ts",
-      "role": "公开领域模型与不变量",
+      "role": "保存图形数据并检查图形结构",
       "category": "kernel",
       "lines": 7,
       "nonblankLines": 7,
@@ -982,7 +982,7 @@
     },
     {
       "file": "src/domain/Ellipse.ts",
-      "role": "公开领域模型与不变量",
+      "role": "保存图形数据并检查图形结构",
       "category": "kernel",
       "lines": 7,
       "nonblankLines": 7,
@@ -1013,7 +1013,7 @@
     },
     {
       "file": "src/domain/Group.ts",
-      "role": "公开领域模型与不变量",
+      "role": "保存图形数据并检查图形结构",
       "category": "kernel",
       "lines": 28,
       "nonblankLines": 28,
@@ -1094,7 +1094,7 @@
     },
     {
       "file": "src/domain/Line.ts",
-      "role": "公开领域模型与不变量",
+      "role": "保存图形数据并检查图形结构",
       "category": "kernel",
       "lines": 7,
       "nonblankLines": 7,
@@ -1125,7 +1125,7 @@
     },
     {
       "file": "src/domain/Rect.ts",
-      "role": "公开领域模型与不变量",
+      "role": "保存图形数据并检查图形结构",
       "category": "kernel",
       "lines": 9,
       "nonblankLines": 9,
@@ -1156,7 +1156,7 @@
     },
     {
       "file": "src/domain/Shape.ts",
-      "role": "公开领域模型与不变量",
+      "role": "保存图形数据并检查图形结构",
       "category": "kernel",
       "lines": 65,
       "nonblankLines": 58,
@@ -1262,7 +1262,7 @@
     },
     {
       "file": "src/domain/SvgDocument.ts",
-      "role": "公开领域模型与不变量",
+      "role": "保存图形数据并检查图形结构",
       "category": "kernel",
       "lines": 94,
       "nonblankLines": 93,
@@ -1433,7 +1433,7 @@
     },
     {
       "file": "src/domain/Text.ts",
-      "role": "公开领域模型与不变量",
+      "role": "保存图形数据并检查图形结构",
       "category": "kernel",
       "lines": 14,
       "nonblankLines": 14,
@@ -1474,7 +1474,7 @@
     },
     {
       "file": "src/domain/Value.ts",
-      "role": "公开领域模型与不变量",
+      "role": "保存图形数据并检查图形结构",
       "category": "kernel",
       "lines": 32,
       "nonblankLines": 29,
@@ -1505,7 +1505,7 @@
     },
     {
       "file": "src/infrastructure/FileDocumentStore.ts",
-      "role": "IO 适配与 SVG 编解码",
+      "role": "读写文件、读取目录或转换 SVG",
       "category": "kernel",
       "lines": 23,
       "nonblankLines": 23,
@@ -1531,7 +1531,7 @@
     },
     {
       "file": "src/infrastructure/SvgCodec.ts",
-      "role": "IO 适配与 SVG 编解码",
+      "role": "读写文件、读取目录或转换 SVG",
       "category": "kernel",
       "lines": 99,
       "nonblankLines": 97,
@@ -1632,7 +1632,7 @@
     },
     {
       "file": "src/main.ts",
-      "role": "宿主对象装配",
+      "role": "启动程序、选择插件并连接各部分",
       "category": "composition",
       "lines": 11,
       "nonblankLines": 10,
@@ -1644,7 +1644,7 @@
   "after": [
     {
       "file": "src/application/Args.ts",
-      "role": "应用事务与扩展调度",
+      "role": "管理文档操作并调用插件",
       "category": "kernel",
       "lines": 7,
       "nonblankLines": 7,
@@ -1670,7 +1670,7 @@
     },
     {
       "file": "src/application/AttributeService.ts",
-      "role": "应用事务与扩展调度",
+      "role": "管理文档操作并调用插件",
       "category": "kernel",
       "lines": 21,
       "nonblankLines": 20,
@@ -1696,7 +1696,7 @@
     },
     {
       "file": "src/application/Command.ts",
-      "role": "应用事务与扩展调度",
+      "role": "管理文档操作并调用插件",
       "category": "kernel",
       "lines": 4,
       "nonblankLines": 4,
@@ -1706,7 +1706,7 @@
     },
     {
       "file": "src/application/DocumentStore.ts",
-      "role": "应用事务与扩展调度",
+      "role": "管理文档操作并调用插件",
       "category": "kernel",
       "lines": 5,
       "nonblankLines": 5,
@@ -1716,7 +1716,7 @@
     },
     {
       "file": "src/application/DuplicateRegistrationError.ts",
-      "role": "应用事务与扩展调度",
+      "role": "管理文档操作并调用插件",
       "category": "kernel",
       "lines": 3,
       "nonblankLines": 3,
@@ -1732,7 +1732,7 @@
     },
     {
       "file": "src/application/EditCommand.ts",
-      "role": "应用事务与扩展调度",
+      "role": "管理文档操作并调用插件",
       "category": "kernel",
       "lines": 13,
       "nonblankLines": 13,
@@ -1758,7 +1758,7 @@
     },
     {
       "file": "src/application/EditorSession.ts",
-      "role": "应用事务与扩展调度",
+      "role": "管理文档操作并调用插件",
       "category": "kernel",
       "lines": 101,
       "nonblankLines": 100,
@@ -1864,7 +1864,7 @@
     },
     {
       "file": "src/application/ExtensionRegistry.ts",
-      "role": "应用事务与扩展调度",
+      "role": "管理文档操作并调用插件",
       "category": "kernel",
       "lines": 58,
       "nonblankLines": 57,
@@ -1950,7 +1950,7 @@
     },
     {
       "file": "src/application/HistoryEntry.ts",
-      "role": "应用事务与扩展调度",
+      "role": "管理文档操作并调用插件",
       "category": "kernel",
       "lines": 7,
       "nonblankLines": 7,
@@ -1976,7 +1976,7 @@
     },
     {
       "file": "src/application/SessionFacade.ts",
-      "role": "应用事务与扩展调度",
+      "role": "管理文档操作并调用插件",
       "category": "kernel",
       "lines": 22,
       "nonblankLines": 21,
@@ -2047,7 +2047,7 @@
     },
     {
       "file": "src/application/ShapeFactory.ts",
-      "role": "应用事务与扩展调度",
+      "role": "管理文档操作并调用插件",
       "category": "kernel",
       "lines": 41,
       "nonblankLines": 40,
@@ -2128,7 +2128,7 @@
     },
     {
       "file": "src/application/TreeLabels.ts",
-      "role": "应用事务与扩展调度",
+      "role": "管理文档操作并调用插件",
       "category": "kernel",
       "lines": 29,
       "nonblankLines": 28,
@@ -2179,7 +2179,7 @@
     },
     {
       "file": "src/application/TreeRenderer.ts",
-      "role": "应用事务与扩展调度",
+      "role": "管理文档操作并调用插件",
       "category": "kernel",
       "lines": 24,
       "nonblankLines": 23,
@@ -2210,7 +2210,7 @@
     },
     {
       "file": "src/application/extensions/AttributeHandler.ts",
-      "role": "公开扩展契约",
+      "role": "插件使用的公开接口",
       "category": "kernel",
       "lines": 16,
       "nonblankLines": 14,
@@ -2220,7 +2220,7 @@
     },
     {
       "file": "src/application/extensions/Command.ts",
-      "role": "公开扩展契约",
+      "role": "插件使用的公开接口",
       "category": "kernel",
       "lines": 22,
       "nonblankLines": 19,
@@ -2230,7 +2230,7 @@
     },
     {
       "file": "src/application/extensions/DirectoryAccess.ts",
-      "role": "公开扩展契约",
+      "role": "插件使用的公开接口",
       "category": "kernel",
       "lines": 10,
       "nonblankLines": 9,
@@ -2240,7 +2240,7 @@
     },
     {
       "file": "src/application/extensions/Plugin.ts",
-      "role": "公开扩展契约",
+      "role": "插件使用的公开接口",
       "category": "kernel",
       "lines": 16,
       "nonblankLines": 14,
@@ -2250,7 +2250,7 @@
     },
     {
       "file": "src/application/extensions/PluginContext.ts",
-      "role": "公开扩展契约",
+      "role": "插件使用的公开接口",
       "category": "kernel",
       "lines": 12,
       "nonblankLines": 11,
@@ -2260,7 +2260,7 @@
     },
     {
       "file": "src/application/extensions/SessionApi.ts",
-      "role": "公开扩展契约",
+      "role": "插件使用的公开接口",
       "category": "kernel",
       "lines": 28,
       "nonblankLines": 25,
@@ -2270,7 +2270,7 @@
     },
     {
       "file": "src/application/extensions/ShapeAccess.ts",
-      "role": "公开扩展契约",
+      "role": "插件使用的公开接口",
       "category": "kernel",
       "lines": 4,
       "nonblankLines": 4,
@@ -2280,7 +2280,7 @@
     },
     {
       "file": "src/application/extensions/ShapeProvider.ts",
-      "role": "公开扩展契约",
+      "role": "插件使用的公开接口",
       "category": "kernel",
       "lines": 29,
       "nonblankLines": 26,
@@ -2290,7 +2290,7 @@
     },
     {
       "file": "src/application/extensions/TreeDecorator.ts",
-      "role": "公开扩展契约",
+      "role": "插件使用的公开接口",
       "category": "kernel",
       "lines": 21,
       "nonblankLines": 18,
@@ -2300,7 +2300,7 @@
     },
     {
       "file": "src/application/extensions/index.ts",
-      "role": "公开扩展契约",
+      "role": "插件使用的公开接口",
       "category": "kernel",
       "lines": 12,
       "nonblankLines": 12,
@@ -2310,7 +2310,7 @@
     },
     {
       "file": "src/cli/CommandProcessor.ts",
-      "role": "输入解析与命令分派",
+      "role": "读取输入并调用对应命令",
       "category": "kernel",
       "lines": 24,
       "nonblankLines": 24,
@@ -2336,7 +2336,7 @@
     },
     {
       "file": "src/cli/CommandRegistry.ts",
-      "role": "输入解析与命令分派",
+      "role": "读取输入并调用对应命令",
       "category": "kernel",
       "lines": 17,
       "nonblankLines": 16,
@@ -2387,7 +2387,7 @@
     },
     {
       "file": "src/cli/Repl.ts",
-      "role": "输入解析与命令分派",
+      "role": "读取输入并调用对应命令",
       "category": "kernel",
       "lines": 16,
       "nonblankLines": 16,
@@ -2413,7 +2413,7 @@
     },
     {
       "file": "src/cli/Token.ts",
-      "role": "输入解析与命令分派",
+      "role": "读取输入并调用对应命令",
       "category": "kernel",
       "lines": 5,
       "nonblankLines": 5,
@@ -2439,7 +2439,7 @@
     },
     {
       "file": "src/cli/Tokenizer.ts",
-      "role": "输入解析与命令分派",
+      "role": "读取输入并调用对应命令",
       "category": "kernel",
       "lines": 19,
       "nonblankLines": 19,
@@ -2455,7 +2455,7 @@
     },
     {
       "file": "src/domain/Circle.ts",
-      "role": "公开领域模型与不变量",
+      "role": "保存图形数据并检查图形结构",
       "category": "kernel",
       "lines": 7,
       "nonblankLines": 7,
@@ -2486,7 +2486,7 @@
     },
     {
       "file": "src/domain/Ellipse.ts",
-      "role": "公开领域模型与不变量",
+      "role": "保存图形数据并检查图形结构",
       "category": "kernel",
       "lines": 7,
       "nonblankLines": 7,
@@ -2517,7 +2517,7 @@
     },
     {
       "file": "src/domain/Group.ts",
-      "role": "公开领域模型与不变量",
+      "role": "保存图形数据并检查图形结构",
       "category": "kernel",
       "lines": 30,
       "nonblankLines": 30,
@@ -2603,7 +2603,7 @@
     },
     {
       "file": "src/domain/Line.ts",
-      "role": "公开领域模型与不变量",
+      "role": "保存图形数据并检查图形结构",
       "category": "kernel",
       "lines": 7,
       "nonblankLines": 7,
@@ -2634,7 +2634,7 @@
     },
     {
       "file": "src/domain/Rect.ts",
-      "role": "公开领域模型与不变量",
+      "role": "保存图形数据并检查图形结构",
       "category": "kernel",
       "lines": 9,
       "nonblankLines": 9,
@@ -2665,7 +2665,7 @@
     },
     {
       "file": "src/domain/Shape.ts",
-      "role": "公开领域模型与不变量",
+      "role": "保存图形数据并检查图形结构",
       "category": "kernel",
       "lines": 73,
       "nonblankLines": 66,
@@ -2801,7 +2801,7 @@
     },
     {
       "file": "src/domain/SvgDocument.ts",
-      "role": "公开领域模型与不变量",
+      "role": "保存图形数据并检查图形结构",
       "category": "kernel",
       "lines": 122,
       "nonblankLines": 121,
@@ -2997,7 +2997,7 @@
     },
     {
       "file": "src/domain/Text.ts",
-      "role": "公开领域模型与不变量",
+      "role": "保存图形数据并检查图形结构",
       "category": "kernel",
       "lines": 14,
       "nonblankLines": 14,
@@ -3038,7 +3038,7 @@
     },
     {
       "file": "src/domain/Value.ts",
-      "role": "公开领域模型与不变量",
+      "role": "保存图形数据并检查图形结构",
       "category": "kernel",
       "lines": 32,
       "nonblankLines": 29,
@@ -3069,7 +3069,7 @@
     },
     {
       "file": "src/host/CliStartup.ts",
-      "role": "宿主对象装配",
+      "role": "启动程序、选择插件并连接各部分",
       "category": "composition",
       "lines": 27,
       "nonblankLines": 26,
@@ -3090,7 +3090,7 @@
     },
     {
       "file": "src/host/DefaultHost.ts",
-      "role": "宿主对象装配",
+      "role": "启动程序、选择插件并连接各部分",
       "category": "composition",
       "lines": 31,
       "nonblankLines": 30,
@@ -3131,7 +3131,7 @@
     },
     {
       "file": "src/host/PluginConfigLoader.ts",
-      "role": "宿主对象装配",
+      "role": "启动程序、选择插件并连接各部分",
       "category": "composition",
       "lines": 81,
       "nonblankLines": 79,
@@ -3182,7 +3182,7 @@
     },
     {
       "file": "src/host/PluginInstaller.ts",
-      "role": "宿主对象装配",
+      "role": "启动程序、选择插件并连接各部分",
       "category": "composition",
       "lines": 58,
       "nonblankLines": 57,
@@ -3223,7 +3223,7 @@
     },
     {
       "file": "src/host/RegistrationTransaction.ts",
-      "role": "宿主对象装配",
+      "role": "启动程序、选择插件并连接各部分",
       "category": "composition",
       "lines": 33,
       "nonblankLines": 32,
@@ -3304,7 +3304,7 @@
     },
     {
       "file": "src/infrastructure/FileDocumentStore.ts",
-      "role": "IO 适配与 SVG 编解码",
+      "role": "读写文件、读取目录或转换 SVG",
       "category": "kernel",
       "lines": 23,
       "nonblankLines": 23,
@@ -3330,7 +3330,7 @@
     },
     {
       "file": "src/infrastructure/NodeDirectoryAdapter.ts",
-      "role": "IO 适配与 SVG 编解码",
+      "role": "读写文件、读取目录或转换 SVG",
       "category": "kernel",
       "lines": 11,
       "nonblankLines": 10,
@@ -3356,7 +3356,7 @@
     },
     {
       "file": "src/infrastructure/SvgCodec.ts",
-      "role": "IO 适配与 SVG 编解码",
+      "role": "读写文件、读取目录或转换 SVG",
       "category": "kernel",
       "lines": 101,
       "nonblankLines": 99,
@@ -3462,7 +3462,7 @@
     },
     {
       "file": "src/main.ts",
-      "role": "宿主对象装配",
+      "role": "启动程序、选择插件并连接各部分",
       "category": "composition",
       "lines": 5,
       "nonblankLines": 4,
@@ -3478,7 +3478,7 @@
     },
     {
       "file": "src/plugins/builtin/BuiltinCommand.ts",
-      "role": "注册式内置能力实现",
+      "role": "插件 builtin：BuiltinCommand",
       "category": "plugins",
       "lines": 9,
       "nonblankLines": 8,
@@ -3499,7 +3499,7 @@
     },
     {
       "file": "src/plugins/builtin/BuiltinPlugin.ts",
-      "role": "注册式内置能力实现",
+      "role": "插件 builtin：BuiltinPlugin",
       "category": "plugins",
       "lines": 78,
       "nonblankLines": 76,
@@ -3680,7 +3680,7 @@
     },
     {
       "file": "src/plugins/builtin/BuiltinShapeProvider.ts",
-      "role": "注册式内置能力实现",
+      "role": "插件 builtin：BuiltinShapeProvider",
       "category": "plugins",
       "lines": 37,
       "nonblankLines": 36,
@@ -3716,7 +3716,7 @@
     },
     {
       "file": "src/plugins/builtin/commands/AddToCommand.ts",
-      "role": "注册式内置能力实现",
+      "role": "插件 builtin：AddToCommand",
       "category": "plugins",
       "lines": 11,
       "nonblankLines": 11,
@@ -3742,7 +3742,7 @@
     },
     {
       "file": "src/plugins/builtin/commands/CanvasCommand.ts",
-      "role": "注册式内置能力实现",
+      "role": "插件 builtin：CanvasCommand",
       "category": "plugins",
       "lines": 7,
       "nonblankLines": 7,
@@ -3763,7 +3763,7 @@
     },
     {
       "file": "src/plugins/builtin/commands/CreateCommand.ts",
-      "role": "注册式内置能力实现",
+      "role": "插件 builtin：CreateCommand",
       "category": "plugins",
       "lines": 15,
       "nonblankLines": 15,
@@ -3789,7 +3789,7 @@
     },
     {
       "file": "src/plugins/builtin/commands/DeleteCommand.ts",
-      "role": "注册式内置能力实现",
+      "role": "插件 builtin：DeleteCommand",
       "category": "plugins",
       "lines": 11,
       "nonblankLines": 11,
@@ -3815,7 +3815,7 @@
     },
     {
       "file": "src/plugins/builtin/commands/GroupCommand.ts",
-      "role": "注册式内置能力实现",
+      "role": "插件 builtin：GroupCommand",
       "category": "plugins",
       "lines": 8,
       "nonblankLines": 8,
@@ -3841,7 +3841,7 @@
     },
     {
       "file": "src/plugins/builtin/commands/HelpCommand.ts",
-      "role": "注册式内置能力实现",
+      "role": "插件 builtin：HelpCommand",
       "category": "plugins",
       "lines": 5,
       "nonblankLines": 5,
@@ -3862,7 +3862,7 @@
     },
     {
       "file": "src/plugins/builtin/commands/InitCommand.ts",
-      "role": "注册式内置能力实现",
+      "role": "插件 builtin：InitCommand",
       "category": "plugins",
       "lines": 7,
       "nonblankLines": 7,
@@ -3883,7 +3883,7 @@
     },
     {
       "file": "src/plugins/builtin/commands/MoveCommand.ts",
-      "role": "注册式内置能力实现",
+      "role": "插件 builtin：MoveCommand",
       "category": "plugins",
       "lines": 19,
       "nonblankLines": 19,
@@ -3909,7 +3909,7 @@
     },
     {
       "file": "src/plugins/builtin/commands/OrderCommand.ts",
-      "role": "注册式内置能力实现",
+      "role": "插件 builtin：OrderCommand",
       "category": "plugins",
       "lines": 8,
       "nonblankLines": 8,
@@ -3935,7 +3935,7 @@
     },
     {
       "file": "src/plugins/builtin/commands/ReadCommand.ts",
-      "role": "注册式内置能力实现",
+      "role": "插件 builtin：ReadCommand",
       "category": "plugins",
       "lines": 7,
       "nonblankLines": 7,
@@ -3956,7 +3956,7 @@
     },
     {
       "file": "src/plugins/builtin/commands/RedoCommand.ts",
-      "role": "注册式内置能力实现",
+      "role": "插件 builtin：RedoCommand",
       "category": "plugins",
       "lines": 7,
       "nonblankLines": 7,
@@ -3977,7 +3977,7 @@
     },
     {
       "file": "src/plugins/builtin/commands/SaveCommand.ts",
-      "role": "注册式内置能力实现",
+      "role": "插件 builtin：SaveCommand",
       "category": "plugins",
       "lines": 7,
       "nonblankLines": 7,
@@ -3998,7 +3998,7 @@
     },
     {
       "file": "src/plugins/builtin/commands/ScaleCommand.ts",
-      "role": "注册式内置能力实现",
+      "role": "插件 builtin：ScaleCommand",
       "category": "plugins",
       "lines": 8,
       "nonblankLines": 8,
@@ -4024,7 +4024,7 @@
     },
     {
       "file": "src/plugins/builtin/commands/SetCommand.ts",
-      "role": "注册式内置能力实现",
+      "role": "插件 builtin：SetCommand",
       "category": "plugins",
       "lines": 5,
       "nonblankLines": 5,
@@ -4045,7 +4045,7 @@
     },
     {
       "file": "src/plugins/builtin/commands/ShowCommand.ts",
-      "role": "注册式内置能力实现",
+      "role": "插件 builtin：ShowCommand",
       "category": "plugins",
       "lines": 14,
       "nonblankLines": 14,
@@ -4066,7 +4066,7 @@
     },
     {
       "file": "src/plugins/builtin/commands/TreeCommand.ts",
-      "role": "注册式内置能力实现",
+      "role": "插件 builtin：TreeCommand",
       "category": "plugins",
       "lines": 5,
       "nonblankLines": 5,
@@ -4087,7 +4087,7 @@
     },
     {
       "file": "src/plugins/builtin/commands/UndoCommand.ts",
-      "role": "注册式内置能力实现",
+      "role": "插件 builtin：UndoCommand",
       "category": "plugins",
       "lines": 7,
       "nonblankLines": 7,
@@ -4108,7 +4108,7 @@
     },
     {
       "file": "src/plugins/builtin/commands/UngroupCommand.ts",
-      "role": "注册式内置能力实现",
+      "role": "插件 builtin：UngroupCommand",
       "category": "plugins",
       "lines": 11,
       "nonblankLines": 11,
@@ -4134,7 +4134,7 @@
     },
     {
       "file": "src/plugins/command-dir/DirCommand.ts",
-      "role": "注册式内置能力实现",
+      "role": "插件 command-dir：DirCommand",
       "category": "plugins",
       "lines": 18,
       "nonblankLines": 17,
@@ -4165,7 +4165,7 @@
     },
     {
       "file": "src/plugins/command-dir/DirPlugin.ts",
-      "role": "注册式内置能力实现",
+      "role": "插件 command-dir：DirPlugin",
       "category": "plugins",
       "lines": 8,
       "nonblankLines": 6,
@@ -4181,7 +4181,7 @@
     },
     {
       "file": "src/plugins/command-stats/StatsCommand.ts",
-      "role": "注册式内置能力实现",
+      "role": "插件 command-stats：StatsCommand",
       "category": "plugins",
       "lines": 22,
       "nonblankLines": 21,
@@ -4202,7 +4202,7 @@
     },
     {
       "file": "src/plugins/command-stats/StatsPlugin.ts",
-      "role": "注册式内置能力实现",
+      "role": "插件 command-stats：StatsPlugin",
       "category": "plugins",
       "lines": 8,
       "nonblankLines": 6,
@@ -4218,7 +4218,7 @@
     },
     {
       "file": "src/plugins/shape-box/Box.ts",
-      "role": "注册式内置能力实现",
+      "role": "插件 shape-box：Box",
       "category": "plugins",
       "lines": 39,
       "nonblankLines": 38,
@@ -4329,7 +4329,7 @@
     },
     {
       "file": "src/plugins/shape-box/BoxAttributeHandler.ts",
-      "role": "注册式内置能力实现",
+      "role": "插件 shape-box：BoxAttributeHandler",
       "category": "plugins",
       "lines": 23,
       "nonblankLines": 22,
@@ -4350,7 +4350,7 @@
     },
     {
       "file": "src/plugins/shape-box/BoxPlugin.ts",
-      "role": "注册式内置能力实现",
+      "role": "插件 shape-box：BoxPlugin",
       "category": "plugins",
       "lines": 14,
       "nonblankLines": 12,
@@ -4366,7 +4366,7 @@
     },
     {
       "file": "src/plugins/shape-box/BoxProvider.ts",
-      "role": "注册式内置能力实现",
+      "role": "插件 shape-box：BoxProvider",
       "category": "plugins",
       "lines": 35,
       "nonblankLines": 34,
@@ -4397,7 +4397,7 @@
     },
     {
       "file": "src/plugins/shape-box/BoxTypeDecorator.ts",
-      "role": "注册式内置能力实现",
+      "role": "插件 shape-box：BoxTypeDecorator",
       "category": "plugins",
       "lines": 8,
       "nonblankLines": 7,
@@ -4418,7 +4418,7 @@
     },
     {
       "file": "src/plugins/tree-star/ModifiedStarDecorator.ts",
-      "role": "注册式内置能力实现",
+      "role": "插件 tree-star：ModifiedStarDecorator",
       "category": "plugins",
       "lines": 37,
       "nonblankLines": 32,
@@ -4464,7 +4464,7 @@
     },
     {
       "file": "src/plugins/tree-star/TreeStarPlugin.ts",
-      "role": "注册式内置能力实现",
+      "role": "插件 tree-star：TreeStarPlugin",
       "category": "plugins",
       "lines": 8,
       "nonblankLines": 6,

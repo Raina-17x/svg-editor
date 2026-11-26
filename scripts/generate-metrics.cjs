@@ -44,14 +44,14 @@ class MetricsReport {
       const category = file.startsWith('vscode-extension/') ? 'vscode'
         : file.startsWith('src/plugins/') ? 'plugins'
         : file.startsWith('src/host/') || file === 'src/main.ts' ? 'composition' : 'kernel';
-      const role = file.includes('/extensions/') ? '公开扩展契约'
-        : file.startsWith('src/domain/') ? '公开领域模型与不变量'
+      const role = file.includes('/extensions/') ? '插件使用的公开接口'
+        : file.startsWith('src/domain/') ? '保存图形数据并检查图形结构'
         : file.startsWith('src/application/commands/') ? 'Phase 1 内置命令（历史内核）'
-        : file.startsWith('src/plugins/') ? '注册式内置能力实现'
-        : file.startsWith('src/host/') || file === 'src/main.ts' ? '宿主对象装配'
-        : file.startsWith('src/cli/') ? '输入解析与命令分派'
-        : file.startsWith('src/infrastructure/') ? 'IO 适配与 SVG 编解码'
-        : file.startsWith('vscode-extension/') ? 'VSCode 扩展（单独统计）' : '应用事务与扩展调度';
+        : file.startsWith('src/plugins/') ? `插件 ${file.split('/')[2]}：${path.basename(file, '.ts')}`
+        : file.startsWith('src/host/') || file === 'src/main.ts' ? '启动程序、选择插件并连接各部分'
+        : file.startsWith('src/cli/') ? '读取输入并调用对应命令'
+        : file.startsWith('src/infrastructure/') ? '读写文件、读取目录或转换 SVG'
+        : file.startsWith('vscode-extension/') ? 'VSCode 扩展（单独统计）' : '管理文档操作并调用插件';
       rows.push({ file, role, category, lines: text ? text.split(/\r?\n/).length - (text.endsWith('\n') ? 1 : 0) : 0,
         nonblankLines: text.split(/\r?\n/).filter(line => line.trim()).length,
         complexity: functions.reduce((sum, item) => sum + item.complexity, 0), functions,
@@ -92,11 +92,12 @@ class MetricsReport {
     const inventory = after.map(row => `| ${row.file} | ${row.role} | ${row.category} | ${row.lines} | ${row.complexity} |`);
     fs.writeFileSync(path.join(directory, 'README.md'), [
       '# CLI 重构指标（脚本生成）', '', `比较：${from} (${report.from.commit}) → ${to} (${report.to.commit})。`,
-      to === 'WORKTREE' ? '当前是框架阶段的工作树快照，并非最终 p2 指标；源文件哈希见 report.json。' : '两端均从 Git 历史读取。', '',
-      '运行 `npm run metrics` 更新工作树快照；最终运行 `npm run metrics -- --from final --to p2` 比较两个历史标签。', '',
-      '只统计 src 下运行时 TypeScript；vscode-extension/src 单独列出。测试、脚本、依赖和构建产物排除。',
-      'kernel 包含领域、应用、CLI 和基础设施；composition 是 main 与 host；plugins 是 src/plugins。Phase 1 的旧 application/commands 按当时目录归入 kernel。', '',
-      '行数为物理行（含空行和注释）。复杂度为每个有函数体的函数/方法/访问器的 1，加 if、循环、catch、非 default case、三元和 &&/||/??；嵌套函数独立计算，不重复计数。不计可选链和默认参数。这是本项目固定的 AST 统计口径，不等同于所有工具的实现。逐函数明细见 report.json。', '',
+      to === 'WORKTREE' ? '当前版本读取工作目录中的源文件。report.json 保存各文件的 SHA-256 校验值，可用于核对文件内容。' : '两个版本的源文件均从 Git 历史读取。创建 p2 标签后，可以用下面的命令更新最终报告。', '',
+      '运行 `npm run metrics`，比较 final 与工作目录中的当前代码。运行 `npm run metrics -- --from final --to p2`，比较 final 和 p2 两个标签对应的代码。', '',
+      'CLI 的统计范围是 src 下的 TypeScript 源码。VSCode 扩展的源码位于 vscode-extension/src，单独统计。',
+      '表中的 kernel 表示内核，包括图形数据、文档操作、命令处理和文件读写。composition 表示装配处，包括 main 和 host，负责启动和加载插件。plugins 表示 src/plugins 下的插件。vscode 表示 VSCode 扩展。Phase 1 的命令位于 application/commands，按该版本的目录归入内核。', '',
+      '行数按源文件的实际行数统计，包含空行和注释。增量等于当前值减去基线值。', '',
+      '复杂度用于观察代码中判断和循环的数量。脚本分析 TypeScript 语法结构，每个有函数体的函数、方法或属性访问器从 1 开始计数。每遇到一个 if、循环、catch、case 分支、三元表达式，或 &&、||、?? 运算符，就增加 1。default 分支、可选链和默认参数增加 0。函数内部定义的函数单独计算。文件复杂度是各函数复杂度的总和。逐函数结果保存在 report.json。', '',
       headings, ...totals, '', '## 文件清单与职责', '', '| 文件 | 职责 | 分类 | 行数 | 复杂度 |', '| --- | --- | --- | ---: | ---: |', ...inventory, ''
     ].join('\n'));
     console.log(`Generated docs/metrics: ${before.length} → ${after.length} runtime files (VSCode separate).`);

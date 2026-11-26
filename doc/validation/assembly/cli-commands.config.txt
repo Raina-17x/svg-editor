@@ -1,0 +1,60 @@
+svg-editor 0.1 — type 'help' for commands
+[DIR]  docs
+[DIR]  plugins
+[FILE]  .hidden
+[FILE]  demo.svg
+[FILE]  package.json
+error: no document. use 'init' or 'read' first
+init [w] [h] | read <file.svg> | save [file.svg] | canvas [w h]
+create rect <id> <x> <y> <w> <h> [fill] [in <gid>]
+create circle <id> <cx> <cy> <r> [fill] [in <gid>]
+create ellipse <id> <cx> <cy> <rx> <ry> [fill] [in <gid>]
+create line <id> <x1> <y1> <x2> <y2> [stroke] [in <gid>]
+create text <id> <x> <y> "content" [in <gid>]
+create g <id> [in <gid>]
+delete <id> | move <id> <dx> <dy> | scale <id> <factor>
+set <id> <attr> <value> | group <newGid> <id1> <id2>...
+ungroup <gid> | addto <gid> <id> | front <id> | back <id>
+tree [id] | show <id> | help | undo | redo
+Use double quotes for spaces; # at line start is a comment. EOF (Ctrl+Z then Enter on Windows) exits.
+stats — count leaves by type and containers
+dir — list the process working directory
+create box <id> <x> <y> <w> <h> "title" [in <gid>]
+canvas 800x600 created
+(total 0, containers 0)
+g#flow created
+rect#r created in g#flow
+circle#c created in g#flow
+text#t created in g#flow
+rect: 1  circle: 1  text: 1  (total 3, containers 1)
+rect#r moved to (6,2)
+rect#r moved back to (1,2)
+[DIR]  docs
+[DIR]  plugins
+[FILE]  .hidden
+[FILE]  demo.svg
+[FILE]  package.json
+rect: 1  circle: 1  text: 1  (total 3, containers 1)
+rect#r moved to (6,2)
+svg (800x600) *
+└── g#flow *
+    ├── rect#r x=6 y=2 w=3 h=4 fill=red *
+    ├── circle#c cx=10 cy=20 r=3 *
+    └── text#t (20,30) "hello" *
+saved to ../output.svg (4 elements)
+[DIR]  docs
+[DIR]  plugins
+[FILE]  .hidden
+[FILE]  demo.svg
+[FILE]  package.json
+error: undo not allowed after io command
+read ../input.svg (1 elements)
+[DIR]  docs
+[DIR]  plugins
+[FILE]  .hidden
+[FILE]  demo.svg
+[FILE]  package.json
+circle: 1  (total 1, containers 0)
+error: invalid arguments; type 'help' for syntax
+error: invalid arguments; type 'help' for syntax
+canvas 100x100

@@ -1,0 +1,5 @@
+cli-1: full code/config stdout and SVG match; same cwd and restored initial files
+cli-1a: full code/config stdout and SVG match; same cwd and restored initial files
+cli-1-box: full code/config stdout and SVG match; same cwd and restored initial files
+cli-commands: full code/config stdout and SVG match; same cwd and restored initial files
+cli-labels: full code/config stdout and SVG match; same cwd and restored initial files

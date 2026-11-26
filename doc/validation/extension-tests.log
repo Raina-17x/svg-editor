@@ -1,0 +1,14 @@
+✔ badge applies only to real SVG files, preserves uri, and does not propagate (1.1524ms)
+✔ deleted/unreadable paths and cancellation are safe; refresh and disposal remain local (0.2891ms)
+✔ nested groups, unnamed leaves, arbitrary SVG elements and exact ranges (2.0225ms)
+✔ comments, CDATA, quoted delimiters, decoded ids, namespaces and UTF-16 offsets (1.087ms)
+✔ incomplete and malformed XML is rejected without retaining state (0.7347ms)
+✔ provider maps hierarchy and source locations, uses edited buffer, and recovers after incomplete XML (1.0231ms)
+ℹ tests 6
+ℹ suites 0
+ℹ pass 6
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 100.8309
